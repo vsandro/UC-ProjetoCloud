@@ -1,0 +1,47 @@
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "linux-musl"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Operations {
+  id   String @id @default(uuid())
+  method String
+  route String
+  description String
+
+  @@map("operations")
+}
+
+model Profiles {
+  id   String @id @default(uuid())
+  name String @unique
+  Users Users[]
+  
+  @@map("profiles")
+}
+
+model Permissions {
+  id       String @id @default(uuid())
+  profile_id String 
+  operation_id String
+     
+  @@map("permissions")
+}
+
+model Users {
+  id       String @id @default(uuid())
+  profile_id String
+  username String @unique
+  password String
+  blocked Boolean @default(false)
+  failed Int @default(0)
+
+  Profiles Profiles @relation(fields: [profile_id], references: [id])
+  
+  @@map("users")
+}

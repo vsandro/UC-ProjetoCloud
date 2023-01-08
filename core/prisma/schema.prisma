@@ -1,0 +1,54 @@
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "linux-musl"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Events {
+  id       String @id @default(uuid())
+  name String @unique
+  active Boolean @default(true)
+
+  @@map("events")
+}
+
+model Collectors {
+  id       String @id @default(uuid())
+  latitude Int
+  longitude Int
+  address String
+  status String @default("A")
+
+  @@map("collectors")
+}
+
+model Categories {
+  id       String @id @default(uuid())
+  name String @unique
+  active Boolean @default(true)
+
+  @@map("categories")
+}
+
+model Stores {
+  id       String @id @default(uuid())
+  name String
+  address String
+  latitude Int
+  longitude Int
+  active Boolean @default(true)
+
+  @@map("stores")
+}
+
+model Store_categories {
+  id       String @id @default(uuid())
+  store_id String
+  category_id String
+
+  @@map("store_categories")
+}

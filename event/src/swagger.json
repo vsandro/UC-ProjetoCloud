@@ -1,0 +1,532 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Swagger - Event microservice documentation",
+    "description": ""
+  },
+  "tags": [
+    {
+      "name": "eventrecord",
+      "description": "Access to event records",
+      "externalDocs": {
+        "description": "",
+        "url": "ocalhost:5001"
+      }
+    },
+    {
+      "name": "collector",
+      "description": "Access to collectors",
+      "externalDocs": {
+        "description": "",
+        "url": "ocalhost:5001"
+      }
+    },
+    {
+      "name": "event",
+      "description": "Access to events",
+      "externalDocs": {
+        "description": "",
+        "url": "ocalhost:5001"
+      }
+    }          
+  ],
+  "paths": {
+    "/eventrecords/": {
+      "post": {
+        "tags": [
+          "eventrecord"
+        ],
+        "summary": "Create a new event record",
+        "description": "",
+        "operationId": "createEventrecord",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Eventrecord"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/Eventrecord"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/Eventrecord"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Eventrecord"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]           
+      }
+    },
+    "/eventrecords": {
+      "get": {
+        "tags": [
+          "eventrecord"
+        ],
+        "summary": "Returns all categories",
+        "description": "",
+        "operationId": "getEventrecord",
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
+    "/eventrecords/{eventrecordId}": {
+      "get": {
+        "tags": [
+          "eventrecord"
+        ],
+        "summary": "Find eventrecord by ID",
+        "description": "",
+        "operationId": "getEventrecordById",
+        "parameters": [
+          {
+            "name": "eventrecordId",
+            "in": "path",
+            "description": "ID of eventrecord that needs to be fetched",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Eventrecord"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Eventrecord"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Eventrecord not found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "eventrecord"
+        ],
+        "summary": "Update eventrecord",
+        "description": "",
+        "operationId": "updateEventrecord",
+        "parameters": [
+          {
+            "name": "eventrecordId",
+            "in": "path",
+            "description": "ID of eventrecord that needs to be fetched",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Update eventrecord",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Eventrecord"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/Eventrecord"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/Eventrecord"
+              }
+            }
+          }
+        },
+        "responses": {
+          "default": {
+            "description": "successful operation"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "eventrecord"
+        ],
+        "summary": "Delete eventrecord by ID",
+        "description": "",
+        "operationId": "deleteEventrecord",
+        "parameters": [
+          {
+            "name": "eventrecordId",
+            "in": "path",
+            "description": "ID of the eventrecord that needs to be deleted",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Eventrecord not found"
+          }
+        }
+      }
+    },
+    "/collector/": {
+    },
+    "/collector": {
+      "get": {
+        "tags": [
+          "collector"
+        ],
+        "summary": "Returns all collectors",
+        "description": "",
+        "operationId": "getInventory",
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
+    "/collector/{collectorId}": {
+      "get": {
+        "tags": [
+          "collector"
+        ],
+        "summary": "Find collector by ID",
+        "description": "",
+        "operationId": "getCollectorById",
+        "parameters": [
+          {
+            "name": "collectorId",
+            "in": "path",
+            "description": "ID of collector that needs to be fetched",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Collector"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Collector"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Collector not found"
+          }
+        }
+      }
+    },
+    "/event/": {
+    },
+    "/event": {
+      "get": {
+        "tags": [
+          "event"
+        ],
+        "summary": "Returns all events",
+        "description": "",
+        "operationId": "getInventory",
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
+    "/event/{eventId}": {
+      "/event/": {
+        "post": {
+          "tags": [
+            "event"
+          ],
+          "summary": "Create a new event",
+          "description": "",
+          "operationId": "createEvent",
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Event"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Event"
+                }
+              },
+              "application/x-www-form-urlencoded": {
+                "schema": {
+                  "$ref": "#/components/schemas/Event"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "successful operation",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Event"
+                  }
+                }
+              }
+            },
+            "405": {
+              "description": "Invalid input"
+            }
+          }
+        }
+      },
+      "/event": {
+        "event": {
+          "tags": [
+            "event"
+          ],
+          "summary": "Returns all events",
+          "description": "",
+          "operationId": "getInventory",
+          "responses": {
+            "200": {
+              "description": "successful operation"
+            }
+          }
+        }
+      },  
+      "get": {
+        "tags": [
+          "event"
+        ],
+        "summary": "Find event by ID",
+        "description": "",
+        "operationId": "getEventById",
+        "parameters": [
+          {
+            "name": "eventId",
+            "in": "path",
+            "description": "ID of event that needs to be fetched",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Event"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Event"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "event not found"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Eventrecord": {
+        "type": "object",
+        "properties": {
+          "collector_id": {
+            "type": "string",
+            "example": "eb1333bf-a80e-4989-89eb-700900f16173"
+          },
+          "event_id": {
+            "type": "string",
+            "example": "1ccccdaa-cf75-4f75-9dfb-3fec4a2183ce"
+          },
+          "description": {
+            "type": "string",
+            "example": "description..."
+          }                      
+        },
+        "xml": {
+          "name": "eventrecord"
+        }
+      },
+      "Collector": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "example": "store #1"
+          },
+          "address": {
+            "type": "string",
+            "example": "address #1"
+          },          
+          "latitude": {
+            "type": "integer",
+            "format": "int32",
+            "example": 10
+          },
+          "longitude": {
+            "type": "integer",
+            "format": "int32",
+            "example": 20
+          },
+          "status": {
+            "type": "string",
+            "example": "A"
+          }         
+        },
+        "xml": {
+          "name": "store"
+        }
+      },
+      "Event": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "example": "event #1"
+          },
+          "active": {
+            "type": "boolean",
+            "example": true
+          }          
+        },
+        "xml": {
+          "name": "event"
+        }
+      }
+    },
+    "requestBodies": {
+      "Eventrecord": {
+        "description": "eventrecord",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Eventrecord"
+            }
+          },
+          "application/xml": {
+            "schema": {
+              "$ref": "#/components/schemas/Eventrecord"
+            }
+          }
+        }
+      }, 
+      "Collector": {
+        "description": "collector",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Collector"
+            }
+          },
+          "application/xml": {
+            "schema": {
+              "$ref": "#/components/schemas/Collector"
+            }
+          }
+        }
+      }, 
+      "Event": {
+        "description": "event",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Event"
+            }
+          },
+          "application/xml": {
+            "schema": {
+              "$ref": "#/components/schemas/Event"
+            }
+          }
+        }
+      },                  
+      "UserArray": {
+        "description": "List of user object",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/User"
+              }
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "api_key": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }    
+  }
+}

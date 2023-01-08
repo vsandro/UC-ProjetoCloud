@@ -1,0 +1,37 @@
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "linux-musl"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Events {
+  id       String @id @default(uuid())
+  name String @unique
+  active Boolean @default(true)
+
+  @@map("events")
+}
+
+model Collectors {
+  id       String @id @default(uuid())
+  address String
+  status String @default("A")
+
+  @@map("collectors")
+}
+
+model Event_records {
+  id       String @id @default(uuid())
+  collector_id String
+  event_id String
+  registration_date DateTime @default(now())
+  description String
+  status String @default("O")
+  close_date DateTime
+
+  @@map("event_records")
+}
