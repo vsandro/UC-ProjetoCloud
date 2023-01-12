@@ -61,7 +61,7 @@ services:
     container_name: projetoCloud_core
     build: core
     ports:
-      - '5000:5000'
+      - '4100:4100'
     depends_on:
       - database
       - rabbitmq
@@ -73,7 +73,7 @@ services:
     container_name: projetoCloud_event
     build: event
     ports:
-      - '5001:5001'
+      - '4200:4200'
     depends_on:
       - database
       - rabbitmq

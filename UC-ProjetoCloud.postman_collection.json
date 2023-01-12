@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "f359d6e5-2766-4ab7-978e-9affb058c231",
-		"name": "UC-arquitetura",
+		"_postman_id": "a76624b3-879c-491b-a691-3334ee41e114",
+		"name": "UC-projetoCloud",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "3266939"
 	},
@@ -150,12 +150,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:5000/category",
+									"raw": "http://localhost:4100/category",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
-									"port": "5000",
+									"port": "4100",
 									"path": [
 										"category"
 									]
@@ -191,12 +191,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:5000/category",
+									"raw": "http://localhost:4100/category",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
-									"port": "5000",
+									"port": "4100",
 									"path": [
 										"category"
 									]
@@ -232,12 +232,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:5000/category/803f3611-f468-46ec-9504-4fcea625b5c7",
+									"raw": "http://localhost:4100/category/803f3611-f468-46ec-9504-4fcea625b5c7",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
-									"port": "5000",
+									"port": "4100",
 									"path": [
 										"category",
 										"803f3611-f468-46ec-9504-4fcea625b5c7"
@@ -271,12 +271,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:5000/category/803f3611-f468-46ec-9504-4fcea625b5c7",
+									"raw": "http://localhost:4100/category/803f3611-f468-46ec-9504-4fcea625b5c7",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
-									"port": "5000",
+									"port": "4100",
 									"path": [
 										"category",
 										"803f3611-f468-46ec-9504-4fcea625b5c7"
@@ -310,12 +310,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:5000/category/803f3611-f468-46ec-9504-4fcea625b5c7",
+									"raw": "http://localhost:4100/category/803f3611-f468-46ec-9504-4fcea625b5c7",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
-									"port": "5000",
+									"port": "4100",
 									"path": [
 										"category",
 										"803f3611-f468-46ec-9504-4fcea625b5c7"
@@ -354,12 +354,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:5000/collector",
+									"raw": "http://localhost:4100/collector",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
-									"port": "5000",
+									"port": "4100",
 									"path": [
 										"collector"
 									]
@@ -395,12 +395,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:5000/collector",
+									"raw": "http://localhost:4100/collector",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
-									"port": "5000",
+									"port": "4100",
 									"path": [
 										"collector"
 									]
@@ -436,12 +436,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:5000/collector/8abfeb12-8a89-4a9f-bf70-364001c59b60",
+									"raw": "http://localhost:4100/collector/8abfeb12-8a89-4a9f-bf70-364001c59b60",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
-									"port": "5000",
+									"port": "4100",
 									"path": [
 										"collector",
 										"8abfeb12-8a89-4a9f-bf70-364001c59b60"
@@ -475,12 +475,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:5000/collector/8abfeb12-8a89-4a9f-bf70-364001c59b60",
+									"raw": "http://localhost:4100/collector/8abfeb12-8a89-4a9f-bf70-364001c59b60",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
-									"port": "5000",
+									"port": "4100",
 									"path": [
 										"collector",
 										"8abfeb12-8a89-4a9f-bf70-364001c59b60"
@@ -514,12 +514,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:5000/collector/898f5d8b-7bd7-4abc-bda0-7c06387afb56",
+									"raw": "http://localhost:4100/collector/898f5d8b-7bd7-4abc-bda0-7c06387afb56",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
-									"port": "5000",
+									"port": "4100",
 									"path": [
 										"collector",
 										"898f5d8b-7bd7-4abc-bda0-7c06387afb56"
@@ -544,12 +544,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:5000/collector/distritos",
+									"raw": "http://localhost:4100/collector/distritos",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
-									"port": "5000",
+									"port": "4100",
 									"path": [
 										"collector",
 										"distritos"
@@ -588,12 +588,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:5000/event",
+									"raw": "http://localhost:4100/event",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
-									"port": "5000",
+									"port": "4100",
 									"path": [
 										"event"
 									]
@@ -629,12 +629,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:5000/event",
+									"raw": "http://localhost:4100/event",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
-									"port": "5000",
+									"port": "4100",
 									"path": [
 										"event"
 									]
@@ -670,12 +670,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:5000/event/9c7afbdc-2b9a-48ee-836c-ec71552b17ce",
+									"raw": "http://localhost:4100/event/9c7afbdc-2b9a-48ee-836c-ec71552b17ce",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
-									"port": "5000",
+									"port": "4100",
 									"path": [
 										"event",
 										"9c7afbdc-2b9a-48ee-836c-ec71552b17ce"
@@ -709,12 +709,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:5000/event/9c7afbdc-2b9a-48ee-836c-ec71552b17ce",
+									"raw": "http://localhost:4100/event/9c7afbdc-2b9a-48ee-836c-ec71552b17ce",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
-									"port": "5000",
+									"port": "4100",
 									"path": [
 										"event",
 										"9c7afbdc-2b9a-48ee-836c-ec71552b17ce"
@@ -748,12 +748,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:5000/event/9c7afbdc-2b9a-48ee-836c-ec71552b17ce",
+									"raw": "http://localhost:4100/event/9c7afbdc-2b9a-48ee-836c-ec71552b17ce",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
-									"port": "5000",
+									"port": "4100",
 									"path": [
 										"event",
 										"9c7afbdc-2b9a-48ee-836c-ec71552b17ce"
@@ -792,12 +792,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:5000/store",
+									"raw": "http://localhost:4100/store",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
-									"port": "5000",
+									"port": "4100",
 									"path": [
 										"store"
 									]
@@ -833,12 +833,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:5000/store",
+									"raw": "http://localhost:4100/store",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
-									"port": "5000",
+									"port": "4100",
 									"path": [
 										"store"
 									]
@@ -874,12 +874,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:5000/store/d70510c5-cb0f-4f75-a81d-b6cec834b727",
+									"raw": "http://localhost:4100/store/d70510c5-cb0f-4f75-a81d-b6cec834b727",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
-									"port": "5000",
+									"port": "4100",
 									"path": [
 										"store",
 										"d70510c5-cb0f-4f75-a81d-b6cec834b727"
@@ -913,12 +913,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:5000/store/d70510c5-cb0f-4f75-a81d-b6cec834b727",
+									"raw": "http://localhost:4100/store/d70510c5-cb0f-4f75-a81d-b6cec834b727",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
-									"port": "5000",
+									"port": "4100",
 									"path": [
 										"store",
 										"d70510c5-cb0f-4f75-a81d-b6cec834b727"
@@ -952,12 +952,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:5000/store/d70510c5-cb0f-4f75-a81d-b6cec834b727",
+									"raw": "http://localhost:4100/store/d70510c5-cb0f-4f75-a81d-b6cec834b727",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
-									"port": "5000",
+									"port": "4100",
 									"path": [
 										"store",
 										"d70510c5-cb0f-4f75-a81d-b6cec834b727"
@@ -1001,12 +1001,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:5001/eventrecords",
+									"raw": "http://localhost:4200/eventrecords",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
-									"port": "5001",
+									"port": "4200",
 									"path": [
 										"eventrecords"
 									]
@@ -1042,12 +1042,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:5001/eventrecords",
+									"raw": "http://localhost:4200/eventrecords",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
-									"port": "5001",
+									"port": "4200",
 									"path": [
 										"eventrecords"
 									]
@@ -1083,12 +1083,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:5001/eventrecords/e27d8deb-4ed2-41c6-aeff-aad6036b8047",
+									"raw": "http://localhost:4200/eventrecords/e27d8deb-4ed2-41c6-aeff-aad6036b8047",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
-									"port": "5001",
+									"port": "4200",
 									"path": [
 										"eventrecords",
 										"e27d8deb-4ed2-41c6-aeff-aad6036b8047"
@@ -1122,12 +1122,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:5001/eventrecords/86d454a2-e72a-4ae6-8d50-dc45bea84437",
+									"raw": "http://localhost:4200/eventrecords/86d454a2-e72a-4ae6-8d50-dc45bea84437",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
-									"port": "5001",
+									"port": "4200",
 									"path": [
 										"eventrecords",
 										"86d454a2-e72a-4ae6-8d50-dc45bea84437"
@@ -1161,12 +1161,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:5001/eventrecords/eb2679c7-196f-4ac6-a0e8-2865310c47e8",
+									"raw": "http://localhost:4200/eventrecords/eb2679c7-196f-4ac6-a0e8-2865310c47e8",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
-									"port": "5001",
+									"port": "4200",
 									"path": [
 										"eventrecords",
 										"eb2679c7-196f-4ac6-a0e8-2865310c47e8"
@@ -1208,12 +1208,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:5001/event",
+									"raw": "http://localhost:4200/event",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
-									"port": "5001",
+									"port": "4200",
 									"path": [
 										"event"
 									]
@@ -1249,12 +1249,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:5001/event/87049d9d-4dc3-49e3-a128-f1300165d324",
+									"raw": "http://localhost:4200/event/87049d9d-4dc3-49e3-a128-f1300165d324",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
-									"port": "5001",
+									"port": "4200",
 									"path": [
 										"event",
 										"87049d9d-4dc3-49e3-a128-f1300165d324"
@@ -1296,12 +1296,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:5001/collector",
+									"raw": "http://localhost:4200/collector",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
-									"port": "5001",
+									"port": "4200",
 									"path": [
 										"collector"
 									]
@@ -1337,12 +1337,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:5001/collector/f0fcc360-03f3-43aa-965b-4c6c5457e6e5",
+									"raw": "http://localhost:4200/collector/f0fcc360-03f3-43aa-965b-4c6c5457e6e5",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
-									"port": "5001",
+									"port": "4200",
 									"path": [
 										"collector",
 										"f0fcc360-03f3-43aa-965b-4c6c5457e6e5"
