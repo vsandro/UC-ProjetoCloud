@@ -1,12 +1,16 @@
 import { hash } from 'bcrypt';
 import { prisma } from '../../../database/prisma';
 interface ICreateUser {
-  username: string;
-  password: string;
   profile_id: string;
+  username: string;
+  password: string;  
+  name: string;
+  address: string;
+  phone: string;
+  email: string;
 }
 export class CreateUserModel {
-  async execute({ username, password, profile_id }: ICreateUser) {
+  async execute({ profile_id, username, password, name, address, phone, email }: ICreateUser) {
     const userExists = await prisma.users.findFirst({
       where: {
         username: {
@@ -22,11 +26,15 @@ export class CreateUserModel {
 
     const hashPassword = await hash(password, 10);
 
+    // console.log(username, name, phone)
+
     const user = await prisma.users.create({
       data: {
-        username,
-        password: hashPassword,
         profile_id,
+        username,
+        password: hashPassword, 
+        blocked: false,
+        failed: 0,
       },
     });
  

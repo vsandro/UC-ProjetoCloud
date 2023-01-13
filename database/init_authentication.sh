@@ -16,8 +16,7 @@ psql -v ON_ERROR_STOP=1 --username "postgres" --dbname "arquitetura_authenticati
     "method" text COLLATE "pg_catalog"."default" NOT NULL,
     "route" text COLLATE "pg_catalog"."default" NOT NULL,
     "description" text COLLATE "pg_catalog"."default" NOT NULL
-    )
-    ;
+    );
 
     INSERT INTO "arquitetura_authentication"."operations" VALUES ('e0ae632b-2717-4f80-899a-870a4b909e99', 'POST', '/user', '[authentication] create user');
     INSERT INTO "arquitetura_authentication"."operations" VALUES ('b09cd1d7-34a0-45f7-8dc6-c26ea45b92f8', 'POST', '/user/unlock', '[authentication] unlock user');
@@ -37,6 +36,12 @@ psql -v ON_ERROR_STOP=1 --username "postgres" --dbname "arquitetura_authenticati
     INSERT INTO "arquitetura_authentication"."operations" VALUES ('797b9add-790e-4e00-8429-5eb1deefe26f', 'PUT', '/store', '[core] update store');
     INSERT INTO "arquitetura_authentication"."operations" VALUES ('8a154ba0-15e0-4f52-9b5d-5ab210b031e7', 'DELETE', '/store', '[core] delete store');
     INSERT INTO "arquitetura_authentication"."operations" VALUES ('235d210e-afd3-4e98-9598-cf7e7ceb0bc7', 'GET', '/store', '[core] get all stores');
+
+    INSERT INTO "arquitetura_authentication"."operations" VALUES ('704fd5fe-72b4-44d3-acbe-49b55be18b74', 'POST', '/item', '[core] create item');
+    INSERT INTO "arquitetura_authentication"."operations" VALUES ('fb38c0a9-0352-4a8d-bb17-9019f30ea314', 'PUT', '/item', '[core] update item');
+    INSERT INTO "arquitetura_authentication"."operations" VALUES ('157d905f-ec23-42cc-a1a8-7cc8cb72edce', 'DELETE', '/item', '[core] delete item');
+    INSERT INTO "arquitetura_authentication"."operations" VALUES ('de132788-599c-4aef-a8be-a15c1159dfb1', 'GET', '/item', '[core] get all items');
+
     INSERT INTO "arquitetura_authentication"."operations" VALUES ('26a22878-6bec-4f9d-b70c-c286cc52cae0', 'POST', '/eventrecords', '[event] create event record');
     INSERT INTO "arquitetura_authentication"."operations" VALUES ('4a4ea7cd-3e43-47b6-a263-ea1c0ea145bfb', 'PUT', '/eventrecords', '[event] update event record');
     INSERT INTO "arquitetura_authentication"."operations" VALUES ('72ac6213-5581-4312-ba29-ae7fdb7533f1', 'DELETE', '/eventrecords', '[event] delete event record');
@@ -49,8 +54,7 @@ psql -v ON_ERROR_STOP=1 --username "postgres" --dbname "arquitetura_authenticati
     "id" text COLLATE "pg_catalog"."default" NOT NULL,
     "profile_id" text COLLATE "pg_catalog"."default" NOT NULL,
     "operation_id" text COLLATE "pg_catalog"."default" NOT NULL
-    )
-    ;
+    );
 
     INSERT INTO "arquitetura_authentication"."permissions" VALUES ('2adcf753-c440-4d57-a5db-fa126bab4b6f', '7e9d6f9c-700a-4fdb-a431-4be8357274a4', 'e0ae632b-2717-4f80-899a-870a4b909e99');
     INSERT INTO "arquitetura_authentication"."permissions" VALUES ('635cbb1e-e253-4f7f-b3ad-9546a17c5499', '7e9d6f9c-700a-4fdb-a431-4be8357274a4', 'b09cd1d7-34a0-45f7-8dc6-c26ea45b92f8');
@@ -66,6 +70,12 @@ psql -v ON_ERROR_STOP=1 --username "postgres" --dbname "arquitetura_authenticati
     INSERT INTO "arquitetura_authentication"."permissions" VALUES ('e3dfbb3d-ecce-461a-a95f-aa77fe830d79', '7e9d6f9c-700a-4fdb-a431-4be8357274a4', '797b9add-790e-4e00-8429-5eb1deefe26f');
     INSERT INTO "arquitetura_authentication"."permissions" VALUES ('15579177-4f9d-4525-871c-b25c89e44061', '7e9d6f9c-700a-4fdb-a431-4be8357274a4', '8a154ba0-15e0-4f52-9b5d-5ab210b031e7');
     INSERT INTO "arquitetura_authentication"."permissions" VALUES ('93e9720f-2ef6-4f93-aeb3-04366969e5cb', '7e9d6f9c-700a-4fdb-a431-4be8357274a4', '235d210e-afd3-4e98-9598-cf7e7ceb0bc7');
+
+    INSERT INTO "arquitetura_authentication"."permissions" VALUES ('47afadbe-22dc-4ed1-8e22-e455a07ba331', '7e9d6f9c-700a-4fdb-a431-4be8357274a4', '704fd5fe-72b4-44d3-acbe-49b55be18b74');
+    INSERT INTO "arquitetura_authentication"."permissions" VALUES ('fd51b9a1-2fb8-405d-b472-e3815abd7ea5', '7e9d6f9c-700a-4fdb-a431-4be8357274a4', 'fb38c0a9-0352-4a8d-bb17-9019f30ea314');
+    INSERT INTO "arquitetura_authentication"."permissions" VALUES ('c7f6412e-32df-4fd9-ab19-97b31b51ce52', '7e9d6f9c-700a-4fdb-a431-4be8357274a4', '157d905f-ec23-42cc-a1a8-7cc8cb72edce');
+    INSERT INTO "arquitetura_authentication"."permissions" VALUES ('c3e07ef9-cb76-4608-aef7-b77fc14af298', '7e9d6f9c-700a-4fdb-a431-4be8357274a4', 'de132788-599c-4aef-a8be-a15c1159dfb1');
+
     INSERT INTO "arquitetura_authentication"."permissions" VALUES ('8a18eaca-9f00-4c29-a850-e63846916130', '7e9d6f9c-700a-4fdb-a431-4be8357274a4', '41229250-f0b1-40a5-9c70-ffb6771cbf6f');
     INSERT INTO "arquitetura_authentication"."permissions" VALUES ('8c0647f7-7683-4873-8c47-862516c05f1b', '7e9d6f9c-700a-4fdb-a431-4be8357274a4', '31df7605-787b-4fda-8c93-f41a18fd0e6b');
     INSERT INTO "arquitetura_authentication"."permissions" VALUES ('20206c9e-216f-4d67-8e19-2ffdd7a7eb54', '7e9d6f9c-700a-4fdb-a431-4be8357274a4', '5d6940f4-9d9c-4b12-9b21-38cf9185895b');
@@ -100,13 +110,12 @@ psql -v ON_ERROR_STOP=1 --username "postgres" --dbname "arquitetura_authenticati
     CREATE TABLE "arquitetura_authentication"."profiles" (
     "id" text COLLATE "pg_catalog"."default" NOT NULL,
     "name" text COLLATE "pg_catalog"."default" NOT NULL
-    )
-    ;
+    );
 
 
-    INSERT INTO "arquitetura_authentication"."profiles" VALUES ('7e9d6f9c-700a-4fdb-a431-4be8357274a4', 'Administrador');
-    INSERT INTO "arquitetura_authentication"."profiles" VALUES ('cceacd43-1647-415d-9179-76282331e3c5', 'Gestor');
-    INSERT INTO "arquitetura_authentication"."profiles" VALUES ('0cd9f2ff-df2c-49e8-a5db-976aa757c501', 'Cliente');
+    INSERT INTO "arquitetura_authentication"."profiles" VALUES ('7e9d6f9c-700a-4fdb-a431-4be8357274a4', 'Administrador 1');
+    INSERT INTO "arquitetura_authentication"."profiles" VALUES ('cceacd43-1647-415d-9179-76282331e3c5', 'Gestor 1');
+    INSERT INTO "arquitetura_authentication"."profiles" VALUES ('0cd9f2ff-df2c-49e8-a5db-976aa757c501', 'Usuario 1');
 
 
     DROP TABLE IF EXISTS "arquitetura_authentication"."users";
@@ -116,19 +125,18 @@ psql -v ON_ERROR_STOP=1 --username "postgres" --dbname "arquitetura_authenticati
     "username" text COLLATE "pg_catalog"."default" NOT NULL,
     "password" text COLLATE "pg_catalog"."default" NOT NULL,
     "blocked" bool NOT NULL DEFAULT false,
-    "failed" int4 NOT NULL DEFAULT 0
-    )
-    ;
+    "failed" int4 NOT NULL DEFAULT 0,
+    "name" text COLLATE "pg_catalog"."default" NOT NULL,
+    "address" text COLLATE "pg_catalog"."default" NOT NULL,
+    "phone" text COLLATE "pg_catalog"."default" NOT NULL,
+    "email" text COLLATE "pg_catalog"."default" NOT NULL    
+    );
 
-
-    INSERT INTO "arquitetura_authentication"."users" VALUES ('3bf13e38-83d7-40cf-9a3c-36980680ee7f', '7e9d6f9c-700a-4fdb-a431-4be8357274a4', 'sandro', '$2b$10$5y/IjNkmi5h7F2DbjQ2i9uJUyqRMpovEIo808v8kuHqobBvtSuyvS', 'f', 0);
-    INSERT INTO "arquitetura_authentication"."users" VALUES ('8a154ba0-15e0-4f52-9b5d-5ab210b031e7', 'cceacd43-1647-415d-9179-76282331e3c5', 'jorge', '$2b$10$5y/IjNkmi5h7F2DbjQ2i9uJUyqRMpovEIo808v8kuHqobBvtSuyvS', 'f', 0);
-    INSERT INTO "arquitetura_authentication"."users" VALUES ('1fe8d804-ef76-4ed0-bf9a-785002e62dcf', '0cd9f2ff-df2c-49e8-a5db-976aa757c501', 'maria', '$2b$10$5y/IjNkmi5h7F2DbjQ2i9uJUyqRMpovEIo808v8kuHqobBvtSuyvS', 'f', 0);
-
-
+    INSERT INTO "arquitetura_authentication"."users" VALUES ('3bf13e38-83d7-40cf-9a3c-36980680ee7f', '7e9d6f9c-700a-4fdb-a431-4be8357274a4', 'sandro', '$2b$10$5y/IjNkmi5h7F2DbjQ2i9uJUyqRMpovEIo808v8kuHqobBvtSuyvS', 'f', 0, 'Sandro Vieira', 'Rua Jose, 12 Braga', '958 4558', 'vsandro@gmail.com');
+    INSERT INTO "arquitetura_authentication"."users" VALUES ('8a154ba0-15e0-4f52-9b5d-5ab210b031e7', 'cceacd43-1647-415d-9179-76282331e3c5', 'jorge', '$2b$10$5y/IjNkmi5h7F2DbjQ2i9uJUyqRMpovEIo808v8kuHqobBvtSuyvS', 'f', 0, 'Jorge', 'Rua B, 287 Barcelos', '945 4587', 'jorge@gmail.com');
+    INSERT INTO "arquitetura_authentication"."users" VALUES ('1fe8d804-ef76-4ed0-bf9a-785002e62dcf', '0cd9f2ff-df2c-49e8-a5db-976aa757c501', 'maria', '$2b$10$5y/IjNkmi5h7F2DbjQ2i9uJUyqRMpovEIo808v8kuHqobBvtSuyvS', 'f', 0, 'Maria', 'Rua ABC, 87 Braga', '974 2547', 'maria@gmail.com');
 
     ALTER TABLE "arquitetura_authentication"."operations" ADD CONSTRAINT "operations_pkey" PRIMARY KEY ("id");
-
 
     ALTER TABLE "arquitetura_authentication"."permissions" ADD CONSTRAINT "permissions_pkey" PRIMARY KEY ("id");
 
@@ -139,7 +147,6 @@ psql -v ON_ERROR_STOP=1 --username "postgres" --dbname "arquitetura_authenticati
 
 
     ALTER TABLE "arquitetura_authentication"."profiles" ADD CONSTRAINT "profiles_pkey" PRIMARY KEY ("id");
-
 
     CREATE UNIQUE INDEX "users_username_key" ON "arquitetura_authentication"."users" USING btree (
     "username" COLLATE "pg_catalog"."default" "pg_catalog"."text_ops" ASC NULLS LAST
