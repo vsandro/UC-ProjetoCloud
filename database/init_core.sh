@@ -104,8 +104,16 @@ psql -v ON_ERROR_STOP=1 --username "postgres" --dbname "arquitetura_core" <<-EOS
     INSERT INTO "arquitetura_core"."stores" VALUES ('c4c1f45d-0c5b-4c7b-97c8-9bda2cacec02', 'Stores #4', 'Store address', 10, 10, 't');
 
 
-    
+    DROP TABLE IF EXISTS "arquitetura_core"."items";
+    CREATE TABLE "arquitetura_core"."items" (
+    "id" text COLLATE "pg_catalog"."default" NOT NULL,
+    "description" text COLLATE "pg_catalog"."default" NOT NULL,
+    "category_id" text COLLATE "pg_catalog"."default" NOT NULL,
+    "active" bool NOT NULL DEFAULT true,
+    "reserved" bool NOT NULL DEFAULT false
+    );
 
+ 
 
     CREATE UNIQUE INDEX "categories_name_key" ON "arquitetura_core"."categories" USING btree (
     "name" COLLATE "pg_catalog"."default" "pg_catalog"."text_ops" ASC NULLS LAST
@@ -118,7 +126,13 @@ psql -v ON_ERROR_STOP=1 --username "postgres" --dbname "arquitetura_core" <<-EOS
 
     ALTER TABLE "arquitetura_core"."event_records" ADD CONSTRAINT "event_records_pkey" PRIMARY KEY ("id");
 
-
+    ALTER TABLE "arquitetura_core"."items" ADD CONSTRAINT "items_pkey" PRIMARY KEY ("id");
+    ALTER TABLE "arquitetura_core"."items" ADD CONSTRAINT "item_category_id_fkey" FOREIGN KEY ("category_id") REFERENCES "arquitetura_core"."categories" ("id") ON DELETE NO ACTION ON UPDATE NO ACTION;
+    
+    CREATE UNIQUE INDEX "items_description_key" ON "arquitetura_core"."items" USING btree (
+    "description" COLLATE "pg_catalog"."default" "pg_catalog"."text_ops" ASC NULLS LAST
+    );
+    
     CREATE UNIQUE INDEX "events_name_key" ON "arquitetura_core"."events" USING btree (
     "name" COLLATE "pg_catalog"."default" "pg_catalog"."text_ops" ASC NULLS LAST
     );

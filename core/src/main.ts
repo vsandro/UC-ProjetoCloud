@@ -32,11 +32,20 @@ import { GetAllStores } from './domain/use-cases/store/get-all-store'
 import { GetOneStore } from './domain/use-cases/store/get-one-store'
 import { UpdateStore } from './domain/use-cases/store/update-store'
 
+import ItemRouter from './presentation/routers/item-router'
+import { ItemRepositoryImpl } from './domain/repositories/item-repository'
+import { CreateItem } from './domain/use-cases/item/create-item'
+import { DeleteItem } from './domain/use-cases/item/delete-item'
+import { GetAllItem } from './domain/use-cases/item/get-all-item'
+import { GetOneItem } from './domain/use-cases/item/get-one-item'
+import { UpdateItem } from './domain/use-cases/item/update-item'
+
 // import { NoSQLDatabaseWrapper } from './infrastructure/interfaces/data-sources/nosql-database-wrapper'
 import { PGEventDataSource } from './infrastructure/data-sources/postgresql/pg-event-data-source'
 import { PGCollectorDataSource } from './infrastructure/data-sources/postgresql/pg-collector-data-source'
 import { PGCategoryDataSource } from './infrastructure/data-sources/postgresql/pg-category-data-source'
 import { PGStoreDataSource } from './infrastructure/data-sources/postgresql/pg-store-data-source'
+import { PGItemDataSource } from './infrastructure/data-sources/postgresql/pg-item-data-source'
 
 import { Pool } from 'pg'
 
@@ -95,6 +104,18 @@ async function getStorePGDS() {
     return new PGStoreDataSource(db)
 }
 
+async function getItemPGDS() {
+
+    const db = new Pool({
+        user: POSTGRES_USER,
+        password: POSTGRES_PASSWORD,
+        host: DB_HOST,
+        database: POSTGRES_DB,
+        port: DB_PORT,
+    })
+    return new PGItemDataSource(db)
+}
+
 (async () => {
     const dataSourceEvent = await getEventPGDS();
     
@@ -136,6 +157,16 @@ async function getStorePGDS() {
         new UpdateStore(new StoreRepositoryImpl(dataSourceStore)),        
     )
 
+    const dataSourceItem = await getItemPGDS();
+
+    const itemMiddleWare = ItemRouter(        
+        new CreateItem(new ItemRepositoryImpl(dataSourceItem)),
+        new DeleteItem(new ItemRepositoryImpl(dataSourceItem)),
+        new GetAllItem(new ItemRepositoryImpl(dataSourceItem)),
+        new GetOneItem(new ItemRepositoryImpl(dataSourceItem)),
+        new UpdateItem(new ItemRepositoryImpl(dataSourceItem)),        
+    )
+
     const swaggerUi = require('swagger-ui-express'),
     swaggerDocument = require('./swagger.json');
 
@@ -148,6 +179,7 @@ async function getStorePGDS() {
     server.use("/collector", collectorMiddleWare)
     server.use("/category", categoryMiddleWare)
     server.use("/store", storeMiddleWare)
+    server.use("/item", itemMiddleWare)
     
     server.listen(PORT, () => {
         console.log("[core]" + "\x1b[34m" + " Server running" + "\x1b[0m" + " on port " + PORT);

@@ -4,9 +4,13 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "generate": "npx prisma generate",
     "build": "tsc -p .",
     "start": "ts-node dist/server.js",
     "dev": "ts-node-dev --exit-child --transpile-only --ignore-watch node_modules src/server.ts"
+  },
+  "prisma": {
+    "schema": "src/prisma/schema.prisma"
   },
   "devDependencies": {
     "@types/amqplib": "^0.10.0",
@@ -15,23 +19,25 @@
     "@types/elasticsearch": "^5.0.36",
     "@types/express": "^4.17.14",
     "@types/jsonwebtoken": "^8.5.8",
-    "ts-node-dev": "^2.0.0",
+    "@types/node": "^18.11.18",
     "@types/pg": "^8.6.5",
-    "typescript": "^4.7.3"
+    "prisma": "^4.8.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.8.4"
   },
   "dependencies": {
-    "@prisma/client": "^3.15.1",
+    "@prisma/client": "^4.8.1",
     "amqplib": "^0.10.3",
-    "bcrypt": "^5.0.1",
+    "bcrypt": "5.0.1",
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "elasticsearch": "^16.7.1",
     "express": "^4.18.2",
     "express-async-errors": "^3.1.1",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "path": "^0.12.7",
-    "prisma": "^4.5.0",
     "pg": "^8.7.3",
-    "swagger-ui-express": "^4.6.0"
+    "swagger-ui-express": "^4.6.0",
+    "yarn": "^1.22.19"
   }
 }

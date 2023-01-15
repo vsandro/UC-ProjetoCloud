@@ -33,6 +33,10 @@ CREATE TABLE "users" (
     "password" TEXT NOT NULL,
     "blocked" BOOLEAN NOT NULL DEFAULT false,
     "failed" INTEGER NOT NULL DEFAULT 0,
+    "name" TEXT NOT NULL,
+    "address" TEXT NOT NULL,
+    "phone" TEXT NOT NULL,
+    "email" TEXT NOT NULL,
 
     CONSTRAINT "users_pkey" PRIMARY KEY ("id")
 );
