@@ -43,6 +43,7 @@ export class PGItemDataSource implements ItemDataSource {
             description: item.description,
             active: item.active,
             category_id: item.category_id,
+            reserved: item.reserved,
         }));
 
         return result;
@@ -61,6 +62,7 @@ export class PGItemDataSource implements ItemDataSource {
             description: item.description,
             active: item.active,
             category_id: item.category_id,
+            reserved: item.reserved,
         }));
         return result[0];
     }

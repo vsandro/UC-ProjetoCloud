@@ -1,6 +1,5 @@
 generator client {
-  provider      = "prisma-client-js"
-  binaryTargets = ["native", "linux-musl"]
+  provider      = "prisma-client-js"  
 }
 
 datasource db {
@@ -40,10 +39,6 @@ model Users {
   password String
   blocked Boolean @default(false)
   failed Int @default(0)
-  name String
-  address String
-  phone String
-  email String
 
   Profiles Profiles @relation(fields: [profile_id], references: [id])
   
