@@ -74,7 +74,7 @@ export class PGItemDataSource implements ItemDataSource {
             console.log("Not found");
             return false;
         }     
-        await this.db.query(`update ${DB_TABLE} set description = $2, active = $3, category_id = $4 where id = $1`, [id, data.description, data.active, data.category_id])
+        await this.db.query(`update ${DB_TABLE} set description = $2, active = $3, category_id = $4, reserved = $5 where id = $1`, [id, data.description, data.active, data.category_id, data.reserved])
 
         const jsonSend = JSON.stringify({
             id: id,

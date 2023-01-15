@@ -4,14 +4,14 @@ interface ICreateUser {
   profile_id: string;
   username: string;
   password: string;  
-  // name: string;
-  // address: string;
-  // phone: string;
-  // email: string;
+  name: string;
+  address: string;
+  phone: string;
+  email: string;
 }
 export class CreateUserModel {
-  // async execute({ profile_id, username, password, name, address, phone, email }: ICreateUser) {
-    async execute({ profile_id, username, password }: ICreateUser) {
+  async execute({ profile_id, username, password, name, address, phone, email }: ICreateUser) {
+    // async execute({ profile_id, username, password }: ICreateUser) {
     const userExists = await prisma.users.findFirst({
       where: {
         username: {
@@ -36,6 +36,10 @@ export class CreateUserModel {
         password: hashPassword, 
         blocked: false,
         failed: 0,
+        name,
+        address,
+        phone,
+        email,
       },
     });
  
