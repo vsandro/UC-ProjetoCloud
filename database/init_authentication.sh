@@ -126,16 +126,18 @@ psql -v ON_ERROR_STOP=1 --username "postgres" --dbname "arquitetura_authenticati
     "password" text COLLATE "pg_catalog"."default" NOT NULL,
     "blocked" bool NOT NULL DEFAULT false,
     "failed" int4 NOT NULL DEFAULT 0,
-    "name" text COLLATE "pg_catalog"."default" NOT NULL,
-    "address" text COLLATE "pg_catalog"."default" NOT NULL,
-    "phone" text COLLATE "pg_catalog"."default" NOT NULL,
-    "email" text COLLATE "pg_catalog"."default" NOT NULL    
+    "name" text COLLATE "pg_catalog"."default" NULL,
+    "address" text COLLATE "pg_catalog"."default" NULL,
+    "phone" text COLLATE "pg_catalog"."default" NULL,
+    "email" text COLLATE "pg_catalog"."default" NULL    
     );
 
-    INSERT INTO "arquitetura_authentication"."users" VALUES ('3bf13e38-83d7-40cf-9a3c-36980680ee7f', '7e9d6f9c-700a-4fdb-a431-4be8357274a4', 'sandro', '$2b$10$5y/IjNkmi5h7F2DbjQ2i9uJUyqRMpovEIo808v8kuHqobBvtSuyvS', 'f', 0, 'Sandro Vieira', 'Rua Jose, 12 Braga', '958 4558', 'vsandro@gmail.com');
-    INSERT INTO "arquitetura_authentication"."users" VALUES ('8a154ba0-15e0-4f52-9b5d-5ab210b031e7', 'cceacd43-1647-415d-9179-76282331e3c5', 'jorge', '$2b$10$5y/IjNkmi5h7F2DbjQ2i9uJUyqRMpovEIo808v8kuHqobBvtSuyvS', 'f', 0, 'Jorge', 'Rua B, 287 Barcelos', '945 4587', 'jorge@gmail.com');
-    INSERT INTO "arquitetura_authentication"."users" VALUES ('1fe8d804-ef76-4ed0-bf9a-785002e62dcf', '0cd9f2ff-df2c-49e8-a5db-976aa757c501', 'maria', '$2b$10$5y/IjNkmi5h7F2DbjQ2i9uJUyqRMpovEIo808v8kuHqobBvtSuyvS', 'f', 0, 'Maria', 'Rua ABC, 87 Braga', '974 2547', 'maria@gmail.com');
+    INSERT INTO "arquitetura_authentication"."users" VALUES ('3bf13e38-83d7-40cf-9a3c-36980680ee7f', '7e9d6f9c-700a-4fdb-a431-4be8357274a4', 'sandro', '$2b$10$DUMv4yzurO0OtygLk4Q6T.67xT1Rid6XvkhWybnANR6KuACvqdOc2', 'f', 0, 'Sandro Vieira', 'Rua Jose, 12 Braga', '958 4558', 'vsandro@gmail.com');
+    INSERT INTO "arquitetura_authentication"."users" VALUES ('8a154ba0-15e0-4f52-9b5d-5ab210b031e7', 'cceacd43-1647-415d-9179-76282331e3c5', 'jorge', '$2b$10$DUMv4yzurO0OtygLk4Q6T.67xT1Rid6XvkhWybnANR6KuACvqdOc2', 'f', 0, 'Jorge', 'Rua B, 287 Barcelos', '945 4587', 'jorge@gmail.com');
+    INSERT INTO "arquitetura_authentication"."users" VALUES ('1fe8d804-ef76-4ed0-bf9a-785002e62dcf', '0cd9f2ff-df2c-49e8-a5db-976aa757c501', 'maria', '$2b$10$DUMv4yzurO0OtygLk4Q6T.67xT1Rid6XvkhWybnANR6KuACvqdOc2', 'f', 0, 'Maria', 'Rua ABC, 87 Braga', '974 2547', 'maria@gmail.com');
 
+    update arquitetura_authentication.users set password='$2b$10$5y/IjNkmi5h7F2DbjQ2i9uJUyqRMpovEIo808v8kuHqobBvtSuyvS';
+  
     ALTER TABLE "arquitetura_authentication"."operations" ADD CONSTRAINT "operations_pkey" PRIMARY KEY ("id");
 
     ALTER TABLE "arquitetura_authentication"."permissions" ADD CONSTRAINT "permissions_pkey" PRIMARY KEY ("id");
@@ -145,13 +147,11 @@ psql -v ON_ERROR_STOP=1 --username "postgres" --dbname "arquitetura_authenticati
     "name" COLLATE "pg_catalog"."default" "pg_catalog"."text_ops" ASC NULLS LAST
     );
 
-
     ALTER TABLE "arquitetura_authentication"."profiles" ADD CONSTRAINT "profiles_pkey" PRIMARY KEY ("id");
 
     CREATE UNIQUE INDEX "users_username_key" ON "arquitetura_authentication"."users" USING btree (
     "username" COLLATE "pg_catalog"."default" "pg_catalog"."text_ops" ASC NULLS LAST
     );
-
 
     ALTER TABLE "arquitetura_authentication"."users" ADD CONSTRAINT "users_pkey" PRIMARY KEY ("id");
 
@@ -159,9 +159,9 @@ psql -v ON_ERROR_STOP=1 --username "postgres" --dbname "arquitetura_authenticati
     ALTER TABLE "arquitetura_authentication"."permissions" ADD CONSTRAINT "permissions_operation_id_fkey" FOREIGN KEY ("operation_id") REFERENCES "arquitetura_authentication"."operations" ("id") ON DELETE NO ACTION ON UPDATE NO ACTION;
     ALTER TABLE "arquitetura_authentication"."permissions" ADD CONSTRAINT "permissions_profile_id_fkey" FOREIGN KEY ("profile_id") REFERENCES "arquitetura_authentication"."profiles" ("id") ON DELETE NO ACTION ON UPDATE NO ACTION;
 
-
     ALTER TABLE "arquitetura_authentication"."users" ADD CONSTRAINT "users_profile_id_fkey" FOREIGN KEY ("profile_id") REFERENCES "arquitetura_authentication"."profiles" ("id") ON DELETE RESTRICT ON UPDATE CASCADE;
     
+  
 EOSQL
 
 
