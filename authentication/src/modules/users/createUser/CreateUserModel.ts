@@ -11,7 +11,6 @@ interface ICreateUser {
 }
 export class CreateUserModel {
   async execute({ profile_id, username, password, name, address, phone, email }: ICreateUser) {
-    // async execute({ profile_id, username, password }: ICreateUser) {
     const userExists = await prisma.users.findFirst({
       where: {
         username: {
@@ -26,8 +25,6 @@ export class CreateUserModel {
     }
 
     const hashPassword = await hash(password, 10);
-
-    // console.log(username, name, phone)
 
     const user = await prisma.users.create({
       data: {
