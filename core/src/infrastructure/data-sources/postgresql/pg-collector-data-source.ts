@@ -22,13 +22,14 @@ export class PGCollectorDataSource implements CollectorDataSource {
 
     async create(Collector: CollectorRequestModel) {  
         const ID = uuidv4()     
-        await this.db.query(`insert into ${DB_TABLE} (id, latitude, longitude, address, status) values ($1, $2, $3, $4, $5)`, [ID, Collector.latitude, Collector.longitude, Collector.address, Collector.status])
+        await this.db.query(`insert into ${DB_TABLE} (id, latitude, longitude, address, id_city, status) values ($1, $2, $3, $4, $5, $6)`, [ID, Collector.latitude, Collector.longitude, Collector.address, Collector.id_city, Collector.status])
 
         const jsonSend = JSON.stringify({
             id: ID,
             latitude: Collector.latitude,
             longitude: Collector.longitude,
             address: Collector.address,
+            id_city: Collector.id_city,
             status: Collector.status,
             type: "collector created",
         })
@@ -43,6 +44,7 @@ export class PGCollectorDataSource implements CollectorDataSource {
             latitude: item.latitude,
             longitude: item.longitude,
             address: item.address,
+            id_city: item.id_city,
             status: item.status,
         }));
         return result;
@@ -61,6 +63,7 @@ export class PGCollectorDataSource implements CollectorDataSource {
             latitude: item.latitude,
             longitude: item.longitude,
             address: item.address,
+            id_city: item.id_city,
             status: item.status,     
         }));
         return result[0];
@@ -73,11 +76,12 @@ export class PGCollectorDataSource implements CollectorDataSource {
             console.log("Not found");
             return false;
         }     
-        await this.db.query(`update ${DB_TABLE} set latitude = $2, longitude = $3, address = $4, status = $5 where id = $1`, [id, data.latitude, data.longitude, data.address, data.status])
+        await this.db.query(`update ${DB_TABLE} set latitude = $2, longitude = $3, address = $4, id_city = $5, status = $6 where id = $1`, [id, data.latitude, data.longitude, data.address, data.id_city, data.status])
 
         const jsonSend = JSON.stringify({
             id: id,
             address: data.address,
+            id_city: data.id_city,
             status: data.status,                
             type: "collector updated",
         })

@@ -33,7 +33,6 @@ export class PGCategoryDataSource implements CategoryDataSource {
             type: "category created",
         })
         producer(jsonSend)
-
     }
 
     async getAll(): Promise<CategoryResponseModel[]> {

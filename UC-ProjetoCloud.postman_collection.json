@@ -57,7 +57,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"profile_id\": \"7e9d6f9c-700a-4fdb-a431-4be8357274a4\",\r\n  \"username\": \"ana.paula\",\r\n  \"password\": \"123456\",\r\n  \"name\": \"name1\",\r\n  \"address\": \"address\",\r\n  \"phone\": \"phone\",\r\n  \"email\": \"email@gmail.com\"\r\n}",
+									"raw": "{\r\n  \"profile_id\": \"7e9d6f9c-700a-4fdb-a431-4be8357274a4\",\r\n  \"username\": \"ana.paula\",\r\n  \"password\": \"abc\",\r\n  \"name\": \"name1\",\r\n  \"address\": \"address\",\r\n  \"phone\": \"phone\",\r\n  \"email\": \"email@gmail.com\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -142,7 +142,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"name\": \"category #9b\"\r\n}",
+									"raw": "{\r\n  \"name\": \"category #6\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -232,7 +232,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:4100/category/803f3611-f468-46ec-9504-4fcea625b5c7",
+									"raw": "http://localhost:4100/category/2bcf9606-968b-462f-9757-1f1142c3a86f",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -240,7 +240,7 @@
 									"port": "4100",
 									"path": [
 										"category",
-										"803f3611-f468-46ec-9504-4fcea625b5c7"
+										"2bcf9606-968b-462f-9757-1f1142c3a86f"
 									]
 								}
 							},
@@ -263,7 +263,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"name\": \"category #1(alterado postman)\",\r\n  \"active\": false\r\n}",
+									"raw": "{\r\n  \"name\": \"category #2 (alterado postman)\",\r\n  \"active\": false\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -271,7 +271,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:4100/category/803f3611-f468-46ec-9504-4fcea625b5c7",
+									"raw": "http://localhost:4100/category/2bcf9606-968b-462f-9757-1f1142c3a86f",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -279,7 +279,7 @@
 									"port": "4100",
 									"path": [
 										"category",
-										"803f3611-f468-46ec-9504-4fcea625b5c7"
+										"2bcf9606-968b-462f-9757-1f1142c3a86f"
 									]
 								}
 							},
@@ -310,7 +310,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:4100/category/803f3611-f468-46ec-9504-4fcea625b5c7",
+									"raw": "http://localhost:4100/category/2bcf9606-968b-462f-9757-1f1142c3a86f",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -318,7 +318,7 @@
 									"port": "4100",
 									"path": [
 										"category",
-										"803f3611-f468-46ec-9504-4fcea625b5c7"
+										"2bcf9606-968b-462f-9757-1f1142c3a86f"
 									]
 								}
 							},
@@ -346,7 +346,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"description\": \"description #2\",\r\n  \"category_id\": \"e79824c9-0ae9-4ece-9b69-ca11538fd173\"\r\n}",
+									"raw": "{\r\n  \"description\": \"description #5\",\r\n  \"category_id\": \"e1e068ac-ddc1-46ae-9500-3b76850c5017\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -436,7 +436,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:4100/item/dbd553b7-61db-4f7d-a68e-74fc3b22c587",
+									"raw": "http://localhost:4100/item/67f30d5d-3994-452b-b655-1b94db2968ac",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -444,7 +444,7 @@
 									"port": "4100",
 									"path": [
 										"item",
-										"dbd553b7-61db-4f7d-a68e-74fc3b22c587"
+										"67f30d5d-3994-452b-b655-1b94db2968ac"
 									]
 								}
 							},
@@ -467,7 +467,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"description\": \"item #1(alterado postman)\",\r\n   \"category_id\": \"e79824c9-0ae9-4ece-9b69-ca11538fd173\",\r\n  \"active\": false,\r\n  \"reserved\": true\r\n}",
+									"raw": "{\r\n  \"description\": \"item #1(alterado postman)\",\r\n   \"category_id\": \"e1e068ac-ddc1-46ae-9500-3b76850c5017\",\r\n  \"active\": false,\r\n  \"reserved\": true\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -475,7 +475,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:4100/item/f743eecf-cbae-4c31-b038-0e02eaebdcb3",
+									"raw": "http://localhost:4100/item/67f30d5d-3994-452b-b655-1b94db2968ac",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -483,7 +483,7 @@
 									"port": "4100",
 									"path": [
 										"item",
-										"f743eecf-cbae-4c31-b038-0e02eaebdcb3"
+										"67f30d5d-3994-452b-b655-1b94db2968ac"
 									]
 								}
 							},
@@ -514,7 +514,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:4100/item/97cb3cad-fea6-46b8-97d0-263f6f134abd",
+									"raw": "http://localhost:4100/item/b58ee3ef-04f9-4785-b4bf-be21c36eb347",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -522,7 +522,7 @@
 									"port": "4100",
 									"path": [
 										"item",
-										"97cb3cad-fea6-46b8-97d0-263f6f134abd"
+										"b58ee3ef-04f9-4785-b4bf-be21c36eb347"
 									]
 								}
 							},
@@ -550,7 +550,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"latitude\": 22,\r\n  \"longitude\": 333,\r\n  \"address\": \"address 222222\",\r\n  \"status\": \"D\"\r\n}",
+									"raw": "{\r\n  \"latitude\": 22,\r\n  \"longitude\": 333,\r\n  \"address\": \"address 55\",\r\n  \"id_city\": 3,\r\n  \"status\": \"D\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -671,7 +671,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"latitude\": 66,\r\n  \"longitude\": 2666222,\r\n  \"address\": \"address update\",\r\n  \"status\": \"M\"\r\n}",
+									"raw": "{\r\n  \"latitude\": 66,\r\n  \"longitude\": 2666222,\r\n  \"address\": \"address update\",\r\n  \"id_city\": 1,\r\n  \"status\": \"M\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -679,7 +679,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:4100/collector/8abfeb12-8a89-4a9f-bf70-364001c59b60",
+									"raw": "http://localhost:4100/collector/bd65bb8b-a850-439f-94a6-0244b29e549f",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -687,7 +687,7 @@
 									"port": "4100",
 									"path": [
 										"collector",
-										"8abfeb12-8a89-4a9f-bf70-364001c59b60"
+										"bd65bb8b-a850-439f-94a6-0244b29e549f"
 									]
 								}
 							},
@@ -784,7 +784,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"name\": \"event #33\"\r\n}",
+									"raw": "{\r\n  \"name\": \"event #11\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -905,7 +905,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"name\": \"alterado\",\r\n  \"active\": false\r\n}",
+									"raw": "{\r\n  \"name\": \"alterado (sandro)\",\r\n  \"active\": true\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -913,7 +913,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:4100/event/9c7afbdc-2b9a-48ee-836c-ec71552b17ce",
+									"raw": "http://localhost:4100/event/adaad12f-fb84-4a21-baed-64e36e4013d1",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -921,7 +921,7 @@
 									"port": "4100",
 									"path": [
 										"event",
-										"9c7afbdc-2b9a-48ee-836c-ec71552b17ce"
+										"adaad12f-fb84-4a21-baed-64e36e4013d1"
 									]
 								}
 							},
@@ -988,7 +988,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"name\": \"store #333\",\r\n  \"address\": \"address #333\",\r\n  \"latitude\": 10,\r\n  \"longitude\": 20\r\n}",
+									"raw": "{\r\n  \"name\": \"store #333\",\r\n  \"address\": \"address #333\",\r\n  \"latitude\": 10,\r\n  \"longitude\": 20,\r\n  \"id_city\": 3\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1109,7 +1109,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"name\": \"store (alterado)\",\r\n  \"address\": \"address\",\r\n  \"latitude\": 22,\r\n  \"longitude\": 333,\r\n  \"active\": false\r\n}",
+									"raw": "{\r\n  \"name\": \"store (alterado)\",\r\n  \"address\": \"address\",\r\n  \"latitude\": 22,\r\n  \"longitude\": 333,\r\n  \"id_city\":11,\r\n  \"active\": false\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1117,7 +1117,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:4100/store/d70510c5-cb0f-4f75-a81d-b6cec834b727",
+									"raw": "http://localhost:4100/store/9302a768-cfb0-4f6c-937e-5d549bea5b4a",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -1125,7 +1125,7 @@
 									"port": "4100",
 									"path": [
 										"store",
-										"d70510c5-cb0f-4f75-a81d-b6cec834b727"
+										"9302a768-cfb0-4f6c-937e-5d549bea5b4a"
 									]
 								}
 							},
@@ -1453,7 +1453,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:4200/event/87049d9d-4dc3-49e3-a128-f1300165d324",
+									"raw": "http://localhost:4200/event/76b00a9a-eb6c-4eee-ba10-7a55dee1a6a8",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -1461,7 +1461,7 @@
 									"port": "4200",
 									"path": [
 										"event",
-										"87049d9d-4dc3-49e3-a128-f1300165d324"
+										"76b00a9a-eb6c-4eee-ba10-7a55dee1a6a8"
 									]
 								}
 							},
@@ -1558,6 +1558,58 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "Microservice  Choose Donation",
+			"item": [
+				{
+					"name": "Stores",
+					"item": [
+						{
+							"name": "get all",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4300/stores/getAllStores",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4300",
+									"path": [
+										"stores",
+										"getAllStores"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
 		}
 	],
 	"event": [
@@ -1583,7 +1635,7 @@
 	"variable": [
 		{
 			"key": "TOKEN",
-			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNhbmRybyIsImlhdCI6MTY3Mzg5ODQ2NiwiZXhwIjoxNjczOTg0ODY2LCJzdWIiOiIzYmYxM2UzOC04M2Q3LTQwY2YtOWEzYy0zNjk4MDY4MGVlN2YifQ.2EZbkHCwZ2PlzIYID8dQuRRhoKb93FKAutlF620b_ds"
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNhbmRybyIsImlhdCI6MTY3NDE1MjEyMywiZXhwIjoxNjc0MjM4NTIzLCJzdWIiOiIzYmYxM2UzOC04M2Q3LTQwY2YtOWEzYy0zNjk4MDY4MGVlN2YifQ.H7l7xbBiY1rz2HNpeTpsH1M4duGK7Zo68kQU_HqpGBs"
 		}
 	]
 }

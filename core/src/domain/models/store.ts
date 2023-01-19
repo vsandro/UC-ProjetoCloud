@@ -2,7 +2,8 @@ export interface StoreRequestModel {
     name: string;
     address: string;
     latitude: number;
-    longitude: number;    
+    longitude: number;  
+    id_city: number;   
     active: boolean;
 }
 export interface StoreResponseModel {
@@ -10,6 +11,7 @@ export interface StoreResponseModel {
     name: string;
     address: string;
     latitude: number;
-    longitude: number;    
+    longitude: number; 
+    id_city: number;   
     active: boolean;
 }

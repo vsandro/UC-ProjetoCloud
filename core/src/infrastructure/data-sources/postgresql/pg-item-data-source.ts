@@ -33,7 +33,6 @@ export class PGItemDataSource implements ItemDataSource {
             type: "item created",
         })
         producer(jsonSend)
-
     }
 
     async getAll(): Promise<ItemResponseModel[]> {

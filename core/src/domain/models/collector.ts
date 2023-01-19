@@ -2,6 +2,7 @@ export interface CollectorRequestModel {
     latitude: number;
     longitude: number;
     address: string;
+    id_city: number;
     status: string;
 }
 export interface CollectorResponseModel {
@@ -9,5 +10,6 @@ export interface CollectorResponseModel {
     latitude: number;
     longitude: number;
     address: string;
+    id_city: number;
     status: string;
 }

@@ -1,0 +1,250 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Swagger - Choose Donation microservice documentation",
+    "description": ""
+  },
+  "tags": [
+    {
+      "name": "user",
+      "description": "Access to users",
+      "externalDocs": {
+        "description": "Find out more about our user",
+        "url": "localhost:4300"
+      }
+    }
+  ],
+  "paths": {
+    "/user/": {
+      "post": {
+        "tags": [
+          "user"
+        ],
+        "security": [
+          {
+            "api_key": []
+          }
+        ],
+        "summary": "Create a new user",
+        "description": "",
+        "operationId": "createuser",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/user"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/user"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/user"
+              }
+            }
+          }          
+        },
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/user"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/user/login": {
+      "post": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Login user",
+        "description": "",
+        "operationId": "userlogin",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/login"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/login"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/login"
+              }
+            }
+          }          
+        },
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/login"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }     
+      }
+    },
+    "/user/unlock": {
+      "post": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Unlock user",
+        "description": "",
+        "operationId": "unlockuser",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/unlock"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/unlock"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/unlock"
+              }
+            }
+          }          
+        },
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/unlock"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]           
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "user": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string",
+            "example": "username1"
+          },
+          "password": {
+            "type": "string",
+            "example": "123456"
+          },          
+          "profile_id": {
+            "type": "string",
+            "example": "7e9d6f9c-700a-4fdb-a431-4be8357274a4"
+          }
+        },
+        "xml": {
+          "name": "user"
+        }
+      },
+      "login": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string",
+            "example": "username1"
+          },
+          "password": {
+            "type": "string",
+            "example": "123456"
+          }    
+        },
+        "xml": {
+          "name": "login"
+        }
+      },
+      "unlock": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string",
+            "example": "username1"
+          }
+        },
+        "xml": {
+          "name": "unlock"
+        }
+      }
+    },
+    "requestBodies": {
+      "User": {
+        "description": "Added user",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/User"
+            }
+          },
+          "application/xml": {
+            "schema": {
+              "$ref": "#/components/schemas/User"
+            }
+          }
+        }
+      },
+      "UserArray": {
+        "description": "List of user object",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/User"
+              }
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "api_key": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  }
+}
