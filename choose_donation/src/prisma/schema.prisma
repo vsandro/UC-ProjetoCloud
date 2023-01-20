@@ -19,9 +19,3 @@ model Stores {
   @@map("stores")
 }
 
-model Store_categories {
-  id       String @id @default(uuid())
-  store_id   Stores @relation(fields: [store_id], references: [id])  
-
-  @@map("store_categories")
-}

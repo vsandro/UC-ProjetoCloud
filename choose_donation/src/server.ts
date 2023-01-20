@@ -1,3 +1,4 @@
+import createMQConsumer from '../src/application-rabbitmq/consumer'
 import 'dotenv/config';
 import cors from 'cors';
 
@@ -34,6 +35,12 @@ app.use('/api-docs',
     swaggerUi.serve, 
     swaggerUi.setup(swaggerDocument)
 );
+
+const SERVER = String(process.env.SERVER_HABBIT)
+
+const consumerStores = createMQConsumer(SERVER, "core.stores");
+
+consumerStores();
 
 const PORT = process.env.PORT
 
