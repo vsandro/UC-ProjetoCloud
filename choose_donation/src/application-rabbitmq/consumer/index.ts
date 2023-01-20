@@ -41,28 +41,50 @@ const createMQConsumer = (amqpURl: string, queueName: string) => {
             let query;
           
             switch (queueName) {
+              case 'core.collectors':
+                if (parsed.type === 'collector created') {
+                  query = `insert into ${POSTGRES_DB + ".collectors"} (id, address, latitude, longitude, id_city, status) values ('${parsed.id}', '${parsed.address}', '${parsed.latitude}', '${parsed.longitude}', '${parsed.id_city}', '${parsed.status}')`;
+                }                 
+                if (parsed.type === 'collector updated') {
+                  query = `update ${POSTGRES_DB + ".collectors"} set address = '${parsed.address}', latitude = '${parsed.latitude}', longitude = '${parsed.longitude}', id_city = '${parsed.id_city}', status = '${parsed.status}' where id = '${parsed.id}'`;
+                }
+                if (parsed.type === 'collector deleted') {
+                  query = `delete from ${POSTGRES_DB + ".collectors"}  where id = '${parsed.id}'`;
+                }                              
+                break
               case 'core.stores':
                 if (parsed.type === 'store created') {
                   query = `insert into ${POSTGRES_DB + ".stores"} (id, name, address, latitude, longitude, id_city) values ('${parsed.id}', '${parsed.name}', '${parsed.address}', '${parsed.latitude}', '${parsed.longitude}', '${parsed.id_city}')`;
                 }                 
                 if (parsed.type === 'store updated') {
-                  query = `update ${POSTGRES_DB + ".stores"} set , name = '${parsed.name}', address = '${parsed.address}', latitude = '${parsed.latitude}', longitude = '${parsed.longitude}', id_city = '${parsed.id_city}' where id = '${parsed.id}'`;
+                  query = `update ${POSTGRES_DB + ".stores"} set name = '${parsed.name}', address = '${parsed.address}', latitude = '${parsed.latitude}', longitude = '${parsed.longitude}', id_city = '${parsed.id_city}', active = '${parsed.active}' where id = '${parsed.id}'`;
                 }
                 if (parsed.type === 'store deleted') {
                   query = `delete from ${POSTGRES_DB + ".stores"}  where id = '${parsed.id}'`;
                 }                              
                 break
-              case 'core.collectors':
-                if (parsed.type === 'collector created') {
-                  query = `insert into ${POSTGRES_DB + ".collectors"} (id, address, status) values ('${parsed.id}', '${parsed.address}', '${parsed.status}')`;
+              case 'core.items':
+                if (parsed.type === 'item created') {
+                  query = `insert into ${POSTGRES_DB + ".items"} (id, description, category_id, active, reserved) values ('${parsed.id}', '${parsed.description}', '${parsed.category_id}', true, false)`;
                 }                 
-                if (parsed.type === 'collector updated') {
-                  query = `update ${POSTGRES_DB + ".collectors"} set address = '${parsed.address}', status = '${parsed.status}' where id = '${parsed.id}'`;
+                if (parsed.type === 'item updated') {
+                  query = `update ${POSTGRES_DB + ".items"} set description = '${parsed.description}', category_id = '${parsed.category_id}', active = '${parsed.active}', reserved = '${parsed.reserved}' where id = '${parsed.id}'`;
                 }
-                if (parsed.type === 'collector deleted') {
-                  query = `delete from ${POSTGRES_DB + ".collectors"}  where id = '${parsed.id}'`;
+                if (parsed.type === 'item deleted') {
+                  query = `delete from ${POSTGRES_DB + ".items"}  where id = '${parsed.id}'`;
                 }                                  
                 break
+                case 'core.categories':
+                  if (parsed.type === 'category created') {
+                    query = `insert into ${POSTGRES_DB + ".categories"} (id, name, active) values ('${parsed.id}', '${parsed.name}', true)`;
+                  }                 
+                  if (parsed.type === 'category updated') {
+                    query = `update ${POSTGRES_DB + ".categories"} set name = '${parsed.name}', active = '${parsed.active}' where id = '${parsed.id}'`;
+                  }
+                  if (parsed.type === 'category deleted') {
+                    query = `delete from ${POSTGRES_DB + ".categories"}  where id = '${parsed.id}'`;
+                  }                              
+                  break                
               default:
                 break
             }           

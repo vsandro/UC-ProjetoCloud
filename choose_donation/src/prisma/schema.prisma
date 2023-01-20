@@ -16,6 +16,31 @@ model Stores {
   id_city Int
   active Boolean @default(true)
 
+  storeItems Store_items[]
+
   @@map("stores")
+}
+
+model Items {
+  id  String @id @default(uuid())
+  description String
+  category_id String
+  active  Boolean
+  reserved  Boolean
+
+  storeItems Store_items[]
+
+  @@map("items")
+}
+
+model Store_items {
+  id    String @id @default(uuid())
+  store_id String
+  item_id String  
+
+  store Stores @relation(fields: [store_id], references: [id])
+  item Items @relation(fields: [item_id], references: [id])
+
+  @@map("store_items")
 }
 

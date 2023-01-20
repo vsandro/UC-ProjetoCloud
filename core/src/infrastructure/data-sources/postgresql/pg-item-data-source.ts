@@ -30,6 +30,7 @@ export class PGItemDataSource implements ItemDataSource {
         const jsonSend = JSON.stringify({
             id: ID,
             description: Item.description,
+            category_id: Item.category_id,
             type: "item created",
         })
         producer(jsonSend)
@@ -78,6 +79,7 @@ export class PGItemDataSource implements ItemDataSource {
         const jsonSend = JSON.stringify({
             id: id,
             description: data.description,
+            category_id: data.category_id,
             type: "item updated",
         })
         producer(jsonSend)

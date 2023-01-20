@@ -74,6 +74,7 @@ export class PGCategoryDataSource implements CategoryDataSource {
         const jsonSend = JSON.stringify({
             id: id,
             name: data.name,
+            active: data.active,
             type: "category updated",
         })
         producer(jsonSend)

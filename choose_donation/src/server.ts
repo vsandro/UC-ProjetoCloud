@@ -39,8 +39,12 @@ app.use('/api-docs',
 const SERVER = String(process.env.SERVER_HABBIT)
 
 const consumerStores = createMQConsumer(SERVER, "core.stores");
+const consumerItems = createMQConsumer(SERVER, "core.items");
+const consumerCategories = createMQConsumer(SERVER, "core.categories");
 
 consumerStores();
+consumerItems();
+consumerCategories();
 
 const PORT = process.env.PORT
 

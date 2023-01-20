@@ -29,7 +29,7 @@ export class PGStoreDataSource implements StoreDataSource {
                   address: Store.address,
                   latitude: Store.latitude,
                   longitude: Store.longitude,
-                  active: Store.active,
+                  active: true,
                   id_city: Store.id_city,
                   type: "store created",                  
         })
@@ -82,8 +82,11 @@ export class PGStoreDataSource implements StoreDataSource {
         const jsonSend = JSON.stringify({
             id: id,
             name: data.name,
-            active: data.active,
-            id_city: data.id_city,               
+            address: data.address,
+            latitude: data.latitude,
+            longitude: data.longitude,
+            id_city: data.id_city,
+            active: data.active,              
             type: "store updated",
         })
         producer(jsonSend)        
