@@ -56,7 +56,7 @@ CREATE TABLE "arquitetura_event"."event_records" (
   "registration_date" timestamp(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
   "description" text COLLATE "pg_catalog"."default" NOT NULL,
   "status" text COLLATE "pg_catalog"."default" NOT NULL DEFAULT 'O'::text,
-  "close_date" timestamp(3) NOT NULL
+  "close_date" timestamp(3) NULL
 )
 ;
 
