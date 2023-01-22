@@ -24,7 +24,7 @@ psql -v ON_ERROR_STOP=1 --username "postgres" --dbname "arquitetura_choose_donat
  Target Server Version : 150001 (150001)
  File Encoding         : 65001
 
- Date: 17/01/2023 14:45:52
+ Date: 22/01/2023 13:56:53
 */
 
 
@@ -66,8 +66,8 @@ INSERT INTO "arquitetura_choose_donation"."cities" VALUES (2, 1, 'Espinho');
 INSERT INTO "arquitetura_choose_donation"."cities" VALUES (3, 1, 'Estarreja');
 INSERT INTO "arquitetura_choose_donation"."cities" VALUES (4, 1, 'Santa Maria da Feira');
 INSERT INTO "arquitetura_choose_donation"."cities" VALUES (5, 1, 'Ílhavo');
-INSERT INTO "arquitetura_choose_donation"."cities" VALUES (6, 1, 'Mealhada');
 INSERT INTO "arquitetura_choose_donation"."cities" VALUES (7, 1, 'Murtosa');
+INSERT INTO "arquitetura_choose_donation"."cities" VALUES (6, 1, 'Mealhada');
 INSERT INTO "arquitetura_choose_donation"."cities" VALUES (8, 1, 'Oliveira de Azeméis');
 INSERT INTO "arquitetura_choose_donation"."cities" VALUES (9, 1, 'Oliveira do Bairro');
 INSERT INTO "arquitetura_choose_donation"."cities" VALUES (10, 1, 'Ovar');
@@ -385,7 +385,7 @@ CREATE TABLE "arquitetura_choose_donation"."store_categories" (
 -- ----------------------------
 DROP TABLE IF EXISTS "arquitetura_choose_donation"."store_items";
 CREATE TABLE "arquitetura_choose_donation"."store_items" (
-  "id" int4 NOT NULL,
+  "id" text COLLATE "pg_catalog"."default" NOT NULL,
   "store_id" text COLLATE "pg_catalog"."default" NOT NULL,
   "item_id" text COLLATE "pg_catalog"."default" NOT NULL
 )

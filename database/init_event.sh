@@ -11,6 +11,7 @@ EOSQL
 psql -v ON_ERROR_STOP=1 --username "postgres" --dbname "arquitetura_event" <<-EOSQL
 	\c arquitetura_event; 
     
+
 /*
  Navicat Premium Data Transfer
 
@@ -25,7 +26,7 @@ psql -v ON_ERROR_STOP=1 --username "postgres" --dbname "arquitetura_event" <<-EO
  Target Server Version : 150001 (150001)
  File Encoding         : 65001
 
- Date: 17/01/2023 14:46:21
+ Date: 22/01/2023 13:57:17
 */
 
 
@@ -81,6 +82,7 @@ INSERT INTO "arquitetura_event"."events" VALUES ('c0486ad4-8bba-441f-b859-5f635b
 INSERT INTO "arquitetura_event"."events" VALUES ('025a4c9c-5d37-4587-944f-b8715b196fde', 'Contentor precisa de manutenção', 't');
 INSERT INTO "arquitetura_event"."events" VALUES ('76b00a9a-eb6c-4eee-ba10-7a55dee1a6a8', 'Aviso', 't');
 INSERT INTO "arquitetura_event"."events" VALUES ('709667bd-803e-473f-acde-0e588cf52bfe', 'Informação', 't');
+INSERT INTO "arquitetura_event"."events" VALUES ('424c30ce-5a53-43bc-b80c-439eb06d2426', 'event new #1', 't');
 
 -- ----------------------------
 -- Primary Key structure for table collectors

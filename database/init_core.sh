@@ -10,6 +10,7 @@ EOSQL
 psql -v ON_ERROR_STOP=1 --username "postgres" --dbname "arquitetura_core" <<-EOSQL
     \c arquitetura_core; 
 
+
 /*
  Navicat Premium Data Transfer
 
@@ -24,7 +25,7 @@ psql -v ON_ERROR_STOP=1 --username "postgres" --dbname "arquitetura_core" <<-EOS
  Target Server Version : 150001 (150001)
  File Encoding         : 65001
 
- Date: 17/01/2023 14:46:05
+ Date: 22/01/2023 13:57:05
 */
 
 
@@ -351,6 +352,7 @@ INSERT INTO "arquitetura_core"."events" VALUES ('c0486ad4-8bba-441f-b859-5f635b1
 INSERT INTO "arquitetura_core"."events" VALUES ('025a4c9c-5d37-4587-944f-b8715b196fde', 'Contentor precisa de manutenção', 't');
 INSERT INTO "arquitetura_core"."events" VALUES ('76b00a9a-eb6c-4eee-ba10-7a55dee1a6a8', 'Aviso', 't');
 INSERT INTO "arquitetura_core"."events" VALUES ('709667bd-803e-473f-acde-0e588cf52bfe', 'Informação', 't');
+INSERT INTO "arquitetura_core"."events" VALUES ('424c30ce-5a53-43bc-b80c-439eb06d2426', 'event new #1', 't');
 
 -- ----------------------------
 -- Table structure for items
@@ -368,6 +370,10 @@ CREATE TABLE "arquitetura_core"."items" (
 -- ----------------------------
 -- Records of items
 -- ----------------------------
+INSERT INTO "arquitetura_core"."items" VALUES ('287fff2c-7193-46d4-bf07-083e580becfc', 'description item #1', 'e1e068ac-ddc1-46ae-9500-3b76850c5017', 't', 'f');
+INSERT INTO "arquitetura_core"."items" VALUES ('1d04760d-0d36-48de-a753-5ce901e12e47', 'description item #2', 'e1e068ac-ddc1-46ae-9500-3b76850c5017', 't', 'f');
+INSERT INTO "arquitetura_core"."items" VALUES ('397b0a01-9efb-4e9c-87f5-864bbc338eb1', 'description item #3', 'e1e068ac-ddc1-46ae-9500-3b76850c5017', 't', 'f');
+INSERT INTO "arquitetura_core"."items" VALUES ('30c0466e-6c9b-44b7-b3f3-08752621b496', 'description item #4', 'e1e068ac-ddc1-46ae-9500-3b76850c5017', 't', 'f');
 
 -- ----------------------------
 -- Table structure for store_categories
@@ -417,6 +423,11 @@ CREATE TABLE "arquitetura_core"."stores" (
 -- ----------------------------
 -- Records of stores
 -- ----------------------------
+INSERT INTO "arquitetura_core"."stores" VALUES ('bde8569a-8254-4bc9-864d-26ab69067865', 'store #2', 'address', 10, 20, 't', 3);
+INSERT INTO "arquitetura_core"."stores" VALUES ('749cec25-7446-44fb-932d-e9df8f325fa8', 'store 1 (alterado)', 'address (alterado)', 98, 99, 'f', 3);
+INSERT INTO "arquitetura_core"."stores" VALUES ('35f80b90-cb05-48ed-a0a7-c5f6dc00287d', 'store #3', 'address', 10, 20, 't', 3);
+INSERT INTO "arquitetura_core"."stores" VALUES ('728a4fa8-1240-4cba-89fe-57abc06932c5', 'store #4', 'address', 10, 20, 't', 3);
+INSERT INTO "arquitetura_core"."stores" VALUES ('d3c88e53-1c47-4fdd-96f8-5e15cd738b28', 'store #5', 'address', 10, 20, 't', 3);
 
 -- ----------------------------
 -- Indexes structure for table categories

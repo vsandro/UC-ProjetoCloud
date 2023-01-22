@@ -10,6 +10,7 @@ EOSQL
 psql -v ON_ERROR_STOP=1 --username "postgres" --dbname "arquitetura_schedule" <<-EOSQL
     \c arquitetura_schedule; 
 
+
 /*
  Navicat Premium Data Transfer
 
@@ -24,7 +25,7 @@ psql -v ON_ERROR_STOP=1 --username "postgres" --dbname "arquitetura_schedule" <<
  Target Server Version : 150001 (150001)
  File Encoding         : 65001
 
- Date: 17/01/2023 14:46:32
+ Date: 22/01/2023 13:57:38
 */
 
 
@@ -88,7 +89,6 @@ ALTER TABLE "arquitetura_schedule"."users" ADD CONSTRAINT "users_pkey" PRIMARY K
 -- Foreign Keys structure for table schedules
 -- ----------------------------
 ALTER TABLE "arquitetura_schedule"."schedules" ADD CONSTRAINT "schedules_user_id_fkey" FOREIGN KEY ("user_id") REFERENCES "arquitetura_schedule"."users" ("id") ON DELETE NO ACTION ON UPDATE NO ACTION;
-    
   
 EOSQL
 
