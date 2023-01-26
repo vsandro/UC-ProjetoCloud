@@ -7,6 +7,18 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model Orders {
+  id   String @id @default(uuid())
+  user_id String
+  store_id String
+  required_date  DateTime   @default(now())
+  status String
+  delivery_date  DateTime?
+
+  @@map("orders")
+}
+
+
 model Stores {
   id   String @id @default(uuid())
   name String

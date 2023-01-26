@@ -1,12 +1,12 @@
 import { prisma } from '../../../database/prisma';
 
 
-export class GetAllStoresModel {
+export class GetAllStoresRegionModel {
   async execute() {
  
     const result = await prisma.stores.findMany({ 
       where: {
-        id: { in: ["35f80b90-cb05-48ed-a0a7-c5f6dc00287d", "d3c88e53-1c47-4fdd-96f8-5e15cd738b28"] },
+        id_city: { in: [4, 6] },
       }   
     });
        

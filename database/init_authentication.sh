@@ -24,7 +24,7 @@ psql -v ON_ERROR_STOP=1 --username "postgres" --dbname "arquitetura_authenticati
  Target Server Version : 150001 (150001)
  File Encoding         : 65001
 
- Date: 22/01/2023 13:56:43
+ Date: 26/01/2023 16:48:30
 */
 
 
@@ -171,9 +171,9 @@ CREATE TABLE "arquitetura_authentication"."users" (
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO "arquitetura_authentication"."users" VALUES ('8a154ba0-15e0-4f52-9b5d-5ab210b031e7', 'cceacd43-1647-415d-9179-76282331e3c5', 'jorge', 'b0y/IjNkmi5h7F2DbjQ2i9uJUyqRMpovEIo808v8kuHqobBvtSuyvS', 'f', 0, 'Jorge', 'Rua B, 287 Barcelos', '945 4587', 'jorge@gmail.com');
-INSERT INTO "arquitetura_authentication"."users" VALUES ('1fe8d804-ef76-4ed0-bf9a-785002e62dcf', '0cd9f2ff-df2c-49e8-a5db-976aa757c501', 'maria', 'b0y/IjNkmi5h7F2DbjQ2i9uJUyqRMpovEIo808v8kuHqobBvtSuyvS', 'f', 0, 'Maria', 'Rua ABC, 87 Braga', '974 2547', 'maria@gmail.com');
-INSERT INTO "arquitetura_authentication"."users" VALUES ('3bf13e38-83d7-40cf-9a3c-36980680ee7f', '7e9d6f9c-700a-4fdb-a431-4be8357274a4', 'sandro', 'b0y/IjNkmi5h7F2DbjQ2i9uJUyqRMpovEIo808v8kuHqobBvtSuyvS', 'f', 1, 'Sandro Vieira', 'Rua Jose, 12 Braga', '958 4558', 'vsandro@gmail.com');
+INSERT INTO "arquitetura_authentication"."users" VALUES ('8a154ba0-15e0-4f52-9b5d-5ab210b031e7', 'cceacd43-1647-415d-9179-76282331e3c5', 'jorge', '$2b$10$5y/IjNkmi5h7F2DbjQ2i9uJUyqRMpovEIo808v8kuHqobBvtSuyvS', 'f', 0, 'Jorge', 'Rua B, 287 Barcelos', '945 4587', 'jorge@gmail.com');
+INSERT INTO "arquitetura_authentication"."users" VALUES ('1fe8d804-ef76-4ed0-bf9a-785002e62dcf', '0cd9f2ff-df2c-49e8-a5db-976aa757c501', 'maria', '$2b$10$5y/IjNkmi5h7F2DbjQ2i9uJUyqRMpovEIo808v8kuHqobBvtSuyvS', 'f', 0, 'Maria', 'Rua ABC, 87 Braga', '974 2547', 'maria@gmail.com');
+INSERT INTO "arquitetura_authentication"."users" VALUES ('3bf13e38-83d7-40cf-9a3c-36980680ee7f', '7e9d6f9c-700a-4fdb-a431-4be8357274a4', 'sandro', '$2b$10$5y/IjNkmi5h7F2DbjQ2i9uJUyqRMpovEIo808v8kuHqobBvtSuyvS', 'f', 0, 'Sandro Vieira', 'Rua Jose, 12 Braga', '958 4558', 'vsandro@gmail.com');
 
 -- ----------------------------
 -- Primary Key structure for table operations

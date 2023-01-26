@@ -142,7 +142,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"name\": \"category #6\"\r\n}",
+									"raw": "{\r\n  \"name\": \"category #1\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -271,7 +271,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:4100/category/2bcf9606-968b-462f-9757-1f1142c3a86f",
+									"raw": "http://localhost:4100/category/22aa18c4-4f0b-418a-a0f5-1bea64f1fab5",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -279,7 +279,7 @@
 									"port": "4100",
 									"path": [
 										"category",
-										"2bcf9606-968b-462f-9757-1f1142c3a86f"
+										"22aa18c4-4f0b-418a-a0f5-1bea64f1fab5"
 									]
 								}
 							},
@@ -310,7 +310,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:4100/category/2bcf9606-968b-462f-9757-1f1142c3a86f",
+									"raw": "http://localhost:4100/category/22aa18c4-4f0b-418a-a0f5-1bea64f1fab5",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -318,7 +318,7 @@
 									"port": "4100",
 									"path": [
 										"category",
-										"2bcf9606-968b-462f-9757-1f1142c3a86f"
+										"22aa18c4-4f0b-418a-a0f5-1bea64f1fab5"
 									]
 								}
 							},
@@ -346,7 +346,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"description\": \"description #5\",\r\n  \"category_id\": \"e1e068ac-ddc1-46ae-9500-3b76850c5017\"\r\n}",
+									"raw": "{\r\n  \"description\": \"description item #4\",\r\n  \"category_id\": \"e1e068ac-ddc1-46ae-9500-3b76850c5017\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -784,7 +784,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"name\": \"event #11\"\r\n}",
+									"raw": "{\r\n  \"name\": \"event new #1\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -988,7 +988,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"name\": \"store #333\",\r\n  \"address\": \"address #333\",\r\n  \"latitude\": 10,\r\n  \"longitude\": 20,\r\n  \"id_city\": 3\r\n}",
+									"raw": "{\r\n  \"name\": \"store #5\",\r\n  \"address\": \"address\",\r\n  \"latitude\": 10,\r\n  \"longitude\": 20,\r\n  \"id_city\": 3\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1109,7 +1109,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"name\": \"store (alterado)\",\r\n  \"address\": \"address\",\r\n  \"latitude\": 22,\r\n  \"longitude\": 333,\r\n  \"id_city\":11,\r\n  \"active\": false\r\n}",
+									"raw": "{\r\n  \"name\": \"store 1 (alterado)\",\r\n  \"address\": \"address (alterado)\",\r\n  \"latitude\": 98,\r\n  \"longitude\": 99,\r\n  \"id_city\":3,\r\n  \"active\": false\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1117,7 +1117,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:4100/store/9302a768-cfb0-4f6c-937e-5d549bea5b4a",
+									"raw": "http://localhost:4100/store/749cec25-7446-44fb-932d-e9df8f325fa8",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -1125,7 +1125,7 @@
 									"port": "4100",
 									"path": [
 										"store",
-										"9302a768-cfb0-4f6c-937e-5d549bea5b4a"
+										"749cec25-7446-44fb-932d-e9df8f325fa8"
 									]
 								}
 							},
@@ -1156,7 +1156,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:4100/store/d70510c5-cb0f-4f75-a81d-b6cec834b727",
+									"raw": "http://localhost:4100/store/919b52a9-6c55-49dd-bb42-82e3eebf6239",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -1164,7 +1164,7 @@
 									"port": "4100",
 									"path": [
 										"store",
-										"d70510c5-cb0f-4f75-a81d-b6cec834b727"
+										"919b52a9-6c55-49dd-bb42-82e3eebf6239"
 									]
 								}
 							},
@@ -1197,7 +1197,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"collector_id\": \"eb1333bf-a80e-4989-89eb-700900f16173\",\r\n  \"event_id\": \"1ccccdaa-cf75-4f75-9dfb-3fec4a2183ce\",\r\n  \"description\": \"comentario 3\"\r\n}",
+									"raw": "{\r\n  \"collector_id\": \"345dbc49-71e5-43f5-b5fa-52b7e94306e1\",\r\n  \"event_id\": \"c0486ad4-8bba-441f-b859-5f635b171f2b\",\r\n  \"description\": \"comentario 1\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1287,7 +1287,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:4200/eventrecords/e27d8deb-4ed2-41c6-aeff-aad6036b8047",
+									"raw": "http://localhost:4200/eventrecords/9e2906c5-b1b1-4103-bb30-bd10a117dc8b",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -1295,7 +1295,7 @@
 									"port": "4200",
 									"path": [
 										"eventrecords",
-										"e27d8deb-4ed2-41c6-aeff-aad6036b8047"
+										"9e2906c5-b1b1-4103-bb30-bd10a117dc8b"
 									]
 								}
 							},
@@ -1318,7 +1318,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"collector_id\": \"06b06c84-c880-415f-b373-7cd7c8e4e241\",\r\n  \"event_id\": \"83c1d746-9806-4def-8eaf-f3afa6d9270e\",\r\n  \"description\": \"comentario alterado\",\r\n  \"close_date\": \"2022-12-06 20:02:11.484\",\r\n  \"status\": \"C\"\r\n}",
+									"raw": "{\r\n  \"collector_id\": \"345dbc49-71e5-43f5-b5fa-52b7e94306e1\",\r\n  \"event_id\": \"c0486ad4-8bba-441f-b859-5f635b171f2b\",\r\n  \"description\": \"comentario alterado\",\r\n  \"close_date\": \"2022-01-22 20:02:11.484\",\r\n  \"status\": \"C\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1326,7 +1326,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:4200/eventrecords/86d454a2-e72a-4ae6-8d50-dc45bea84437",
+									"raw": "http://localhost:4200/eventrecords/9e2906c5-b1b1-4103-bb30-bd10a117dc8b",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -1334,7 +1334,7 @@
 									"port": "4200",
 									"path": [
 										"eventrecords",
-										"86d454a2-e72a-4ae6-8d50-dc45bea84437"
+										"9e2906c5-b1b1-4103-bb30-bd10a117dc8b"
 									]
 								}
 							},
@@ -1365,7 +1365,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:4200/eventrecords/eb2679c7-196f-4ac6-a0e8-2865310c47e8",
+									"raw": "http://localhost:4200/eventrecords/41e5b816-63bc-45f3-b671-a840bfbbfcf4",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -1373,7 +1373,7 @@
 									"port": "4200",
 									"path": [
 										"eventrecords",
-										"eb2679c7-196f-4ac6-a0e8-2865310c47e8"
+										"41e5b816-63bc-45f3-b671-a840bfbbfcf4"
 									]
 								}
 							},
@@ -1563,7 +1563,7 @@
 			"name": "Microservice  Choose Donation",
 			"item": [
 				{
-					"name": "Stores",
+					"name": "Stores Region",
 					"item": [
 						{
 							"name": "get all",
@@ -1593,7 +1593,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:4300/stores/getAllStores",
+									"raw": "http://localhost:4300/stores/getAllStoresRegion",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -1601,7 +1601,51 @@
 									"port": "4300",
 									"path": [
 										"stores",
-										"getAllStores"
+										"getAllStoresRegion"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Orders",
+					"item": [
+						{
+							"name": "create",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"user_id\": \"3bf13e38-83d7-40cf-9a3c-36980680ee7f\",\r\n  \"store_id\": \"e925a1d1-cc3e-4611-9a73-816e33e7ff31\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4300/orders/createOrder",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4300",
+									"path": [
+										"orders",
+										"createOrder"
 									]
 								}
 							},
@@ -1635,7 +1679,7 @@
 	"variable": [
 		{
 			"key": "TOKEN",
-			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNhbmRybyIsImlhdCI6MTY3NDE1MjEyMywiZXhwIjoxNjc0MjM4NTIzLCJzdWIiOiIzYmYxM2UzOC04M2Q3LTQwY2YtOWEzYy0zNjk4MDY4MGVlN2YifQ.H7l7xbBiY1rz2HNpeTpsH1M4duGK7Zo68kQU_HqpGBs"
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNhbmRybyIsImlhdCI6MTY3NDczNzEyNSwiZXhwIjoxNjc0ODIzNTI1LCJzdWIiOiIzYmYxM2UzOC04M2Q3LTQwY2YtOWEzYy0zNjk4MDY4MGVlN2YifQ.8zyCF23PN_ilT9FAOWiXaKtTcdYT_YAB0CocxWJ5y_k"
 		}
 	]
 }
