@@ -12,7 +12,7 @@ export class CreateOrdersModel {
       data: {
         user_id,
         store_id,
-        required_date: '2023-01-17 10:08:00',
+        required_date: '2023-02-03 10:06:00',
         status: 'C',
       },
     });

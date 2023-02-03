@@ -1,13 +1,15 @@
 /**
- * CreateUser
+ * CreateUserModel
  * 
- * Este código é uma classe de modelo que cria um novo usuário.
- * Ele importa a biblioteca "bcrypt" para criptografar a senha do usuário
- * e usa a biblioteca "prisma" para acessar ao banco de dados. 
- * Ele define uma interface chamada "ICreateUser" que especifica os campos necessários para criar um novo usuário. 
+ * Parametros de entrada: profile_id, username, password, name, address, phone, email
+ * 
+ * Esta classe cria um novo utilizador.
+ * Usa a biblioteca "bcrypt" para criptografar a senha do utilizador
+ * Usa a biblioteca "prisma" para acesso ao banco de dados. 
+ * Recebe como parametros as informações definidas na interface "ICreateUser" com todos os campos necessários para criar um novo utilizador.
  * O método "execute" da classe verifica se o nome de usuário já existe no banco de dados. 
  * Se existir, ele lança um erro. 
- * Se não existir, ele criptografa a senha e cria um novo usuário e retorna o usuário criado para quem chamou a classe
+ * Se não existir, ele criptografa a senha e cria um novo utilizador que é retornado pela classe
  * 
  * return user
  * 
