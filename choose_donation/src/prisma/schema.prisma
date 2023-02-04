@@ -7,18 +7,6 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Orders {
-  id   String @id @default(uuid())
-  user_id String
-  store_id String
-  required_date  DateTime   @default(now())
-  status String
-  delivery_date  DateTime?
-
-  @@map("orders")
-}
-
-
 model Stores {
   id   String @id @default(uuid())
   name String
@@ -41,6 +29,7 @@ model Items {
   reserved  Boolean
 
   storeItems Store_items[]
+  orderItems Order_items[]
 
   @@map("items")
 }
@@ -56,3 +45,26 @@ model Store_items {
   @@map("store_items")
 }
 
+model Orders {
+  id   String @id @default(uuid())
+  user_id String
+  store_id String
+  required_date  DateTime   @default(now())
+  status String
+  delivery_date  DateTime?
+
+  orderItems Order_items[]
+
+  @@map("orders")
+}
+
+model Order_items {
+  id    String @id @default(uuid())
+  order_id String
+  item_id String
+
+  order Orders @relation(fields: [order_id], references: [id])
+  item Items @relation(fields: [item_id], references: [id])
+
+  @@map("order_items")
+}
