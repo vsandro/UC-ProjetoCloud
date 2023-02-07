@@ -24,7 +24,7 @@ psql -v ON_ERROR_STOP=1 --username "postgres" --dbname "arquitetura_schedule" <<
  Target Server Version : 150001 (150001)
  File Encoding         : 65001
 
- Date: 26/01/2023 16:49:18
+ Date: 07/02/2023 19:22:07
 */
 
 

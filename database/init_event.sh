@@ -11,7 +11,6 @@ EOSQL
 psql -v ON_ERROR_STOP=1 --username "postgres" --dbname "arquitetura_event" <<-EOSQL
 	\c arquitetura_event; 
     
-
 /*
  Navicat Premium Data Transfer
 
@@ -26,7 +25,7 @@ psql -v ON_ERROR_STOP=1 --username "postgres" --dbname "arquitetura_event" <<-EO
  Target Server Version : 150001 (150001)
  File Encoding         : 65001
 
- Date: 26/01/2023 16:49:04
+ Date: 07/02/2023 19:21:53
 */
 
 
@@ -314,5 +313,6 @@ ALTER TABLE "arquitetura_event"."events" ADD CONSTRAINT "events_pkey" PRIMARY KE
 -- ----------------------------
 ALTER TABLE "arquitetura_event"."event_records" ADD CONSTRAINT "event_records_collector_id_fkey" FOREIGN KEY ("collector_id") REFERENCES "arquitetura_event"."collectors" ("id") ON DELETE NO ACTION ON UPDATE NO ACTION;
 ALTER TABLE "arquitetura_event"."event_records" ADD CONSTRAINT "event_records_event_id_fkey" FOREIGN KEY ("event_id") REFERENCES "arquitetura_event"."events" ("id") ON DELETE NO ACTION ON UPDATE NO ACTION;
+
 
 EOSQL

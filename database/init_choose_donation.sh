@@ -24,7 +24,7 @@ psql -v ON_ERROR_STOP=1 --username "postgres" --dbname "arquitetura_choose_donat
  Target Server Version : 150001 (150001)
  File Encoding         : 65001
 
- Date: 26/01/2023 16:48:41
+ Date: 07/02/2023 19:21:27
 */
 
 
@@ -323,17 +323,14 @@ CREATE TABLE "arquitetura_choose_donation"."items" (
   "id" text COLLATE "pg_catalog"."default" NOT NULL,
   "description" text COLLATE "pg_catalog"."default" NOT NULL,
   "category_id" text COLLATE "pg_catalog"."default" NOT NULL,
-  "active" bool NOT NULL DEFAULT true,
-  "reserved" bool NOT NULL DEFAULT false
+  "active" bool NOT NULL,
+  "reserved" bool NOT NULL
 )
 ;
 
 -- ----------------------------
 -- Records of items
 -- ----------------------------
-INSERT INTO "arquitetura_choose_donation"."items" VALUES ('9ef0a7f0-d89b-163d-1d39-6cd942ee89b8', 'V5RTzBxPNF', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb', 't', 'f');
-INSERT INTO "arquitetura_choose_donation"."items" VALUES ('d90a3bcb-c20e-66e9-ce04-ab671e2828eb', '4mcVkVAITJ', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb', 't', 'f');
-INSERT INTO "arquitetura_choose_donation"."items" VALUES ('565a1a7e-ebe2-bfe4-c131-3136e4586ff9', 'ugQ4zxmoQk', 'b4dcacc8-78c1-4695-9386-104337f642e1', 't', 'f');
 INSERT INTO "arquitetura_choose_donation"."items" VALUES ('3b338286-4945-2e56-4651-eae409c88252', 'RB2l0fHldB', '189e06bf-4de8-48cf-87af-6e4da8788e3e', 't', 'f');
 INSERT INTO "arquitetura_choose_donation"."items" VALUES ('6b9cd904-3514-4f81-d01c-348308f2c5f8', 'eqjyHqXdu9', 'e1e068ac-ddc1-46ae-9500-3b76850c5017', 't', 'f');
 INSERT INTO "arquitetura_choose_donation"."items" VALUES ('a2c623fd-e05a-9279-3ddb-5c66fa4dc5ca', 'QjFu7FLRYU', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb', 't', 'f');
@@ -347,10 +344,8 @@ INSERT INTO "arquitetura_choose_donation"."items" VALUES ('93ab4c00-e7bd-fb23-0b
 INSERT INTO "arquitetura_choose_donation"."items" VALUES ('ddf22e78-6925-67a7-edcd-5e1bc8d728d1', 'sNZo4jIJ2s', 'b4dcacc8-78c1-4695-9386-104337f642e1', 't', 'f');
 INSERT INTO "arquitetura_choose_donation"."items" VALUES ('a528d7b7-e10f-e120-087c-80c851d2dc18', '0VzIqEUmWi', '189e06bf-4de8-48cf-87af-6e4da8788e3e', 't', 'f');
 INSERT INTO "arquitetura_choose_donation"."items" VALUES ('305ed115-ef13-f608-60b2-3dea14b405a6', 'MF8f2UGL4L', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb', 't', 'f');
-INSERT INTO "arquitetura_choose_donation"."items" VALUES ('abc29188-9a97-f6f3-a805-37869886f0fe', 'yLgs3Mj6jH', 'e1e068ac-ddc1-46ae-9500-3b76850c5017', 't', 'f');
 INSERT INTO "arquitetura_choose_donation"."items" VALUES ('cba86e9a-75d9-4d3d-69b1-1f321dd1030c', 'P3kiS0jYrd', 'e1e068ac-ddc1-46ae-9500-3b76850c5017', 't', 'f');
 INSERT INTO "arquitetura_choose_donation"."items" VALUES ('f0a1c03e-628f-2001-aa3b-f82ade03c637', '9YdcMaUzRE', 'b4dcacc8-78c1-4695-9386-104337f642e1', 't', 'f');
-INSERT INTO "arquitetura_choose_donation"."items" VALUES ('ac7a6cea-0e7b-7cd4-e9af-6357ba09122b', '05UVJpoa7M', 'b4dcacc8-78c1-4695-9386-104337f642e1', 't', 'f');
 INSERT INTO "arquitetura_choose_donation"."items" VALUES ('37742a5e-8fb2-cc06-5271-a501b9c8abd5', 'lxaxjPYtEP', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb', 't', 'f');
 INSERT INTO "arquitetura_choose_donation"."items" VALUES ('a0b50b60-12e6-ba81-4690-f400253798a1', 'bk7iLLci79', 'b4dcacc8-78c1-4695-9386-104337f642e1', 't', 'f');
 INSERT INTO "arquitetura_choose_donation"."items" VALUES ('70dcc681-f3a5-77fc-6f53-805f69afc7a9', 'S7NOLFgRFX', 'b4dcacc8-78c1-4695-9386-104337f642e1', 't', 'f');
@@ -401,6 +396,10 @@ INSERT INTO "arquitetura_choose_donation"."items" VALUES ('6805b420-2be1-862a-16
 INSERT INTO "arquitetura_choose_donation"."items" VALUES ('3b0b4a01-ec0e-0e18-2a2e-13305f9ae502', 'qXaioLotHv', '189e06bf-4de8-48cf-87af-6e4da8788e3e', 't', 'f');
 INSERT INTO "arquitetura_choose_donation"."items" VALUES ('2b468571-b680-2fd8-4509-d926df3769a3', 'NHXemrWVuV', '189e06bf-4de8-48cf-87af-6e4da8788e3e', 't', 'f');
 INSERT INTO "arquitetura_choose_donation"."items" VALUES ('575de48b-d207-27e0-66e9-275d8ce1a3b0', 'ldsSTdelHy', 'e1e068ac-ddc1-46ae-9500-3b76850c5017', 't', 'f');
+INSERT INTO "arquitetura_choose_donation"."items" VALUES ('565a1a7e-ebe2-bfe4-c131-3136e4586ff9', 'ugQ4zxmoQk', 'b4dcacc8-78c1-4695-9386-104337f642e1', 't', 't');
+INSERT INTO "arquitetura_choose_donation"."items" VALUES ('d90a3bcb-c20e-66e9-ce04-ab671e2828eb', '4mcVkVAITJ', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb', 't', 't');
+INSERT INTO "arquitetura_choose_donation"."items" VALUES ('ac7a6cea-0e7b-7cd4-e9af-6357ba09122b', '05UVJpoa7M', 'b4dcacc8-78c1-4695-9386-104337f642e1', 't', 't');
+INSERT INTO "arquitetura_choose_donation"."items" VALUES ('abc29188-9a97-f6f3-a805-37869886f0fe', 'yLgs3Mj6jH', 'e1e068ac-ddc1-46ae-9500-3b76850c5017', 't', 't');
 INSERT INTO "arquitetura_choose_donation"."items" VALUES ('1a3be8a7-e4b9-0810-4abc-402521c3ee87', '5pQn4qGYrx', '189e06bf-4de8-48cf-87af-6e4da8788e3e', 't', 'f');
 INSERT INTO "arquitetura_choose_donation"."items" VALUES ('33784657-aee7-f866-96a3-d532a5668133', 'KGACFwwPjo', '189e06bf-4de8-48cf-87af-6e4da8788e3e', 't', 'f');
 INSERT INTO "arquitetura_choose_donation"."items" VALUES ('dff0cb70-fc46-0f52-d4ef-5aefe961509d', 'Nm5qBOIrlM', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb', 't', 'f');
@@ -1331,6 +1330,7 @@ INSERT INTO "arquitetura_choose_donation"."items" VALUES ('6edbb4c8-d09c-cf6d-27
 INSERT INTO "arquitetura_choose_donation"."items" VALUES ('0589c2bc-e7ad-1bda-13c8-9441d32dfb8b', 'gCSscvIcj6', 'b4dcacc8-78c1-4695-9386-104337f642e1', 't', 'f');
 INSERT INTO "arquitetura_choose_donation"."items" VALUES ('47dde5b2-982a-b005-e8ba-29daeee5f005', 'C4K9fkBhmf', 'b4dcacc8-78c1-4695-9386-104337f642e1', 't', 'f');
 INSERT INTO "arquitetura_choose_donation"."items" VALUES ('9e78d84e-380d-67f1-d7c2-2bbcf6852dae', '98SSmkl34n', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb', 't', 'f');
+INSERT INTO "arquitetura_choose_donation"."items" VALUES ('9ef0a7f0-d89b-163d-1d39-6cd942ee89b8', 'V5RTzBxPNF', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb', 't', 't');
 
 -- ----------------------------
 -- Table structure for order_items
@@ -1356,429 +1356,14 @@ CREATE TABLE "arquitetura_choose_donation"."orders" (
   "user_id" text COLLATE "pg_catalog"."default" NOT NULL,
   "store_id" text COLLATE "pg_catalog"."default" NOT NULL,
   "required_date" timestamp(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  "status" text COLLATE "pg_catalog"."default" NOT NULL DEFAULT 'O'::text,
-  "delivery_date" timestamp(3) NULL
+  "status" text COLLATE "pg_catalog"."default" NOT NULL,
+  "delivery_date" timestamp(3)
 )
 ;
 
 -- ----------------------------
 -- Records of orders
 -- ----------------------------
-
--- ----------------------------
--- Table structure for store_categories
--- ----------------------------
-DROP TABLE IF EXISTS "arquitetura_choose_donation"."store_categories";
-CREATE TABLE "arquitetura_choose_donation"."store_categories" (
-  "id" text COLLATE "pg_catalog"."default" NOT NULL,
-  "store_id" text COLLATE "pg_catalog"."default" NOT NULL,
-  "category_id" text COLLATE "pg_catalog"."default" NOT NULL
-)
-;
-
--- ----------------------------
--- Records of store_categories
--- ----------------------------
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('1', 'a90da8fa-e2f5-4093-9178-fd77668a90c0', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('2', '75df8bbb-1e86-4fdc-a7c5-9c3c37857ee4', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('3', '0b8a713f-7b62-419e-a2f4-74c8262b2c05', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('4', '2e2d8410-18f1-4e24-8294-00ce4d962410', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('5', '8bf100ad-2483-46d2-bc4a-e4b850d555c5', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('6', 'fd7db1b5-599f-4b77-a15d-8c1b0d575114', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('7', '6c568716-480b-4870-97d2-c49ecee88057', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('8', '1aaaa3ac-1caa-476b-8460-c4ce5e4e2cbf', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('9', '48d9c916-e953-4518-aed1-7b46a701938e', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('10', 'f6a1678c-3157-4d94-b9d6-192e215ac844', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('11', '1aaaa3ac-1caa-476b-8460-c4ce5e4e2cbf', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('12', 'bd46837b-9105-4d5f-9b74-38dd65b79074', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('13', '7168a696-2355-452f-9eec-a1caad634057', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('14', '756be234-a7af-4de2-ad04-22e8e58c47d4', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('15', '2e2d8410-18f1-4e24-8294-00ce4d962410', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('16', '83246e9c-3c58-4f19-8481-ab8b783b4f59', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('17', '18f49031-27be-48a4-b3c9-784e444d9f11', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('18', '849ae98b-a221-4eeb-a1af-0e18ba99b89a', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('19', '3df5b32c-83af-4884-a74a-c331b04854a7', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('20', 'e51d6a92-265e-4851-b5d4-9cfde4d4cfbb', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('21', 'e925a1d1-cc3e-4611-9a73-816e33e7ff31', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('22', '2e2d8410-18f1-4e24-8294-00ce4d962410', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('23', '6c568716-480b-4870-97d2-c49ecee88057', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('24', 'e925a1d1-cc3e-4611-9a73-816e33e7ff31', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('25', 'e1935b15-02a8-4cbb-aa4e-e843c04f9964', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('26', '2d1518af-5ec0-42db-a8ee-6566a2f4718f', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('27', '48d9c916-e953-4518-aed1-7b46a701938e', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('28', 'e1935b15-02a8-4cbb-aa4e-e843c04f9964', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('29', '6c568716-480b-4870-97d2-c49ecee88057', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('30', '0b8a713f-7b62-419e-a2f4-74c8262b2c05', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('31', '4dd07984-81f0-490a-8b77-d42dc29a07d6', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('32', '6701cc66-1c48-4ca1-ba9a-356414af8260', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('33', '92d1de45-b482-44e2-9e83-e080d57762cd', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('34', 'e4561fde-e419-4322-b2ed-985c289e7ce5', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('35', '617b309d-8a86-442c-b89a-175ac6e72bdc', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('36', '7168a696-2355-452f-9eec-a1caad634057', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('37', '28ead06b-81f9-4df6-bcfd-9e125f974b23', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('38', '4dd07984-81f0-490a-8b77-d42dc29a07d6', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('39', 'c82db994-e7c1-42b6-bda6-281c1a0ee655', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('40', '756be234-a7af-4de2-ad04-22e8e58c47d4', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('41', 'e05ced35-e661-4340-8f45-f8c10ad7135e', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('42', '3fc10007-59d9-42b8-9143-ddee6481b567', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('43', '7ed11cb8-f1fd-4690-a212-e6408bf0f5b5', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('44', '7e56ee1b-0f2a-44da-a1ec-15ca72071779', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('45', 'b4c8774a-1595-4a36-9277-3b1859c3763c', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('46', '59e3f9e3-7045-414b-909d-a034df99e4f0', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('47', '030ad23b-9eaf-4803-9808-6cb737eaa0bf', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('48', 'a2c9b17d-5636-4752-9f08-f6f00311607a', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('49', 'b4c8774a-1595-4a36-9277-3b1859c3763c', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('50', 'a2c9b17d-5636-4752-9f08-f6f00311607a', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('51', 'aaf9231e-8c91-4524-b1db-5dc08e10228e', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('52', 'c2f2e5d4-bfe9-43f8-962a-f234b7d76150', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('53', 'c82db994-e7c1-42b6-bda6-281c1a0ee655', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('ac889fa3-3117-9acd-828e-945bb0eda1ad', 'f309611f-b0a2-4c53-8dbe-24f95dc01e53', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('cc2f1e07-0cce-96ef-79fb-24938417130e', '52b8d1ae-10f8-4e68-8fb8-d172cb034957', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('109a9afb-a886-de11-f36c-b5cfa2ff951f', '18f49031-27be-48a4-b3c9-784e444d9f11', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('1aa2cc15-16be-e9d0-a947-5f276ead9c82', '749b0502-9031-44a0-b6cb-485486033d82', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('9057a84a-cba6-0001-a613-e3a4e1c5afab', 'a90da8fa-e2f5-4093-9178-fd77668a90c0', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('54', '030ad23b-9eaf-4803-9808-6cb737eaa0bf', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('55', '7bf79ade-d3d1-45df-8203-fb1412fa3d38', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('56', '1aaaa3ac-1caa-476b-8460-c4ce5e4e2cbf', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('57', 'aa06789b-477a-43d0-a0c2-9cb801faa9db', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('58', 'e925a1d1-cc3e-4611-9a73-816e33e7ff31', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('59', 'a90da8fa-e2f5-4093-9178-fd77668a90c0', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('60', '030ad23b-9eaf-4803-9808-6cb737eaa0bf', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('61', '75df8bbb-1e86-4fdc-a7c5-9c3c37857ee4', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('62', '95c9b5bb-0ed4-4535-8731-f9222ff70b49', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('63', 'b4c8774a-1595-4a36-9277-3b1859c3763c', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('64', '962a0af1-7731-4ef4-96cd-44de4477d4e9', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('65', 'b00dd004-217b-46da-9ab1-a635205d4943', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('66', '61b422dd-bbdb-4692-913c-cd1474e57940', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('67', '2d1518af-5ec0-42db-a8ee-6566a2f4718f', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('68', 'bd46837b-9105-4d5f-9b74-38dd65b79074', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('69', '2d1518af-5ec0-42db-a8ee-6566a2f4718f', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('70', '16e6bc3a-0464-49fa-8a81-62e913809fae', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('71', '2472e2de-dee7-4bb4-916d-fbc2ec1e4e5c', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('72', 'e4561fde-e419-4322-b2ed-985c289e7ce5', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('73', 'f309611f-b0a2-4c53-8dbe-24f95dc01e53', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('74', '38d422fa-6b8c-4d25-82ec-a7224e151ffc', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('75', 'f377c293-be85-4a1b-86f9-0d0fd7b5e53b', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('76', 'e7ebb716-9192-4c59-91e0-ea85f36561b5', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('77', '6d4d5ba4-d00c-4405-8e02-d60c63c6a716', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('78', '485c0889-b548-4ad7-81e4-0c598ba5069d', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('79', 'da963c46-f0fb-402f-98f7-41943aaa8133', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('80', 'd0f70a95-19f4-4549-9b97-d5984f7b4637', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('81', '871be72a-b736-46f2-9df8-3fd239b0074b', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('82', '2d1518af-5ec0-42db-a8ee-6566a2f4718f', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('83', '1aaaa3ac-1caa-476b-8460-c4ce5e4e2cbf', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('84', 'c66fca2e-aaa0-494f-9e5e-e60b8712c110', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('85', '1aaaa3ac-1caa-476b-8460-c4ce5e4e2cbf', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('86', '33d9010f-df9f-4f95-978d-3371f5a8431a', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('87', '4dd07984-81f0-490a-8b77-d42dc29a07d6', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('88', 'd88672f9-5e7c-4597-8e72-eebc3fc3656f', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('89', '7168a696-2355-452f-9eec-a1caad634057', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('90', 'aaf9231e-8c91-4524-b1db-5dc08e10228e', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('91', 'b9416f58-c247-47f9-9b3a-8605fd3b06a3', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('92', '962a0af1-7731-4ef4-96cd-44de4477d4e9', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('93', 'f6a1678c-3157-4d94-b9d6-192e215ac844', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('94', 'a2c9b17d-5636-4752-9f08-f6f00311607a', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('95', 'd88672f9-5e7c-4597-8e72-eebc3fc3656f', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('96', '6dd346c2-d077-49a5-b80c-c2cd17599e85', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('97', '92d1de45-b482-44e2-9e83-e080d57762cd', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('98', 'd0f70a95-19f4-4549-9b97-d5984f7b4637', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('99', '18f49031-27be-48a4-b3c9-784e444d9f11', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('100', '92a43cd8-e6f6-4e3a-84fc-3666d403b796', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('101', '815d84f7-410c-40c3-9102-fe2eafea78ec', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('102', 'e925a1d1-cc3e-4611-9a73-816e33e7ff31', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('103', '28ead06b-81f9-4df6-bcfd-9e125f974b23', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('104', '18f49031-27be-48a4-b3c9-784e444d9f11', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('105', '83246e9c-3c58-4f19-8481-ab8b783b4f59', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('106', '48d9c916-e953-4518-aed1-7b46a701938e', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('107', '617b309d-8a86-442c-b89a-175ac6e72bdc', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('108', 'a90da8fa-e2f5-4093-9178-fd77668a90c0', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('109', 'a90da8fa-e2f5-4093-9178-fd77668a90c0', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('110', '7168a696-2355-452f-9eec-a1caad634057', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('111', '52b8d1ae-10f8-4e68-8fb8-d172cb034957', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('112', 'a90da8fa-e2f5-4093-9178-fd77668a90c0', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('113', 'e51d6a92-265e-4851-b5d4-9cfde4d4cfbb', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('114', '00a552e0-c948-48e2-bbd6-9a1969307578', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('115', '48d9c916-e953-4518-aed1-7b46a701938e', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('20d56795-3eba-7f1b-f8ee-ea5c4880aa40', '510236f8-7219-49e4-98e0-4e63d9eb0989', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('c5644acb-9fa3-9f08-798e-62e9a65fc631', '52b8d1ae-10f8-4e68-8fb8-d172cb034957', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('6f7f41c7-17c0-9024-c357-780e4ac55ea4', '7ed11cb8-f1fd-4690-a212-e6408bf0f5b5', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('7f1fb6d1-ce3e-dc2c-cb72-41950690bfba', 'b00dd004-217b-46da-9ab1-a635205d4943', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('7cda0e62-7568-34b5-f064-41d88107ea9e', 'f377c293-be85-4a1b-86f9-0d0fd7b5e53b', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('2fb16ca2-ee6d-1894-0752-727d864f0638', 'bd46837b-9105-4d5f-9b74-38dd65b79074', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('44eecd5a-06b1-94c7-8cf5-431b53852442', 'a6155f88-05b1-4af4-866f-4f22b7a47800', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('6860c696-dc8b-8cb2-0ff4-b38e05a5cd41', '83246e9c-3c58-4f19-8481-ab8b783b4f59', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('62c72321-7ec5-3900-795e-3073a50b79b2', '98f8c03e-d6d6-4cec-8ffb-fc82454cd1a6', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('84a25152-a423-28ad-8be3-cf20593e4b81', 'a026bfb7-e106-4296-874e-c485a433b00d', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('7b0a3052-95fc-210e-e00a-d3b3c61aa7de', '815d84f7-410c-40c3-9102-fe2eafea78ec', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('116', 'd8dc224d-7b57-4a6c-92d6-01bcd6a34fac', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('117', '8b8d4fca-a7e1-41d0-a0a8-eaa8f9db01e6', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('118', '28ead06b-81f9-4df6-bcfd-9e125f974b23', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('119', '29a06bfa-1011-4abb-ac56-6bab24be0185', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('120', '61b422dd-bbdb-4692-913c-cd1474e57940', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('121', '2e2d8410-18f1-4e24-8294-00ce4d962410', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('122', 'd7c82bca-43a7-49d5-96e4-82d31b798291', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('123', 'bd46837b-9105-4d5f-9b74-38dd65b79074', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('124', '00a552e0-c948-48e2-bbd6-9a1969307578', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('125', 'b00dd004-217b-46da-9ab1-a635205d4943', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('126', 'd88672f9-5e7c-4597-8e72-eebc3fc3656f', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('127', '3fc10007-59d9-42b8-9143-ddee6481b567', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('128', '2472e2de-dee7-4bb4-916d-fbc2ec1e4e5c', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('129', '52b8d1ae-10f8-4e68-8fb8-d172cb034957', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('f6594351-814d-b981-da93-f76116a5980b', '7c3c4d91-0e91-4b85-8678-3592030f8446', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('ff350682-5f9a-91cf-c2af-44117deaf620', '0b8a713f-7b62-419e-a2f4-74c8262b2c05', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('a255085c-ab1c-0ea4-db9c-b40b76245ec2', '210423c2-d867-44a2-97d0-ab4e2a6b85a5', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('6b5daa6a-9c08-5ea1-9023-d81f4e589df6', '485c0889-b548-4ad7-81e4-0c598ba5069d', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('e827bf79-5793-ab4f-3368-44ec4524f455', 'a2fb6077-f4f2-4039-8337-7a690e8bc5d6', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('5dc0957d-27da-8bbe-4b57-058a4ec7be75', 'e51d6a92-265e-4851-b5d4-9cfde4d4cfbb', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('05623232-8bb7-91d9-360e-645021bdacfe', 'f309611f-b0a2-4c53-8dbe-24f95dc01e53', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('a90e68da-69c8-fb37-33fd-016a5a9f79e3', 'c2f2e5d4-bfe9-43f8-962a-f234b7d76150', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('43e8eed7-d8b8-9b2a-34d2-38def8f8f5eb', '48d9c916-e953-4518-aed1-7b46a701938e', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('ec98fab6-372b-5144-6bd9-d340b2e38658', '16e6bc3a-0464-49fa-8a81-62e913809fae', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('53a744ba-4305-de94-ac81-e52adce3164d', '871be72a-b736-46f2-9df8-3fd239b0074b', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('3a31a730-3c81-69ac-7ecc-939bf9e0316e', '6d4d5ba4-d00c-4405-8e02-d60c63c6a716', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('c95d1cf0-831c-f1b4-dc5b-64e1520458a0', 'c82db994-e7c1-42b6-bda6-281c1a0ee655', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('284c4d1e-af9a-de54-2e1d-99360713f547', '871be72a-b736-46f2-9df8-3fd239b0074b', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('9f68f642-3e27-e6da-49a6-e8b4b4ebd32d', 'c9b146fa-98a8-433c-bbc6-4486880fb9e9', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('96176150-b831-47a9-7d09-5a3ca020906c', '28aa9a36-9949-47fb-b48a-ec5fd8f8b7ea', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('b25b4786-bc74-57f3-3c74-f9a738bdbf2c', 'f309611f-b0a2-4c53-8dbe-24f95dc01e53', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('f1371b7c-85f1-5e0e-239a-04a20b981c13', 'a55e9f2d-c6cc-43e1-b0d4-4400835f43f2', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('d0f9e543-c5e5-caae-c47d-2fb48166ff95', '00571847-4756-46e4-8c64-d363d502fdc5', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('1bb9f819-5757-d69b-600b-ff5b33571b39', 'f377c293-be85-4a1b-86f9-0d0fd7b5e53b', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('ac958058-5c1d-dbc2-ca6c-24983f07cc06', '2d1518af-5ec0-42db-a8ee-6566a2f4718f', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('2424cbc5-fa50-265f-dc21-2d28bd6a3bf6', 'c66fca2e-aaa0-494f-9e5e-e60b8712c110', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('2a5f0329-1c8e-4aa0-ec2d-ab9b0d313078', '2472e2de-dee7-4bb4-916d-fbc2ec1e4e5c', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('9fff1808-9b63-32ee-4274-f943d5618ad0', '6c568716-480b-4870-97d2-c49ecee88057', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('0ad2b5a0-fcf9-c4ba-c99f-97afaa61e824', '98f8c03e-d6d6-4cec-8ffb-fc82454cd1a6', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('082696b2-c602-aded-9faa-9d4e19ef554c', '4dd07984-81f0-490a-8b77-d42dc29a07d6', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('2739b320-83e6-fd9f-4994-ed598c3a16b2', 'a6155f88-05b1-4af4-866f-4f22b7a47800', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('33f5fa0d-98a6-3b4c-028f-a1ec2a882a47', '28aa9a36-9949-47fb-b48a-ec5fd8f8b7ea', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('008b5ec4-e442-da7a-e82b-6f0c50cc0e06', 'a90da8fa-e2f5-4093-9178-fd77668a90c0', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('e38d00be-fa77-9f5c-0a6c-84c2ea31a8d1', 'aa06789b-477a-43d0-a0c2-9cb801faa9db', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('d52f6de6-f0b4-0bd5-fbec-383a03b79610', '4dd07984-81f0-490a-8b77-d42dc29a07d6', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('cff54ee0-85e7-3b87-3925-03afb8e9535c', 'e7ebb716-9192-4c59-91e0-ea85f36561b5', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('473bc6dd-c48f-8ac0-5204-c5f7f42eddc4', '6c568716-480b-4870-97d2-c49ecee88057', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('5fa67267-6680-7db9-26b8-6f7da7fa4358', '95c9b5bb-0ed4-4535-8731-f9222ff70b49', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('f098dec6-444d-fa79-7061-f62518832eaf', '749b0502-9031-44a0-b6cb-485486033d82', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('8c85965d-f69e-2268-cc12-64df6052698a', '210423c2-d867-44a2-97d0-ab4e2a6b85a5', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('d732dac9-8149-9a90-35b8-f4a83f0973f8', 'c82db994-e7c1-42b6-bda6-281c1a0ee655', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('4b767e69-b3e1-dc35-7d83-440abf28f5dd', '92d1de45-b482-44e2-9e83-e080d57762cd', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('a6cd4df7-8af2-4d19-1186-395ffa1b4be8', '28aa9a36-9949-47fb-b48a-ec5fd8f8b7ea', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('fdd04b8d-1220-bdff-384e-7108f4193449', '7c3c4d91-0e91-4b85-8678-3592030f8446', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('1e3fe1b0-33e0-3a1d-c2ae-ee687b09282d', '7168a696-2355-452f-9eec-a1caad634057', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('504a3be1-5971-f193-bbf1-6a99a545b835', '8b8d4fca-a7e1-41d0-a0a8-eaa8f9db01e6', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('0fea7d68-5834-143e-1469-ec288c9b3316', '3b7489ef-6795-4cda-b599-d4faf09ffafa', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('9733a215-284d-7bcf-4efc-83081b75c8bc', 'bd46837b-9105-4d5f-9b74-38dd65b79074', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('6ca3acc5-862e-91d1-8141-5c140a05e03c', '59e3f9e3-7045-414b-909d-a034df99e4f0', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('2b22b41d-784f-6b04-7979-9d91cc7cab28', 'fd7db1b5-599f-4b77-a15d-8c1b0d575114', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('671b2514-6ade-b982-b32e-079972747a1d', '28aa9a36-9949-47fb-b48a-ec5fd8f8b7ea', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('b138aebe-7ef3-8db4-e441-bbac02a9e1da', '510236f8-7219-49e4-98e0-4e63d9eb0989', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('3b77efdb-78cf-8d9a-8234-a21bb6a09d73', 'b00dd004-217b-46da-9ab1-a635205d4943', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('897b9f53-b86b-4651-f3c6-a4ec6b4d499d', '749b0502-9031-44a0-b6cb-485486033d82', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('f63d61e7-af1e-f723-4d15-527263baec6d', '6701cc66-1c48-4ca1-ba9a-356414af8260', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('e83a4dbf-5b2f-e7ea-9aee-cd4eb705d4a3', 'cf00a329-1f92-41c6-9df7-aa6c003dec4d', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('ba3942a2-2033-6e07-a728-798dad169f4a', 'a2fb6077-f4f2-4039-8337-7a690e8bc5d6', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('a15022ed-f615-c57d-2388-2d52951b4721', '28ead06b-81f9-4df6-bcfd-9e125f974b23', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('5e50778d-0f59-68c0-8aa6-38a47442e4e6', 'd0ef1eb4-0dd6-4795-a0c5-2da0badbec7b', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('88ae2ce7-2dcd-5adc-6db3-0b80761e4d2e', 'aa6f71ce-b0a3-428c-a35a-afb16a2c9982', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('726937d1-cf93-72e4-b7b4-65ac86e7399e', 'e05ced35-e661-4340-8f45-f8c10ad7135e', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('ce0486f6-3401-fc04-c0aa-970bbf83df05', 'f377c293-be85-4a1b-86f9-0d0fd7b5e53b', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('07bf08e8-182e-29ea-ebe7-21d00bc5da18', 'd0f70a95-19f4-4549-9b97-d5984f7b4637', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('d895e0c3-fc9f-9888-df55-cade58bc4b4a', 'f309611f-b0a2-4c53-8dbe-24f95dc01e53', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('4dd52409-26e5-e54f-119a-bfdeab49aa00', 'b9416f58-c247-47f9-9b3a-8605fd3b06a3', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('2c479945-76cd-0f24-598a-e6be49230f56', '28aa9a36-9949-47fb-b48a-ec5fd8f8b7ea', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('429dfc1e-30fd-d08d-f3fc-c5bd6f941a7a', 'c82db994-e7c1-42b6-bda6-281c1a0ee655', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('68cf07d9-0a28-dde4-d553-99c5d04c114a', '4dd07984-81f0-490a-8b77-d42dc29a07d6', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('cc627e71-0ea5-0f2c-723c-439d34aaa253', '7ed11cb8-f1fd-4690-a212-e6408bf0f5b5', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('c7a45d9b-27ed-e202-f270-44f87b1efcd9', '28ead06b-81f9-4df6-bcfd-9e125f974b23', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('427da87f-b361-334f-47d0-26cdfd591cb1', '4dd07984-81f0-490a-8b77-d42dc29a07d6', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('56e0040c-061a-8070-25b5-4172b0a8afd7', 'f309611f-b0a2-4c53-8dbe-24f95dc01e53', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('1e60046d-f6b4-0f1b-7b4a-79187d9f61c3', '59e3f9e3-7045-414b-909d-a034df99e4f0', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('54798519-4450-17bd-0d22-a5b36c60da8f', 'a55e9f2d-c6cc-43e1-b0d4-4400835f43f2', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('84ca672a-ad94-0c1c-cca7-84d844a597ca', '90817a6a-d945-4f0b-99e3-c567aa2f677e', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('d4b5629c-c87b-cb19-8399-eab95c89571d', '871be72a-b736-46f2-9df8-3fd239b0074b', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('77655712-9c17-0085-8577-7c975dffcbfd', '3af469d2-a537-485c-bab7-16e8786a9f37', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('50db72b4-a291-7db2-d494-bb14a62daa09', '61b422dd-bbdb-4692-913c-cd1474e57940', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('9cd67e6b-6ce3-91d6-7843-bb03b2490399', 'aa6f71ce-b0a3-428c-a35a-afb16a2c9982', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('88ace364-0a91-167b-4233-f3edb7892b32', '5ce88800-dc85-4e15-977d-2757f6d0e508', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('307c54bc-2b1e-5f21-5ab5-57dc1f30090f', '3fc10007-59d9-42b8-9143-ddee6481b567', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('78338c0f-032a-d2c6-d476-0188700b6f21', '18f49031-27be-48a4-b3c9-784e444d9f11', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('b7adcf86-a28a-9d7b-d03b-7dc64adbc70d', '6701cc66-1c48-4ca1-ba9a-356414af8260', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('7eb63b3b-fc77-ed18-0ffe-9cd281b366a0', '815d84f7-410c-40c3-9102-fe2eafea78ec', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('0892843e-9f26-679a-935d-03cb3b32fd72', '16e6bc3a-0464-49fa-8a81-62e913809fae', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('00e822fc-9158-c1d5-831e-0f8e69b39d0e', 'a90da8fa-e2f5-4093-9178-fd77668a90c0', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('45623cd7-b02f-24ac-85f1-f9223f27c5c5', '2472e2de-dee7-4bb4-916d-fbc2ec1e4e5c', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('80073074-2ed5-84e7-3eae-c6e4ffe3c09c', '29a06bfa-1011-4abb-ac56-6bab24be0185', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('130', '1aaaa3ac-1caa-476b-8460-c4ce5e4e2cbf', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('131', '815d84f7-410c-40c3-9102-fe2eafea78ec', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('132', 'd7c82bca-43a7-49d5-96e4-82d31b798291', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('133', '59b271da-20c8-4dae-92b6-826fbe30d533', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('134', '52b8d1ae-10f8-4e68-8fb8-d172cb034957', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('135', '871be72a-b736-46f2-9df8-3fd239b0074b', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('136', 'a2c9b17d-5636-4752-9f08-f6f00311607a', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('137', '90817a6a-d945-4f0b-99e3-c567aa2f677e', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('138', '815d84f7-410c-40c3-9102-fe2eafea78ec', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('139', '7168a696-2355-452f-9eec-a1caad634057', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('140', 'e7ebb716-9192-4c59-91e0-ea85f36561b5', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('141', 'cf00a329-1f92-41c6-9df7-aa6c003dec4d', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('142', 'f6a1678c-3157-4d94-b9d6-192e215ac844', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('143', '210423c2-d867-44a2-97d0-ab4e2a6b85a5', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('144', '4e459d29-5812-41cd-8d1e-e84d7ed67462', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('145', '6701cc66-1c48-4ca1-ba9a-356414af8260', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('146', '5ce88800-dc85-4e15-977d-2757f6d0e508', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('147', 'ba5b26ba-e919-4c86-9afc-48579d73222b', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('148', 'c66fca2e-aaa0-494f-9e5e-e60b8712c110', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('149', 'd0ef1eb4-0dd6-4795-a0c5-2da0badbec7b', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('150', 'f6a1678c-3157-4d94-b9d6-192e215ac844', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('151', 'e4561fde-e419-4322-b2ed-985c289e7ce5', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('152', '52b8d1ae-10f8-4e68-8fb8-d172cb034957', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('153', '16a06e5b-a724-444d-aba0-8c090f146df6', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('154', '849ae98b-a221-4eeb-a1af-0e18ba99b89a', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('155', '3fc10007-59d9-42b8-9143-ddee6481b567', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('156', '83246e9c-3c58-4f19-8481-ab8b783b4f59', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('157', 'aaf9231e-8c91-4524-b1db-5dc08e10228e', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('158', '90817a6a-d945-4f0b-99e3-c567aa2f677e', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('159', '33d9010f-df9f-4f95-978d-3371f5a8431a', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('160', 'e4561fde-e419-4322-b2ed-985c289e7ce5', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('161', 'aaf9231e-8c91-4524-b1db-5dc08e10228e', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('162', '210423c2-d867-44a2-97d0-ab4e2a6b85a5', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('163', '850577d5-08fa-49f1-9648-c3fe065ac620', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('164', 'a55e9f2d-c6cc-43e1-b0d4-4400835f43f2', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('165', 'bd46837b-9105-4d5f-9b74-38dd65b79074', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('166', '749b0502-9031-44a0-b6cb-485486033d82', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('167', '90817a6a-d945-4f0b-99e3-c567aa2f677e', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('168', 'cf00a329-1f92-41c6-9df7-aa6c003dec4d', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('169', 'f377c293-be85-4a1b-86f9-0d0fd7b5e53b', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('170', 'd7c82bca-43a7-49d5-96e4-82d31b798291', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('171', '7493d65f-958b-4e0c-90ea-87e5317bbd1b', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('172', '0b8a713f-7b62-419e-a2f4-74c8262b2c05', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('173', '48d9c916-e953-4518-aed1-7b46a701938e', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('174', '16e6bc3a-0464-49fa-8a81-62e913809fae', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('175', 'd8dc224d-7b57-4a6c-92d6-01bcd6a34fac', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('176', '8bf100ad-2483-46d2-bc4a-e4b850d555c5', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('177', '962a0af1-7731-4ef4-96cd-44de4477d4e9', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('178', '749b0502-9031-44a0-b6cb-485486033d82', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('179', '95c9b5bb-0ed4-4535-8731-f9222ff70b49', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('180', 'd0ef1eb4-0dd6-4795-a0c5-2da0badbec7b', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('181', '33d9010f-df9f-4f95-978d-3371f5a8431a', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('182', 'e925a1d1-cc3e-4611-9a73-816e33e7ff31', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('183', '2e2d8410-18f1-4e24-8294-00ce4d962410', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('184', 'a90da8fa-e2f5-4093-9178-fd77668a90c0', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('185', '75df8bbb-1e86-4fdc-a7c5-9c3c37857ee4', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('186', '92d1de45-b482-44e2-9e83-e080d57762cd', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('187', '2e2d8410-18f1-4e24-8294-00ce4d962410', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('188', '756be234-a7af-4de2-ad04-22e8e58c47d4', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('189', 'd0ef1eb4-0dd6-4795-a0c5-2da0badbec7b', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('190', '1a26beaf-58e9-4ef4-8205-0428f8e4aaf7', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('191', '2d1518af-5ec0-42db-a8ee-6566a2f4718f', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('192', '210423c2-d867-44a2-97d0-ab4e2a6b85a5', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('193', '52b8d1ae-10f8-4e68-8fb8-d172cb034957', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('194', 'b9416f58-c247-47f9-9b3a-8605fd3b06a3', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('195', '3b7489ef-6795-4cda-b599-d4faf09ffafa', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('196', '28aa9a36-9949-47fb-b48a-ec5fd8f8b7ea', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('197', '2d1518af-5ec0-42db-a8ee-6566a2f4718f', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('198', 'c82db994-e7c1-42b6-bda6-281c1a0ee655', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('199', '1a26beaf-58e9-4ef4-8205-0428f8e4aaf7', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('200', '29a06bfa-1011-4abb-ac56-6bab24be0185', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('201', '28ead06b-81f9-4df6-bcfd-9e125f974b23', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('202', '749b0502-9031-44a0-b6cb-485486033d82', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('203', '16a06e5b-a724-444d-aba0-8c090f146df6', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('204', '92d1de45-b482-44e2-9e83-e080d57762cd', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('205', 'd88672f9-5e7c-4597-8e72-eebc3fc3656f', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('206', 'd0ef1eb4-0dd6-4795-a0c5-2da0badbec7b', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('207', '0b8a713f-7b62-419e-a2f4-74c8262b2c05', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('208', '23154a03-6da9-4d11-a591-320442cbb535', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('209', '6d4d5ba4-d00c-4405-8e02-d60c63c6a716', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('210', '16a06e5b-a724-444d-aba0-8c090f146df6', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('211', '815d84f7-410c-40c3-9102-fe2eafea78ec', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('212', 'e7ebb716-9192-4c59-91e0-ea85f36561b5', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('213', '6dd346c2-d077-49a5-b80c-c2cd17599e85', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('214', '6dd346c2-d077-49a5-b80c-c2cd17599e85', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('215', '7e56ee1b-0f2a-44da-a1ec-15ca72071779', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('216', '28aa9a36-9949-47fb-b48a-ec5fd8f8b7ea', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('217', 'aaf9231e-8c91-4524-b1db-5dc08e10228e', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('218', 'da963c46-f0fb-402f-98f7-41943aaa8133', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('219', 'da963c46-f0fb-402f-98f7-41943aaa8133', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('220', 'e925a1d1-cc3e-4611-9a73-816e33e7ff31', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('221', '92d1de45-b482-44e2-9e83-e080d57762cd', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('222', 'f309611f-b0a2-4c53-8dbe-24f95dc01e53', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('223', '7c3c4d91-0e91-4b85-8678-3592030f8446', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('224', '0b8a713f-7b62-419e-a2f4-74c8262b2c05', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('225', '7c3c4d91-0e91-4b85-8678-3592030f8446', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('226', '4e459d29-5812-41cd-8d1e-e84d7ed67462', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('227', 'f377c293-be85-4a1b-86f9-0d0fd7b5e53b', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('228', '33d9010f-df9f-4f95-978d-3371f5a8431a', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('229', '194db935-dbf1-4b50-bc2f-2dd814b12f0f', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('230', 'a90da8fa-e2f5-4093-9178-fd77668a90c0', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('231', '3af469d2-a537-485c-bab7-16e8786a9f37', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('232', '6dd346c2-d077-49a5-b80c-c2cd17599e85', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('233', 'f309611f-b0a2-4c53-8dbe-24f95dc01e53', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('234', '3af469d2-a537-485c-bab7-16e8786a9f37', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('235', 'e925a1d1-cc3e-4611-9a73-816e33e7ff31', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('236', 'aaf9231e-8c91-4524-b1db-5dc08e10228e', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('237', 'd8dc224d-7b57-4a6c-92d6-01bcd6a34fac', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('238', '850577d5-08fa-49f1-9648-c3fe065ac620', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('239', '8b8d4fca-a7e1-41d0-a0a8-eaa8f9db01e6', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('240', 'a2fb6077-f4f2-4039-8337-7a690e8bc5d6', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('241', '3b7489ef-6795-4cda-b599-d4faf09ffafa', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('242', '61b422dd-bbdb-4692-913c-cd1474e57940', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('243', 'd8dc224d-7b57-4a6c-92d6-01bcd6a34fac', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('244', 'b00dd004-217b-46da-9ab1-a635205d4943', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('245', 'f309611f-b0a2-4c53-8dbe-24f95dc01e53', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('246', '850577d5-08fa-49f1-9648-c3fe065ac620', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('247', '33d9010f-df9f-4f95-978d-3371f5a8431a', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('248', '16e6bc3a-0464-49fa-8a81-62e913809fae', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('249', '8bf100ad-2483-46d2-bc4a-e4b850d555c5', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('250', 'b9416f58-c247-47f9-9b3a-8605fd3b06a3', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('251', '749b0502-9031-44a0-b6cb-485486033d82', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('252', '7c3c4d91-0e91-4b85-8678-3592030f8446', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('253', 'aa6f71ce-b0a3-428c-a35a-afb16a2c9982', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('254', 'b4c8774a-1595-4a36-9277-3b1859c3763c', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('255', 'e05ced35-e661-4340-8f45-f8c10ad7135e', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('256', '7bf79ade-d3d1-45df-8203-fb1412fa3d38', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('257', 'a2c9b17d-5636-4752-9f08-f6f00311607a', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('258', '4e459d29-5812-41cd-8d1e-e84d7ed67462', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('259', 'd8dc224d-7b57-4a6c-92d6-01bcd6a34fac', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('260', 'a2fb6077-f4f2-4039-8337-7a690e8bc5d6', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('261', 'd88672f9-5e7c-4597-8e72-eebc3fc3656f', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('262', 'f6a1678c-3157-4d94-b9d6-192e215ac844', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('263', '7168a696-2355-452f-9eec-a1caad634057', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('264', 'a6155f88-05b1-4af4-866f-4f22b7a47800', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('265', 'fd7db1b5-599f-4b77-a15d-8c1b0d575114', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('266', 'c66fca2e-aaa0-494f-9e5e-e60b8712c110', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('267', '7ed11cb8-f1fd-4690-a212-e6408bf0f5b5', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('268', '90817a6a-d945-4f0b-99e3-c567aa2f677e', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('269', 'a026bfb7-e106-4296-874e-c485a433b00d', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('270', '48d9c916-e953-4518-aed1-7b46a701938e', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('271', 'fd7db1b5-599f-4b77-a15d-8c1b0d575114', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('272', '38d422fa-6b8c-4d25-82ec-a7224e151ffc', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('273', 'f6a1678c-3157-4d94-b9d6-192e215ac844', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('274', 'fd7db1b5-599f-4b77-a15d-8c1b0d575114', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('275', '2d1518af-5ec0-42db-a8ee-6566a2f4718f', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('276', '871be72a-b736-46f2-9df8-3fd239b0074b', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('277', '2472e2de-dee7-4bb4-916d-fbc2ec1e4e5c', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('278', '749b0502-9031-44a0-b6cb-485486033d82', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('279', '2e2d8410-18f1-4e24-8294-00ce4d962410', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('280', '16a06e5b-a724-444d-aba0-8c090f146df6', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('281', 'd8dc224d-7b57-4a6c-92d6-01bcd6a34fac', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('282', '904da24d-82bb-4485-85a2-14a8e1f215f7', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('283', '92d1de45-b482-44e2-9e83-e080d57762cd', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('284', '7ed11cb8-f1fd-4690-a212-e6408bf0f5b5', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('285', 'ba5b26ba-e919-4c86-9afc-48579d73222b', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('286', '3af469d2-a537-485c-bab7-16e8786a9f37', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('287', '3fc10007-59d9-42b8-9143-ddee6481b567', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('288', '98f8c03e-d6d6-4cec-8ffb-fc82454cd1a6', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('289', '850577d5-08fa-49f1-9648-c3fe065ac620', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('290', 'aaf9231e-8c91-4524-b1db-5dc08e10228e', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('291', 'fd7db1b5-599f-4b77-a15d-8c1b0d575114', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('292', '510236f8-7219-49e4-98e0-4e63d9eb0989', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('293', '18f49031-27be-48a4-b3c9-784e444d9f11', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('294', '3df5b32c-83af-4884-a74a-c331b04854a7', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('295', '904da24d-82bb-4485-85a2-14a8e1f215f7', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('296', 'e51d6a92-265e-4851-b5d4-9cfde4d4cfbb', 'b4dcacc8-78c1-4695-9386-104337f642e1');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('297', '3af469d2-a537-485c-bab7-16e8786a9f37', 'e1e068ac-ddc1-46ae-9500-3b76850c5017');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('298', '61b422dd-bbdb-4692-913c-cd1474e57940', '6f115ce0-91fa-4942-a82e-4dd108c4c4bb');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('299', '3af469d2-a537-485c-bab7-16e8786a9f37', '189e06bf-4de8-48cf-87af-6e4da8788e3e');
-INSERT INTO "arquitetura_choose_donation"."store_categories" VALUES ('300', 'd0ef1eb4-0dd6-4795-a0c5-2da0badbec7b', 'b4dcacc8-78c1-4695-9386-104337f642e1');
 
 -- ----------------------------
 -- Table structure for store_items
@@ -2805,139 +2390,119 @@ CREATE TABLE "arquitetura_choose_donation"."stores" (
   "address" text COLLATE "pg_catalog"."default" NOT NULL,
   "latitude" int4 NOT NULL,
   "longitude" int4 NOT NULL,
-  "active" bool NOT NULL DEFAULT true,
-  "id_city" int4 NOT NULL
+  "id_city" int4 NOT NULL,
+  "active" bool NOT NULL DEFAULT true
 )
 ;
 
 -- ----------------------------
 -- Records of stores
 -- ----------------------------
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('e925a1d1-cc3e-4611-9a73-816e33e7ff31', 'Centro de Saúde São Miguel do Rio Torto e Rossio ao Sul do Tejo', 'Bicas', 39, -8, 't', 1);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('92a43cd8-e6f6-4e3a-84fc-3666d403b796', 'Junta de Freguesia Ramalde', 'RUA ENG EZEQUIEL DE CAMPOS', 41, -9, 't', 16);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('5ce88800-dc85-4e15-977d-2757f6d0e508', 'Universidade Moscavide e Portela', 'MOSCAVIDE E PORTELA', 39, -9, 't', 7);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('92d1de45-b482-44e2-9e83-e080d57762cd', 'Centro de Saúde Oliveira do Douro', 'OLIVEIRA DOURO', 41, -9, 't', 17);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('d0ef1eb4-0dd6-4795-a0c5-2da0badbec7b', 'Junta de Freguesia Santa Comba Dão e Couto do Mosteiro', 'SANTA COMBA DÃO E COUTO DO MOSTEIRO', 40, -8, 't', 14);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('aa06789b-477a-43d0-a0c2-9cb801faa9db', 'Hospital Lordosa', 'Aérodromo', 41, -8, 't', 23);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('da963c46-f0fb-402f-98f7-41943aaa8133', 'Centro de Saúde Tavira (Santa Maria e Santiago)', 'Tavira (Santa Maria e Santiago)', 37, -8, 't', 14);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('8b8d4fca-a7e1-41d0-a0a8-eaa8f9db01e6', 'Hospital Rio de Couros e Casal dos Bernardos', 'Vale do Carro', 40, -9, 't', 21);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('6701cc66-1c48-4ca1-ba9a-356414af8260', 'Hospital Tavarede', 'TAVAREDE', 40, -9, 't', 5);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('d88672f9-5e7c-4597-8e72-eebc3fc3656f', 'Universidade Póvoa de Varzim, Beiriz e Argivai', 'PÓVOA DE VARZIM', 41, -9, 't', 13);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('871be72a-b736-46f2-9df8-3fd239b0074b', 'Centro de dia Algueirão-Mem Martins', 'Mem Martins', 39, -9, 't', 11);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('c66fca2e-aaa0-494f-9e5e-e60b8712c110', 'Junta de Freguesia Fânzeres e São Pedro da Cova', 'FÂNZERES E SÃO PEDRO DA COVA', 41, -9, 't', 4);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('3fc10007-59d9-42b8-9143-ddee6481b567', 'Centro Social Cedofeita, Ildefonso, Sé, Miragaia, Nicolau e Vitória', 'Cedofeita', 41, -9, 't', 16);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('749b0502-9031-44a0-b6cb-485486033d82', 'Pavilhão Desportivo Póvoa de Santa Iria e Forte da Casa', 'PÓVOA DE SANTA IRIA', 39, -9, 't', 14);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('a55e9f2d-c6cc-43e1-b0d4-4400835f43f2', 'Junta de Freguesia Alcabideche', 'Manique', 39, -9, 't', 5);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('7bf79ade-d3d1-45df-8203-fb1412fa3d38', 'Pavilhão Desportivo Moitas Venda', 'MOITAS VENDA', 39, -9, 't', 2);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('38d422fa-6b8c-4d25-82ec-a7224e151ffc', 'Centro de dia Rio Douro', ' Teixugueiras Rio Douro - Guimarães', 42, -8, 't', 4);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('d7c82bca-43a7-49d5-96e4-82d31b798291', 'Santa Casa da Misericórdia Rebordosa', 'Rebordosa', 41, -8, 't', 10);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('18f49031-27be-48a4-b3c9-784e444d9f11', 'Centro de Saúde Rio Tinto', 'Rio Tinto', 41, -9, 't', 4);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('8bf100ad-2483-46d2-bc4a-e4b850d555c5', 'Centro de Saúde Marinhais', 'MARINHAIS', 39, -9, 't', 15);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('bd46837b-9105-4d5f-9b74-38dd65b79074', 'Escola Primária Pontinha e Famões', 'PONTINHA E FAMÕES', 39, -9, 't', 16);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('3af469d2-a537-485c-bab7-16e8786a9f37', 'Pavilhão Desportivo Figueira de Castelo Rodrigo', 'FIGUEIRA', 41, -7, 't', 4);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('00571847-4756-46e4-8c64-d363d502fdc5', 'Centro Social Santo António', 'SANTO ANTÓNIO', 39, -9, 't', 6);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('90817a6a-d945-4f0b-99e3-c567aa2f677e', 'Universidade Oeiras e S. Julião da Barra, Paço de Arcos e Caxias', 'Paço de Arcos', 39, -9, 't', 10);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('fd7db1b5-599f-4b77-a15d-8c1b0d575114', 'Junta de Freguesia Ponte de Sor, Tramaga e Vale de Açor', 'PONTE DE SOR', 39, -8, 't', 13);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('2d1518af-5ec0-42db-a8ee-6566a2f4718f', 'Centro de dia São João Baptista e Santa Maria dos Olivais', 'TOMAR', 40, -8, 't', 18);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('510236f8-7219-49e4-98e0-4e63d9eb0989', 'Escola Primária Massamá e Monte Abraão', 'Monte Abraão', 39, -9, 't', 11);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('7ed11cb8-f1fd-4690-a212-e6408bf0f5b5', 'Santa Casa da Misericórdia Pias', 'PIAS', 38, -7, 't', 13);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('815d84f7-410c-40c3-9102-fe2eafea78ec', 'Centro de Saúde Pampilhosa', 'PAMPILHOSA', 40, -8, 't', 11);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('cf00a329-1f92-41c6-9df7-aa6c003dec4d', 'Universidade Cuba', 'CUBA', 38, -8, 't', 7);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('2e2d8410-18f1-4e24-8294-00ce4d962410', 'Universidade Guia, Ilha e Mata Mourisca', 'Água Formosa', 40, -9, 't', 15);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('ba5b26ba-e919-4c86-9afc-48579d73222b', 'Complexo Desportivo Fátima', 'Cova da Iria', 40, -9, 't', 21);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('98f8c03e-d6d6-4cec-8ffb-fc82454cd1a6', 'Centro de dia Alcabideche', 'Manique', 39, -9, 't', 5);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('850577d5-08fa-49f1-9648-c3fe065ac620', 'Junta de Freguesia Tavira (Santa Maria e Santiago)', 'TAVIRA', 37, -8, 't', 14);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('f377c293-be85-4a1b-86f9-0d0fd7b5e53b', 'Universidade Corroios', 'SANTA MARTA DO PINHAL', 39, -9, 't', 10);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('c82db994-e7c1-42b6-bda6-281c1a0ee655', 'Centro de Saúde Bárrio e Cepões', 'RUA DA INSUA', 42, -9, 't', 7);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('28aa9a36-9949-47fb-b48a-ec5fd8f8b7ea', 'Pavilhão Desportivo Sacavém e Prior Velho', 'Sacavem', 39, -9, 't', 7);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('16e6bc3a-0464-49fa-8a81-62e913809fae', 'Junta de Freguesia São Domingos de Rana', 'SÃO DOMINGOS DE RANA', 39, -9, 't', 5);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('b9416f58-c247-47f9-9b3a-8605fd3b06a3', 'Santa Casa da Misericórdia Chamusca e Pinheiro Grande', 'UNIÃO DAS FREGUESIAS DA CHAMUSCA E PINHE', 39, -8, 't', 7);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('d8dc224d-7b57-4a6c-92d6-01bcd6a34fac', 'Centro de dia São Miguel, Santa Eufémia e Rabaçal', 'sao miguel', 40, -8, 't', 14);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('1aaaa3ac-1caa-476b-8460-c4ce5e4e2cbf', 'Centro Social Silves', 'SILVES', 37, -8, 't', 13);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('aa6f71ce-b0a3-428c-a35a-afb16a2c9982', 'Complexo Desportivo Rio Meão', 'RIO MEÃO', 41, -9, 't', 9);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('e7ebb716-9192-4c59-91e0-ea85f36561b5', 'Universidade Loulé (São Clemente)', 'LOULÉ', 37, -8, 't', 8);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('c9b146fa-98a8-433c-bbc6-4486880fb9e9', 'Escola Primária Vila do Bispo e Raposeira', 'VILA DO BISPO', 37, -9, 't', 15);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('aaf9231e-8c91-4524-b1db-5dc08e10228e', 'Centro de dia Leiria, Pousos, Barreira e Cortes', 'Telheiro', 40, -9, 't', 9);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('d0f70a95-19f4-4549-9b97-d5984f7b4637', 'Universidade Madalena e Beselga', 'CEM SOLDOS', 40, -8, 't', 18);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('4dd07984-81f0-490a-8b77-d42dc29a07d6', 'Pavilhão Desportivo Águeda e Borralha', 'Assequins', 41, -8, 't', 1);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('6d4d5ba4-d00c-4405-8e02-d60c63c6a716', 'Junta de Freguesia Covas e Vila Nova de Oliveirinha', 'VILA NOVA DE OLIVEIRINNA', 40, -8, 't', 16);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('756be234-a7af-4de2-ad04-22e8e58c47d4', 'Escola Primária Cacém e São Marcos', 'São Marcos', 39, -9, 't', 11);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('c2f2e5d4-bfe9-43f8-962a-f234b7d76150', 'Hospital Pontinha e Famões', 'Serra da Luz', 39, -9, 't', 16);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('6c568716-480b-4870-97d2-c49ecee88057', 'Universidade Além da Ribeira e Pedreira', 'PEDREIRA  QUINTA DA GRANJA', 40, -8, 't', 18);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('849ae98b-a221-4eeb-a1af-0e18ba99b89a', 'Hospital Santa Maria da Feira, Travanca, Sanfins e Espargo', 'SANTA MARIA DA FEIRA, TRAVANCA, SANFINS ', 41, -9, 't', 9);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('e1935b15-02a8-4cbb-aa4e-e843c04f9964', 'Universidade Lagos (São Sebastião e Santa Maria)', 'Lagos', 37, -9, 't', 7);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('4e459d29-5812-41cd-8d1e-e84d7ed67462', 'Centro Social Ajuda', 'AJUDA', 39, -9, 't', 6);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('030ad23b-9eaf-4803-9808-6cb737eaa0bf', 'Pavilhão Desportivo Carcavelos e Parede', 'Parede', 39, -9, 't', 5);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('a026bfb7-e106-4296-874e-c485a433b00d', 'Pavilhão Desportivo Torres Novas (São Pedro), Lapas e Ribeira Branca', 'Torres Novas', 39, -9, 't', 19);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('194db935-dbf1-4b50-bc2f-2dd814b12f0f', 'Centro de dia Souto da Carpalhosa e Ortigosa', 'SOUTO DA CARPALHOSA', 40, -9, 't', 9);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('a2c9b17d-5636-4752-9f08-f6f00311607a', 'Hospital Vila Boa de Quires e Maureles', 'VILA BOA DE QUIRES E MAURELES', 41, -8, 't', 7);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('6dd346c2-d077-49a5-b80c-c2cd17599e85', 'Escola Primária S.Julião, N.S. da Anunciada e S. Maria da Graça', 'Setúbal', 39, -9, 't', 12);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('a2fb6077-f4f2-4039-8337-7a690e8bc5d6', 'Santa Casa da Misericórdia Vale da Senhora da Póvoa', 'VALE DA SENHORA DA PÓVOA', 40, -7, 't', 7);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('95c9b5bb-0ed4-4535-8731-f9222ff70b49', 'Escola Primária Escariz', 'ESCARIZ', 41, -8, 't', 4);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('0b8a713f-7b62-419e-a2f4-74c8262b2c05', 'Escola Primária Mondim de Basto', 'MONDIM DE BASTO', 41, -8, 't', 5);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('52b8d1ae-10f8-4e68-8fb8-d172cb034957', 'Pavilhão Desportivo Alcanena e Vila Moreira', 'ALCANENA E VILA MOREIRA', 39, -9, 't', 2);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('33d9010f-df9f-4f95-978d-3371f5a8431a', 'Pavilhão Desportivo Ramalde', 'RUA GASPAR COELHO (VIA PUBLICA)', 41, -9, 't', 16);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('61b422dd-bbdb-4692-913c-cd1474e57940', 'Santa Casa da Misericórdia Cumieira', 'Lugar da Boavista', 41, -8, 't', 11);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('d24884d9-c3f6-44a7-ad4d-78852a5f4b14', 'Centro de dia São Joaninho', 'SÃO JOANINHO', 40, -8, 't', 14);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('28ead06b-81f9-4df6-bcfd-9e125f974b23', 'Hospital Ferreira do Alentejo e Canhestros', 'Canhestros', 38, -8, 't', 8);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('b00dd004-217b-46da-9ab1-a635205d4943', 'Junta de Freguesia Albufeira e Olhos de Água', 'ALBUFEIRA', 37, -8, 't', 1);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('7e56ee1b-0f2a-44da-a1ec-15ca72071779', 'Junta de Freguesia Nespereira e Casais', 'NESPEREIRA', 41, -8, 't', 5);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('75df8bbb-1e86-4fdc-a7c5-9c3c37857ee4', 'Hospital Areias, Sequeiró, Lama e Palmeira', 'AREIAS', 41, -8, 't', 14);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('23154a03-6da9-4d11-a591-320442cbb535', 'Escola Primária Paredes', 'MOURIZ', 41, -8, 't', 10);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('b4c8774a-1595-4a36-9277-3b1859c3763c', 'Centro Social Madalena e Beselga', 'Algarvias', 40, -8, 't', 18);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('59b271da-20c8-4dae-92b6-826fbe30d533', 'Hospital Vinha da Rainha', 'Barreiras', 40, -9, 't', 15);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('59e3f9e3-7045-414b-909d-a034df99e4f0', 'Centro Social Teixoso e Sarzedo', 'Barroca da Donzela', 40, -7, 't', 3);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('00a552e0-c948-48e2-bbd6-9a1969307578', 'Hospital Santa Margarida da Coutada', 'SANTA MARGARIDA DA COUTADA', 39, -8, 't', 8);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('617b309d-8a86-442c-b89a-175ac6e72bdc', 'Complexo Desportivo Armação de Pêra', 'ARMAÇÃO DE PÊRA / H.B.A.', 37, -8, 't', 13);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('7493d65f-958b-4e0c-90ea-87e5317bbd1b', 'Santa Casa da Misericórdia Sagres', 'SAGRES', 37, -9, 't', 15);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('29a06bfa-1011-4abb-ac56-6bab24be0185', 'Hospital Perafita, Lavra e Santa Cruz do Bispo', 'PERAFITA, LAVRA E SANTA CRUZ DO BISPO', 41, -9, 't', 8);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('16a06e5b-a724-444d-aba0-8c090f146df6', 'Hospital Camarate, Unhos e Apelação', 'AMEIXoeira', 39, -9, 't', 7);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('3b7489ef-6795-4cda-b599-d4faf09ffafa', 'Junta de Freguesia Malveira e São Miguel de Alcainça', 'Venda do Valador', 39, -9, 't', 9);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('485c0889-b548-4ad7-81e4-0c598ba5069d', 'Pavilhão Desportivo Cossourado e Linhares', 'Lugar de São Bento', 42, -9, 't', 5);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('deda6597-46a7-4921-ac18-6e09bd3ba1d6', 'Junta de Freguesia Aves', 'AVES', 41, -8, 't', 14);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('7c3c4d91-0e91-4b85-8678-3592030f8446', 'Complexo Desportivo São Domingos de Rana', 'TIRES', 39, -9, 't', 5);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('904da24d-82bb-4485-85a2-14a8e1f215f7', 'Junta de Freguesia Várzea, Aliviada e Folhada', 'VÁRZEA, ALIVIADA E FOLHADA', 41, -8, 't', 7);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('48d9c916-e953-4518-aed1-7b46a701938e', 'Santa Casa da Misericórdia Macedo de Cavaleiros', 'MACEDO DE CAVALEIROS', 42, -7, 't', 5);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('e05ced35-e661-4340-8f45-f8c10ad7135e', 'Pavilhão Desportivo O. Azeméis, Riba-Ul, Ul, Macinhata Seixa, Madail', 'OLIVEIRA DE AZEMÉIS', 41, -8, 't', 13);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('1a26beaf-58e9-4ef4-8205-0428f8e4aaf7', 'Hospital Olhalvo', 'Pocariça', 39, -9, 't', 1);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('f309611f-b0a2-4c53-8dbe-24f95dc01e53', 'Junta de Freguesia Marinha Grande', 'Escola Pinhal do Rei - Marinha Grande', 40, -9, 't', 10);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('83246e9c-3c58-4f19-8481-ab8b783b4f59', 'Complexo Desportivo S.Pedro e Santiago, S.Maria e S.Miguel e Matacães', 'Torres Vedras', 39, -9, 't', 13);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('a90da8fa-e2f5-4093-9178-fd77668a90c0', 'Hospital Sacavém e Prior Velho', 'Prior Velho', 39, -9, 't', 7);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('2472e2de-dee7-4bb4-916d-fbc2ec1e4e5c', 'Centro de Saúde Moscavide e Portela', 'MOSCAVIDE E PORTELA', 39, -9, 't', 7);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('7168a696-2355-452f-9eec-a1caad634057', 'Santa Casa da Misericórdia Mina de Água', 'MINA DE ÁGUA', 39, -9, 't', 15);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('962a0af1-7731-4ef4-96cd-44de4477d4e9', 'Pavilhão Desportivo Santa Maria Maior', 'SANTA MARIA MAIOR', 39, -9, 't', 6);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('3df5b32c-83af-4884-a74a-c331b04854a7', 'Pavilhão Desportivo Quelfes', 'Quatrim', 37, -8, 't', 10);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('f6a1678c-3157-4d94-b9d6-192e215ac844', 'Santa Casa da Misericórdia Vila do Conde', 'Vila do Conde', 41, -9, 't', 16);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('1f4577d2-a8c6-4332-818b-30d4b6738429', 'Pavilhão Desportivo Agualva e Mira-Sintra', 'AGUALVA E MIRA-SINTRA Rua Joaquim Guilherme Costa Caldas na Rotunda', 39, -9, 't', 11);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('e4561fde-e419-4322-b2ed-985c289e7ce5', 'Centro Social Bougado (São Martinho e Santiago)', 'Abelheira', 41, -9, 't', 18);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('a6155f88-05b1-4af4-866f-4f22b7a47800', 'Universidade Alcochete', 'ALCOCHETE', 39, -9, 't', 2);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('e51d6a92-265e-4851-b5d4-9cfde4d4cfbb', 'Centro de dia Fazendas de Almeirim', 'FAZENDAS DE ALMEIRIM', 39, -9, 't', 3);
-INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('210423c2-d867-44a2-97d0-ab4e2a6b85a5', 'Santa Casa da Misericórdia Arrifana', 'Vilar', 40, -8, 't', 17);
-
--- ----------------------------
--- Table structure for users
--- ----------------------------
-DROP TABLE IF EXISTS "arquitetura_choose_donation"."users";
-CREATE TABLE "arquitetura_choose_donation"."users" (
-  "id" text COLLATE "pg_catalog"."default" NOT NULL,
-  "profile_id" text COLLATE "pg_catalog"."default" NOT NULL,
-  "username" text COLLATE "pg_catalog"."default" NOT NULL,
-  "password" text COLLATE "pg_catalog"."default" NOT NULL,
-  "blocked" bool NOT NULL DEFAULT false,
-  "failed" int4 NOT NULL DEFAULT 0,
-  "name" text COLLATE "pg_catalog"."default",
-  "address" text COLLATE "pg_catalog"."default",
-  "phone" text COLLATE "pg_catalog"."default",
-  "email" text COLLATE "pg_catalog"."default"
-)
-;
-
--- ----------------------------
--- Records of users
--- ----------------------------
-INSERT INTO "arquitetura_choose_donation"."users" VALUES ('8a154ba0-15e0-4f52-9b5d-5ab210b031e7', 'cceacd43-1647-415d-9179-76282331e3c5', 'jorge', 'b0y/IjNkmi5h7F2DbjQ2i9uJUyqRMpovEIo808v8kuHqobBvtSuyvS', 'f', 0, 'Jorge', 'Rua B, 287 Barcelos', '945 4587', 'jorge@gmail.com');
-INSERT INTO "arquitetura_choose_donation"."users" VALUES ('1fe8d804-ef76-4ed0-bf9a-785002e62dcf', '0cd9f2ff-df2c-49e8-a5db-976aa757c501', 'maria', 'b0y/IjNkmi5h7F2DbjQ2i9uJUyqRMpovEIo808v8kuHqobBvtSuyvS', 'f', 0, 'Maria', 'Rua ABC, 87 Braga', '974 2547', 'maria@gmail.com');
-INSERT INTO "arquitetura_choose_donation"."users" VALUES ('3bf13e38-83d7-40cf-9a3c-36980680ee7f', '7e9d6f9c-700a-4fdb-a431-4be8357274a4', 'sandro', 'b0y/IjNkmi5h7F2DbjQ2i9uJUyqRMpovEIo808v8kuHqobBvtSuyvS', 'f', 1, 'Sandro Vieira', 'Rua Jose, 12 Braga', '958 4558', 'vsandro@gmail.com');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('bde8569a-8254-4bc9-864d-26ab69067865', 'store #2', 'address', 10, 20, 3, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('749cec25-7446-44fb-932d-e9df8f325fa8', 'store 1 (alterado)', 'address (alterado)', 98, 99, 3, 'f');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('35f80b90-cb05-48ed-a0a7-c5f6dc00287d', 'store #3', 'address', 10, 20, 3, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('728a4fa8-1240-4cba-89fe-57abc06932c5', 'store #4', 'address', 10, 20, 3, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('d3c88e53-1c47-4fdd-96f8-5e15cd738b28', 'store #5', 'address', 10, 20, 3, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('e925a1d1-cc3e-4611-9a73-816e33e7ff31', 'Centro de Saúde São Miguel do Rio Torto e Rossio ao Sul do Tejo', 'Bicas', 39, -8, 1, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('92a43cd8-e6f6-4e3a-84fc-3666d403b796', 'Junta de Freguesia Ramalde', 'RUA ENG EZEQUIEL DE CAMPOS', 41, -9, 16, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('5ce88800-dc85-4e15-977d-2757f6d0e508', 'Universidade Moscavide e Portela', 'MOSCAVIDE E PORTELA', 39, -9, 7, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('92d1de45-b482-44e2-9e83-e080d57762cd', 'Centro de Saúde Oliveira do Douro', 'OLIVEIRA DOURO', 41, -9, 17, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('d0ef1eb4-0dd6-4795-a0c5-2da0badbec7b', 'Junta de Freguesia Santa Comba Dão e Couto do Mosteiro', 'SANTA COMBA DÃO E COUTO DO MOSTEIRO', 40, -8, 14, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('aa06789b-477a-43d0-a0c2-9cb801faa9db', 'Hospital Lordosa', 'Aérodromo', 41, -8, 23, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('da963c46-f0fb-402f-98f7-41943aaa8133', 'Centro de Saúde Tavira (Santa Maria e Santiago)', 'Tavira (Santa Maria e Santiago)', 37, -8, 14, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('8b8d4fca-a7e1-41d0-a0a8-eaa8f9db01e6', 'Hospital Rio de Couros e Casal dos Bernardos', 'Vale do Carro', 40, -9, 21, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('6701cc66-1c48-4ca1-ba9a-356414af8260', 'Hospital Tavarede', 'TAVAREDE', 40, -9, 5, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('d88672f9-5e7c-4597-8e72-eebc3fc3656f', 'Universidade Póvoa de Varzim, Beiriz e Argivai', 'PÓVOA DE VARZIM', 41, -9, 13, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('871be72a-b736-46f2-9df8-3fd239b0074b', 'Centro de dia Algueirão-Mem Martins', 'Mem Martins', 39, -9, 11, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('c66fca2e-aaa0-494f-9e5e-e60b8712c110', 'Junta de Freguesia Fânzeres e São Pedro da Cova', 'FÂNZERES E SÃO PEDRO DA COVA', 41, -9, 4, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('3fc10007-59d9-42b8-9143-ddee6481b567', 'Centro Social Cedofeita, Ildefonso, Sé, Miragaia, Nicolau e Vitória', 'Cedofeita', 41, -9, 16, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('749b0502-9031-44a0-b6cb-485486033d82', 'Pavilhão Desportivo Póvoa de Santa Iria e Forte da Casa', 'PÓVOA DE SANTA IRIA', 39, -9, 14, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('a55e9f2d-c6cc-43e1-b0d4-4400835f43f2', 'Junta de Freguesia Alcabideche', 'Manique', 39, -9, 5, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('7bf79ade-d3d1-45df-8203-fb1412fa3d38', 'Pavilhão Desportivo Moitas Venda', 'MOITAS VENDA', 39, -9, 2, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('38d422fa-6b8c-4d25-82ec-a7224e151ffc', 'Centro de dia Rio Douro', ' Teixugueiras Rio Douro - Guimarães', 42, -8, 4, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('d7c82bca-43a7-49d5-96e4-82d31b798291', 'Santa Casa da Misericórdia Rebordosa', 'Rebordosa', 41, -8, 10, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('18f49031-27be-48a4-b3c9-784e444d9f11', 'Centro de Saúde Rio Tinto', 'Rio Tinto', 41, -9, 4, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('8bf100ad-2483-46d2-bc4a-e4b850d555c5', 'Centro de Saúde Marinhais', 'MARINHAIS', 39, -9, 15, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('bd46837b-9105-4d5f-9b74-38dd65b79074', 'Escola Primária Pontinha e Famões', 'PONTINHA E FAMÕES', 39, -9, 16, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('3af469d2-a537-485c-bab7-16e8786a9f37', 'Pavilhão Desportivo Figueira de Castelo Rodrigo', 'FIGUEIRA', 41, -7, 4, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('00571847-4756-46e4-8c64-d363d502fdc5', 'Centro Social Santo António', 'SANTO ANTÓNIO', 39, -9, 6, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('90817a6a-d945-4f0b-99e3-c567aa2f677e', 'Universidade Oeiras e S. Julião da Barra, Paço de Arcos e Caxias', 'Paço de Arcos', 39, -9, 10, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('fd7db1b5-599f-4b77-a15d-8c1b0d575114', 'Junta de Freguesia Ponte de Sor, Tramaga e Vale de Açor', 'PONTE DE SOR', 39, -8, 13, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('2d1518af-5ec0-42db-a8ee-6566a2f4718f', 'Centro de dia São João Baptista e Santa Maria dos Olivais', 'TOMAR', 40, -8, 18, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('510236f8-7219-49e4-98e0-4e63d9eb0989', 'Escola Primária Massamá e Monte Abraão', 'Monte Abraão', 39, -9, 11, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('7ed11cb8-f1fd-4690-a212-e6408bf0f5b5', 'Santa Casa da Misericórdia Pias', 'PIAS', 38, -7, 13, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('815d84f7-410c-40c3-9102-fe2eafea78ec', 'Centro de Saúde Pampilhosa', 'PAMPILHOSA', 40, -8, 11, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('cf00a329-1f92-41c6-9df7-aa6c003dec4d', 'Universidade Cuba', 'CUBA', 38, -8, 7, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('2e2d8410-18f1-4e24-8294-00ce4d962410', 'Universidade Guia, Ilha e Mata Mourisca', 'Água Formosa', 40, -9, 15, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('ba5b26ba-e919-4c86-9afc-48579d73222b', 'Complexo Desportivo Fátima', 'Cova da Iria', 40, -9, 21, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('98f8c03e-d6d6-4cec-8ffb-fc82454cd1a6', 'Centro de dia Alcabideche', 'Manique', 39, -9, 5, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('850577d5-08fa-49f1-9648-c3fe065ac620', 'Junta de Freguesia Tavira (Santa Maria e Santiago)', 'TAVIRA', 37, -8, 14, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('f377c293-be85-4a1b-86f9-0d0fd7b5e53b', 'Universidade Corroios', 'SANTA MARTA DO PINHAL', 39, -9, 10, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('c82db994-e7c1-42b6-bda6-281c1a0ee655', 'Centro de Saúde Bárrio e Cepões', 'RUA DA INSUA', 42, -9, 7, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('28aa9a36-9949-47fb-b48a-ec5fd8f8b7ea', 'Pavilhão Desportivo Sacavém e Prior Velho', 'Sacavem', 39, -9, 7, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('16e6bc3a-0464-49fa-8a81-62e913809fae', 'Junta de Freguesia São Domingos de Rana', 'SÃO DOMINGOS DE RANA', 39, -9, 5, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('b9416f58-c247-47f9-9b3a-8605fd3b06a3', 'Santa Casa da Misericórdia Chamusca e Pinheiro Grande', 'UNIÃO DAS FREGUESIAS DA CHAMUSCA E PINHE', 39, -8, 7, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('d8dc224d-7b57-4a6c-92d6-01bcd6a34fac', 'Centro de dia São Miguel, Santa Eufémia e Rabaçal', 'sao miguel', 40, -8, 14, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('1aaaa3ac-1caa-476b-8460-c4ce5e4e2cbf', 'Centro Social Silves', 'SILVES', 37, -8, 13, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('aa6f71ce-b0a3-428c-a35a-afb16a2c9982', 'Complexo Desportivo Rio Meão', 'RIO MEÃO', 41, -9, 9, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('e7ebb716-9192-4c59-91e0-ea85f36561b5', 'Universidade Loulé (São Clemente)', 'LOULÉ', 37, -8, 8, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('c9b146fa-98a8-433c-bbc6-4486880fb9e9', 'Escola Primária Vila do Bispo e Raposeira', 'VILA DO BISPO', 37, -9, 15, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('aaf9231e-8c91-4524-b1db-5dc08e10228e', 'Centro de dia Leiria, Pousos, Barreira e Cortes', 'Telheiro', 40, -9, 9, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('d0f70a95-19f4-4549-9b97-d5984f7b4637', 'Universidade Madalena e Beselga', 'CEM SOLDOS', 40, -8, 18, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('4dd07984-81f0-490a-8b77-d42dc29a07d6', 'Pavilhão Desportivo Águeda e Borralha', 'Assequins', 41, -8, 1, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('6d4d5ba4-d00c-4405-8e02-d60c63c6a716', 'Junta de Freguesia Covas e Vila Nova de Oliveirinha', 'VILA NOVA DE OLIVEIRINNA', 40, -8, 16, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('756be234-a7af-4de2-ad04-22e8e58c47d4', 'Escola Primária Cacém e São Marcos', 'São Marcos', 39, -9, 11, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('c2f2e5d4-bfe9-43f8-962a-f234b7d76150', 'Hospital Pontinha e Famões', 'Serra da Luz', 39, -9, 16, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('6c568716-480b-4870-97d2-c49ecee88057', 'Universidade Além da Ribeira e Pedreira', 'PEDREIRA  QUINTA DA GRANJA', 40, -8, 18, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('849ae98b-a221-4eeb-a1af-0e18ba99b89a', 'Hospital Santa Maria da Feira, Travanca, Sanfins e Espargo', 'SANTA MARIA DA FEIRA, TRAVANCA, SANFINS ', 41, -9, 9, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('e1935b15-02a8-4cbb-aa4e-e843c04f9964', 'Universidade Lagos (São Sebastião e Santa Maria)', 'Lagos', 37, -9, 7, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('4e459d29-5812-41cd-8d1e-e84d7ed67462', 'Centro Social Ajuda', 'AJUDA', 39, -9, 6, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('030ad23b-9eaf-4803-9808-6cb737eaa0bf', 'Pavilhão Desportivo Carcavelos e Parede', 'Parede', 39, -9, 5, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('a026bfb7-e106-4296-874e-c485a433b00d', 'Pavilhão Desportivo Torres Novas (São Pedro), Lapas e Ribeira Branca', 'Torres Novas', 39, -9, 19, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('194db935-dbf1-4b50-bc2f-2dd814b12f0f', 'Centro de dia Souto da Carpalhosa e Ortigosa', 'SOUTO DA CARPALHOSA', 40, -9, 9, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('a2c9b17d-5636-4752-9f08-f6f00311607a', 'Hospital Vila Boa de Quires e Maureles', 'VILA BOA DE QUIRES E MAURELES', 41, -8, 7, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('6dd346c2-d077-49a5-b80c-c2cd17599e85', 'Escola Primária S.Julião, N.S. da Anunciada e S. Maria da Graça', 'Setúbal', 39, -9, 12, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('a2fb6077-f4f2-4039-8337-7a690e8bc5d6', 'Santa Casa da Misericórdia Vale da Senhora da Póvoa', 'VALE DA SENHORA DA PÓVOA', 40, -7, 7, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('95c9b5bb-0ed4-4535-8731-f9222ff70b49', 'Escola Primária Escariz', 'ESCARIZ', 41, -8, 4, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('0b8a713f-7b62-419e-a2f4-74c8262b2c05', 'Escola Primária Mondim de Basto', 'MONDIM DE BASTO', 41, -8, 5, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('52b8d1ae-10f8-4e68-8fb8-d172cb034957', 'Pavilhão Desportivo Alcanena e Vila Moreira', 'ALCANENA E VILA MOREIRA', 39, -9, 2, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('33d9010f-df9f-4f95-978d-3371f5a8431a', 'Pavilhão Desportivo Ramalde', 'RUA GASPAR COELHO (VIA PUBLICA)', 41, -9, 16, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('61b422dd-bbdb-4692-913c-cd1474e57940', 'Santa Casa da Misericórdia Cumieira', 'Lugar da Boavista', 41, -8, 11, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('d24884d9-c3f6-44a7-ad4d-78852a5f4b14', 'Centro de dia São Joaninho', 'SÃO JOANINHO', 40, -8, 14, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('28ead06b-81f9-4df6-bcfd-9e125f974b23', 'Hospital Ferreira do Alentejo e Canhestros', 'Canhestros', 38, -8, 8, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('b00dd004-217b-46da-9ab1-a635205d4943', 'Junta de Freguesia Albufeira e Olhos de Água', 'ALBUFEIRA', 37, -8, 1, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('7e56ee1b-0f2a-44da-a1ec-15ca72071779', 'Junta de Freguesia Nespereira e Casais', 'NESPEREIRA', 41, -8, 5, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('75df8bbb-1e86-4fdc-a7c5-9c3c37857ee4', 'Hospital Areias, Sequeiró, Lama e Palmeira', 'AREIAS', 41, -8, 14, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('23154a03-6da9-4d11-a591-320442cbb535', 'Escola Primária Paredes', 'MOURIZ', 41, -8, 10, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('b4c8774a-1595-4a36-9277-3b1859c3763c', 'Centro Social Madalena e Beselga', 'Algarvias', 40, -8, 18, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('59b271da-20c8-4dae-92b6-826fbe30d533', 'Hospital Vinha da Rainha', 'Barreiras', 40, -9, 15, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('59e3f9e3-7045-414b-909d-a034df99e4f0', 'Centro Social Teixoso e Sarzedo', 'Barroca da Donzela', 40, -7, 3, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('00a552e0-c948-48e2-bbd6-9a1969307578', 'Hospital Santa Margarida da Coutada', 'SANTA MARGARIDA DA COUTADA', 39, -8, 8, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('617b309d-8a86-442c-b89a-175ac6e72bdc', 'Complexo Desportivo Armação de Pêra', 'ARMAÇÃO DE PÊRA / H.B.A.', 37, -8, 13, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('7493d65f-958b-4e0c-90ea-87e5317bbd1b', 'Santa Casa da Misericórdia Sagres', 'SAGRES', 37, -9, 15, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('29a06bfa-1011-4abb-ac56-6bab24be0185', 'Hospital Perafita, Lavra e Santa Cruz do Bispo', 'PERAFITA, LAVRA E SANTA CRUZ DO BISPO', 41, -9, 8, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('16a06e5b-a724-444d-aba0-8c090f146df6', 'Hospital Camarate, Unhos e Apelação', 'AMEIXoeira', 39, -9, 7, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('3b7489ef-6795-4cda-b599-d4faf09ffafa', 'Junta de Freguesia Malveira e São Miguel de Alcainça', 'Venda do Valador', 39, -9, 9, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('485c0889-b548-4ad7-81e4-0c598ba5069d', 'Pavilhão Desportivo Cossourado e Linhares', 'Lugar de São Bento', 42, -9, 5, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('deda6597-46a7-4921-ac18-6e09bd3ba1d6', 'Junta de Freguesia Aves', 'AVES', 41, -8, 14, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('7c3c4d91-0e91-4b85-8678-3592030f8446', 'Complexo Desportivo São Domingos de Rana', 'TIRES', 39, -9, 5, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('904da24d-82bb-4485-85a2-14a8e1f215f7', 'Junta de Freguesia Várzea, Aliviada e Folhada', 'VÁRZEA, ALIVIADA E FOLHADA', 41, -8, 7, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('48d9c916-e953-4518-aed1-7b46a701938e', 'Santa Casa da Misericórdia Macedo de Cavaleiros', 'MACEDO DE CAVALEIROS', 42, -7, 5, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('e05ced35-e661-4340-8f45-f8c10ad7135e', 'Pavilhão Desportivo O. Azeméis, Riba-Ul, Ul, Macinhata Seixa, Madail', 'OLIVEIRA DE AZEMÉIS', 41, -8, 13, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('1a26beaf-58e9-4ef4-8205-0428f8e4aaf7', 'Hospital Olhalvo', 'Pocariça', 39, -9, 1, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('f309611f-b0a2-4c53-8dbe-24f95dc01e53', 'Junta de Freguesia Marinha Grande', 'Escola Pinhal do Rei - Marinha Grande', 40, -9, 10, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('83246e9c-3c58-4f19-8481-ab8b783b4f59', 'Complexo Desportivo S.Pedro e Santiago, S.Maria e S.Miguel e Matacães', 'Torres Vedras', 39, -9, 13, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('a90da8fa-e2f5-4093-9178-fd77668a90c0', 'Hospital Sacavém e Prior Velho', 'Prior Velho', 39, -9, 7, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('2472e2de-dee7-4bb4-916d-fbc2ec1e4e5c', 'Centro de Saúde Moscavide e Portela', 'MOSCAVIDE E PORTELA', 39, -9, 7, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('7168a696-2355-452f-9eec-a1caad634057', 'Santa Casa da Misericórdia Mina de Água', 'MINA DE ÁGUA', 39, -9, 15, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('962a0af1-7731-4ef4-96cd-44de4477d4e9', 'Pavilhão Desportivo Santa Maria Maior', 'SANTA MARIA MAIOR', 39, -9, 6, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('3df5b32c-83af-4884-a74a-c331b04854a7', 'Pavilhão Desportivo Quelfes', 'Quatrim', 37, -8, 10, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('f6a1678c-3157-4d94-b9d6-192e215ac844', 'Santa Casa da Misericórdia Vila do Conde', 'Vila do Conde', 41, -9, 16, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('1f4577d2-a8c6-4332-818b-30d4b6738429', 'Pavilhão Desportivo Agualva e Mira-Sintra', 'AGUALVA E MIRA-SINTRA Rua Joaquim Guilherme Costa Caldas na Rotunda', 39, -9, 11, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('e4561fde-e419-4322-b2ed-985c289e7ce5', 'Centro Social Bougado (São Martinho e Santiago)', 'Abelheira', 41, -9, 18, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('a6155f88-05b1-4af4-866f-4f22b7a47800', 'Universidade Alcochete', 'ALCOCHETE', 39, -9, 2, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('e51d6a92-265e-4851-b5d4-9cfde4d4cfbb', 'Centro de dia Fazendas de Almeirim', 'FAZENDAS DE ALMEIRIM', 39, -9, 3, 't');
+INSERT INTO "arquitetura_choose_donation"."stores" VALUES ('210423c2-d867-44a2-97d0-ab4e2a6b85a5', 'Santa Casa da Misericórdia Arrifana', 'Vilar', 40, -8, 17, 't');
 
 -- ----------------------------
 -- Indexes structure for table categories
@@ -2988,39 +2553,24 @@ CREATE UNIQUE INDEX "items_description_key" ON "arquitetura_choose_donation"."it
 ALTER TABLE "arquitetura_choose_donation"."items" ADD CONSTRAINT "items_pkey" PRIMARY KEY ("id");
 
 -- ----------------------------
+-- Primary Key structure for table order_items
+-- ----------------------------
+ALTER TABLE "arquitetura_choose_donation"."order_items" ADD CONSTRAINT "order_items_pkey" PRIMARY KEY ("id");
+
+-- ----------------------------
 -- Primary Key structure for table orders
 -- ----------------------------
 ALTER TABLE "arquitetura_choose_donation"."orders" ADD CONSTRAINT "orders_pkey" PRIMARY KEY ("id");
 
 -- ----------------------------
--- Primary Key structure for table store_categories
--- ----------------------------
-ALTER TABLE "arquitetura_choose_donation"."store_categories" ADD CONSTRAINT "store_categories_pkey" PRIMARY KEY ("id");
-
--- ----------------------------
 -- Primary Key structure for table store_items
 -- ----------------------------
-ALTER TABLE "arquitetura_choose_donation"."store_items" ADD CONSTRAINT "pk_id_store_items" PRIMARY KEY ("id");
+ALTER TABLE "arquitetura_choose_donation"."store_items" ADD CONSTRAINT "store_items_pkey" PRIMARY KEY ("id");
 
 -- ----------------------------
 -- Primary Key structure for table stores
 -- ----------------------------
 ALTER TABLE "arquitetura_choose_donation"."stores" ADD CONSTRAINT "stores_pkey" PRIMARY KEY ("id");
-
--- ----------------------------
--- Indexes structure for table users
--- ----------------------------
-CREATE UNIQUE INDEX "users_email_key" ON "arquitetura_choose_donation"."users" USING btree (
-  "email" COLLATE "pg_catalog"."default" "pg_catalog"."text_ops" ASC NULLS LAST
-);
-CREATE UNIQUE INDEX "users_username_key" ON "arquitetura_choose_donation"."users" USING btree (
-  "username" COLLATE "pg_catalog"."default" "pg_catalog"."text_ops" ASC NULLS LAST
-);
-
--- ----------------------------
--- Primary Key structure for table users
--- ----------------------------
-ALTER TABLE "arquitetura_choose_donation"."users" ADD CONSTRAINT "users_pkey" PRIMARY KEY ("id");
 
 -- ----------------------------
 -- Foreign Keys structure for table cities
@@ -3042,25 +2592,18 @@ ALTER TABLE "arquitetura_choose_donation"."order_items" ADD CONSTRAINT "order_it
 -- Foreign Keys structure for table orders
 -- ----------------------------
 ALTER TABLE "arquitetura_choose_donation"."orders" ADD CONSTRAINT "order_store_id_fkey" FOREIGN KEY ("store_id") REFERENCES "arquitetura_choose_donation"."stores" ("id") ON DELETE NO ACTION ON UPDATE NO ACTION;
-ALTER TABLE "arquitetura_choose_donation"."orders" ADD CONSTRAINT "order_user_id_fkey" FOREIGN KEY ("user_id") REFERENCES "arquitetura_choose_donation"."users" ("id") ON DELETE NO ACTION ON UPDATE NO ACTION;
-
--- ----------------------------
--- Foreign Keys structure for table store_categories
--- ----------------------------
-ALTER TABLE "arquitetura_choose_donation"."store_categories" ADD CONSTRAINT "store_categories_category_id_fkey" FOREIGN KEY ("category_id") REFERENCES "arquitetura_choose_donation"."categories" ("id") ON DELETE NO ACTION ON UPDATE NO ACTION;
-ALTER TABLE "arquitetura_choose_donation"."store_categories" ADD CONSTRAINT "store_categories_store_id_fkey" FOREIGN KEY ("store_id") REFERENCES "arquitetura_choose_donation"."stores" ("id") ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 -- ----------------------------
 -- Foreign Keys structure for table store_items
 -- ----------------------------
-ALTER TABLE "arquitetura_choose_donation"."store_items" ADD CONSTRAINT "store_items_item_id_fkey" FOREIGN KEY ("item_id") REFERENCES "arquitetura_choose_donation"."items" ("id") ON DELETE NO ACTION ON UPDATE NO ACTION;
-ALTER TABLE "arquitetura_choose_donation"."store_items" ADD CONSTRAINT "store_items_store_id_fkey" FOREIGN KEY ("store_id") REFERENCES "arquitetura_choose_donation"."stores" ("id") ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE "arquitetura_choose_donation"."store_items" ADD CONSTRAINT "store_items_item_id_fkey" FOREIGN KEY ("item_id") REFERENCES "arquitetura_choose_donation"."items" ("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "arquitetura_choose_donation"."store_items" ADD CONSTRAINT "store_items_store_id_fkey" FOREIGN KEY ("store_id") REFERENCES "arquitetura_choose_donation"."stores" ("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- ----------------------------
 -- Foreign Keys structure for table stores
 -- ----------------------------
 ALTER TABLE "arquitetura_choose_donation"."stores" ADD CONSTRAINT "stores_id_city_fkey" FOREIGN KEY ("id_city") REFERENCES "arquitetura_choose_donation"."cities" ("id") ON DELETE NO ACTION ON UPDATE NO ACTION;
-  
+
 EOSQL
 
 

@@ -24,7 +24,7 @@ psql -v ON_ERROR_STOP=1 --username "postgres" --dbname "arquitetura_authenticati
  Target Server Version : 150001 (150001)
  File Encoding         : 65001
 
- Date: 26/01/2023 16:48:30
+ Date: 07/02/2023 19:21:12
 */
 
 
@@ -71,6 +71,10 @@ INSERT INTO "arquitetura_authentication"."operations" VALUES ('72ac6213-5581-431
 INSERT INTO "arquitetura_authentication"."operations" VALUES ('255766dd-e7e5-4958-89b7-a4819b83d2e8', 'GET', '/eventrecords', '[event] get all event record');
 INSERT INTO "arquitetura_authentication"."operations" VALUES ('c68809ac-37d6-4839-9119-ff853bac2be8', 'GET', '/event', '[event] get all events');
 INSERT INTO "arquitetura_authentication"."operations" VALUES ('79ba7090-dcd4-452a-85f5-dc3f6388ecb7', 'GET', '/collector', '[event] get all collectors');
+INSERT INTO "arquitetura_authentication"."operations" VALUES ('ecea783f-ab12-4865-8e3f-56bc778c733d', 'GET', '/stores', '[choose donation] get all stores in a region');
+INSERT INTO "arquitetura_authentication"."operations" VALUES ('c39555c3-a6b4-4276-9221-78d89f73e341', 'POST', '/orders', '[choose donation] create order');
+INSERT INTO "arquitetura_authentication"."operations" VALUES ('de54ca19-d85f-4f6d-905c-8a8a1215c72a', 'GET', '/orders', '[choose donation] get all orders a user');
+INSERT INTO "arquitetura_authentication"."operations" VALUES ('e64f09ea-234b-49c2-a31d-824ffa83ba03', 'GET', '/orders', '[choose donation] get all items from an order');
 
 -- ----------------------------
 -- Table structure for permissions
@@ -132,6 +136,10 @@ INSERT INTO "arquitetura_authentication"."permissions" VALUES ('0df40d42-a3f4-46
 INSERT INTO "arquitetura_authentication"."permissions" VALUES ('88b9ae74-ffc9-4380-836e-7e2521747b70', '0cd9f2ff-df2c-49e8-a5db-976aa757c501', '255766dd-e7e5-4958-89b7-a4819b83d2e8');
 INSERT INTO "arquitetura_authentication"."permissions" VALUES ('cab4d67e-d8b6-4e74-81a5-afb56067d1fe', '0cd9f2ff-df2c-49e8-a5db-976aa757c501', 'c68809ac-37d6-4839-9119-ff853bac2be8');
 INSERT INTO "arquitetura_authentication"."permissions" VALUES ('c4dd865b-01b5-45e2-8ba1-4e293984ba2e', '0cd9f2ff-df2c-49e8-a5db-976aa757c501', '79ba7090-dcd4-452a-85f5-dc3f6388ecb7');
+INSERT INTO "arquitetura_authentication"."permissions" VALUES ('60d7c647-639f-4298-aa7c-d89d047c6793', '7e9d6f9c-700a-4fdb-a431-4be8357274a4', 'ecea783f-ab12-4865-8e3f-56bc778c733d');
+INSERT INTO "arquitetura_authentication"."permissions" VALUES ('7b0b2c21-b276-4a51-a65b-d655b8cb4767', '7e9d6f9c-700a-4fdb-a431-4be8357274a4', 'c39555c3-a6b4-4276-9221-78d89f73e341');
+INSERT INTO "arquitetura_authentication"."permissions" VALUES ('0bbd6467-fc9c-48ac-981c-9402774a40b0', '7e9d6f9c-700a-4fdb-a431-4be8357274a4', 'de54ca19-d85f-4f6d-905c-8a8a1215c72a');
+INSERT INTO "arquitetura_authentication"."permissions" VALUES ('f88189b0-a0f9-4686-9e26-bf759381f8b2', '7e9d6f9c-700a-4fdb-a431-4be8357274a4', 'e64f09ea-234b-49c2-a31d-824ffa83ba03');
 
 -- ----------------------------
 -- Table structure for profiles
@@ -223,7 +231,7 @@ ALTER TABLE "arquitetura_authentication"."permissions" ADD CONSTRAINT "permissio
 -- ----------------------------
 ALTER TABLE "arquitetura_authentication"."users" ADD CONSTRAINT "users_profile_id_fkey" FOREIGN KEY ("profile_id") REFERENCES "arquitetura_authentication"."profiles" ("id") ON DELETE RESTRICT ON UPDATE CASCADE;
     
-  
+
 EOSQL
 
 
