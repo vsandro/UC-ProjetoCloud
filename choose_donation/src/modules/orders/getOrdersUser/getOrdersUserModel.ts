@@ -4,7 +4,7 @@ interface IOrder {
   user_id: string;
 }
 
-export class GetOrdersUserModel {
+export class getOrdersUserModel {
   async execute({ user_id }: IOrder) {
 
     const result = await prisma.orders.findMany({ 

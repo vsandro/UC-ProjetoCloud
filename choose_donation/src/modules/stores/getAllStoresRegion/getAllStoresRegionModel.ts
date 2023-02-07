@@ -1,10 +1,10 @@
 import { prisma } from '../../../database/prisma';
-export class GetAllStoresRegionModel {
+export class getAllStoresRegionModel {
   async execute() {
  
     const result = await prisma.stores.findMany({ 
       where: {
-        id_city: { in: [4, 6] },
+        id_city: { in: [3, 4] },
       }   
     });       
 

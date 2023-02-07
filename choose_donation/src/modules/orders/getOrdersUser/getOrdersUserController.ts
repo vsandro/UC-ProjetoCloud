@@ -1,15 +1,15 @@
 import { Request, Response } from 'express';
-import { GetOrdersUserModel } from './getOrdersUserModel';
+import { getOrdersUserModel } from './getOrdersUserModel';
 
-export class GetOrdersUserController {
+export class getOrdersUserController {
   async handle(request: Request, response: Response) {
 
     const { userId } = request.params;
 
-    const getOrdersUserModel = new GetOrdersUserModel();
+    const GetOrdersUserModel = new getOrdersUserModel();
     
-    const result = await getOrdersUserModel.execute({
-      user_id: userId,
+    const result = await GetOrdersUserModel.execute({
+      user_id: userId
     });
 
     return response.json(result);

@@ -1,10 +1,10 @@
 import { Request, Response } from 'express';
-import { GetAllStoresRegionModel } from './getAllStoresRegionModel';
+import { getAllStoresRegionModel } from './getAllStoresRegionModel';
 
-export class GetAllStoresRegionController {
+export class getAllStoresRegionController {
   async handle(request: Request, response: Response) {
 
-    const getAllStoresModel = new GetAllStoresRegionModel();    
+    const getAllStoresModel = new getAllStoresRegionModel();    
     const result = await getAllStoresModel.execute();
 
     return response.json(result);

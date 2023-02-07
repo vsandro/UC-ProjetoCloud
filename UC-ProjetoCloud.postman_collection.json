@@ -1629,7 +1629,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"user_id\": \"3bf13e38-83d7-40cf-9a3c-36980680ee7f\",\r\n  \"store_id\": \"e925a1d1-cc3e-4611-9a73-816e33e7ff31\"\r\n}",
+									"raw": "{\r\n  \"user_id\": \"1fe8d804-ef76-4ed0-bf9a-785002e62dcf\",\r\n  \"store_id\": \"e925a1d1-cc3e-4611-9a73-816e33e7ff31\",\r\n  \"order_items\": [\r\n     \"abc29188-9a97-f6f3-a805-37869886f0fe\",\r\n     \"ac7a6cea-0e7b-7cd4-e9af-6357ba09122b\"\r\n    ] \r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1646,6 +1646,92 @@
 									"path": [
 										"orders",
 										"createOrder"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get Orders User",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4300/orders/getOrdersUser/1fe8d804-ef76-4ed0-bf9a-785002e62dcf",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4300",
+									"path": [
+										"orders",
+										"getOrdersUser",
+										"1fe8d804-ef76-4ed0-bf9a-785002e62dcf"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get Order Items",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4300/orders/getOrderItems/62a007a0-349c-4cb5-8174-ff0bd8ec3eee",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4300",
+									"path": [
+										"orders",
+										"getOrderItems",
+										"62a007a0-349c-4cb5-8174-ff0bd8ec3eee"
 									]
 								}
 							},
@@ -1679,7 +1765,7 @@
 	"variable": [
 		{
 			"key": "TOKEN",
-			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNhbmRybyIsImlhdCI6MTY3NDczNzEyNSwiZXhwIjoxNjc0ODIzNTI1LCJzdWIiOiIzYmYxM2UzOC04M2Q3LTQwY2YtOWEzYy0zNjk4MDY4MGVlN2YifQ.8zyCF23PN_ilT9FAOWiXaKtTcdYT_YAB0CocxWJ5y_k"
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNhbmRybyIsImlhdCI6MTY3NTc4MjE1NywiZXhwIjoxNjc1ODY4NTU3LCJzdWIiOiIzYmYxM2UzOC04M2Q3LTQwY2YtOWEzYy0zNjk4MDY4MGVlN2YifQ.gpMabgO9tWg24f9Y3qtYzx5jUs1tR5TjxRrG33GkZIw"
 		}
 	]
 }

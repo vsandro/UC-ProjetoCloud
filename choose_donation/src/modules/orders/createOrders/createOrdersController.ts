@@ -1,14 +1,14 @@
 import { Request, Response } from 'express';
-import { CreateOrdersModel } from './createOrdersModel';
+import { createOrdersModel } from './createOrdersModel';
 
-export class CreateOrdersController {
+export class createOrdersController {
   async handle(request: Request, response: Response) {
 
     const { user_id, store_id, order_items } = request.body;
 
-    const createOrdersModel = new CreateOrdersModel();
+    const CreateOrdersModel = new createOrdersModel();
     
-    const result = await createOrdersModel.execute({
+    const result = await CreateOrdersModel.execute({
       user_id,
       store_id,
       order_items,

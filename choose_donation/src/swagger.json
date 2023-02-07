@@ -4,227 +4,165 @@
     "title": "Swagger - Choose Donation microservice documentation",
     "description": ""
   },
-  "tags": [
-    {
-      "name": "user",
-      "description": "Access to users",
-      "externalDocs": {
-        "description": "Find out more about our user",
-        "url": "localhost:4300"
-      }
-    }
+  "tags": [       
   ],
   "paths": {
-    "/user/": {
-      "post": {
+    "/orders/": {
+    },
+    "/orders": {
+      "get": {
         "tags": [
-          "user"
+          "orders"
         ],
-        "security": [
-          {
-            "api_key": []
-          }
-        ],
-        "summary": "Create a new user",
+        "summary": "Returns all orderss",
         "description": "",
-        "operationId": "createuser",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/user"
-              }
-            },
-            "application/xml": {
-              "schema": {
-                "$ref": "#/components/schemas/user"
-              }
-            },
-            "application/x-www-form-urlencoded": {
-              "schema": {
-                "$ref": "#/components/schemas/user"
-              }
-            }
-          }          
-        },
+        "operationId": "getInventory",
         "responses": {
           "200": {
-            "description": "successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/user"
-                }
-              }
-            }
-          },
-          "405": {
-            "description": "Invalid input"
+            "description": "successful operation"
           }
         }
       }
     },
-    "/user/login": {
-      "post": {
-        "tags": [
-          "user"
-        ],
-        "summary": "Login user",
-        "description": "",
-        "operationId": "userlogin",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/login"
-              }
-            },
-            "application/xml": {
-              "schema": {
-                "$ref": "#/components/schemas/login"
-              }
-            },
-            "application/x-www-form-urlencoded": {
-              "schema": {
-                "$ref": "#/components/schemas/login"
-              }
-            }
-          }          
-        },
-        "responses": {
-          "200": {
-            "description": "successful operation",
+    "/orders/{orderId}": {
+      "/orders/": {
+        "post": {
+          "tags": [
+            "orders"
+          ],
+          "summary": "Create a new orders",
+          "description": "",
+          "operationId": "createEvent",
+          "requestBody": {
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/login"
+                  "$ref": "#/components/schemas/Event"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Event"
+                }
+              },
+              "application/x-www-form-urlencoded": {
+                "schema": {
+                  "$ref": "#/components/schemas/Event"
                 }
               }
             }
           },
-          "405": {
-            "description": "Invalid input"
-          }
-        }     
-      }
-    },
-    "/user/unlock": {
-      "post": {
-        "tags": [
-          "user"
-        ],
-        "summary": "Unlock user",
-        "description": "",
-        "operationId": "unlockuser",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/unlock"
-              }
-            },
-            "application/xml": {
-              "schema": {
-                "$ref": "#/components/schemas/unlock"
-              }
-            },
-            "application/x-www-form-urlencoded": {
-              "schema": {
-                "$ref": "#/components/schemas/unlock"
-              }
-            }
-          }          
-        },
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/unlock"
+          "responses": {
+            "200": {
+              "description": "successful operation",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Event"
+                  }
                 }
               }
+            },
+            "405": {
+              "description": "Invalid input"
             }
-          },
-          "405": {
-            "description": "Invalid input"
           }
-        },
-        "security": [
+        }
+      },
+      "/orders": {
+        "orders": {
+          "tags": [
+            "orders"
+          ],
+          "summary": "Returns all orderss",
+          "description": "",
+          "operationId": "getInventory",
+          "responses": {
+            "200": {
+              "description": "successful operation"
+            }
+          }
+        }
+      },  
+      "get": {
+        "tags": [
+          "orders"
+        ],
+        "summary": "Find items of order by ID",
+        "description": "",
+        "operationId": "getOrderItems",
+        "parameters": [
           {
-            "api_key": []
+            "name": "orderId",
+            "in": "path",
+            "description": "ID of order that needs to be fetched",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
-        ]           
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Event"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Event"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "orders not found"
+          }
+        }
       }
     }
   },
   "components": {
     "schemas": {
-      "user": {
+       "Event": {
         "type": "object",
         "properties": {
-          "username": {
+          "name": {
             "type": "string",
-            "example": "username1"
+            "example": "orders #1"
           },
-          "password": {
-            "type": "string",
-            "example": "123456"
-          },          
-          "profile_id": {
-            "type": "string",
-            "example": "7e9d6f9c-700a-4fdb-a431-4be8357274a4"
-          }
+          "active": {
+            "type": "boolean",
+            "example": true
+          }          
         },
         "xml": {
-          "name": "user"
-        }
-      },
-      "login": {
-        "type": "object",
-        "properties": {
-          "username": {
-            "type": "string",
-            "example": "username1"
-          },
-          "password": {
-            "type": "string",
-            "example": "123456"
-          }    
-        },
-        "xml": {
-          "name": "login"
-        }
-      },
-      "unlock": {
-        "type": "object",
-        "properties": {
-          "username": {
-            "type": "string",
-            "example": "username1"
-          }
-        },
-        "xml": {
-          "name": "unlock"
+          "name": "orders"
         }
       }
     },
     "requestBodies": {
-      "User": {
-        "description": "Added user",
+      "Event": {
+        "description": "orders",
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/User"
+              "$ref": "#/components/schemas/Event"
             }
           },
           "application/xml": {
             "schema": {
-              "$ref": "#/components/schemas/User"
+              "$ref": "#/components/schemas/Event"
             }
           }
         }
-      },
+      },                  
       "UserArray": {
         "description": "List of user object",
         "content": {
@@ -245,6 +183,6 @@
         "scheme": "bearer",
         "bearerFormat": "JWT"
       }
-    }
+    }    
   }
 }

@@ -4,7 +4,7 @@ interface ICreateOrder {
   store_id: string;
   order_items: string;
 }
-export class CreateOrdersModel {
+export class createOrdersModel {
   async execute({ user_id, store_id, order_items }: ICreateOrder) {
  
     const result_order = await prisma.orders.create({
