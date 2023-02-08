@@ -12,9 +12,9 @@ const createOrders = new createOrdersController();
 const getOrdersUser = new getOrdersUserController();
 const getOrderItems = new getOrderItemsController();
 
-routes.get('/stores/getAllStoresRegion', getAllStoresRegion.handle);
-routes.post('/orders/createOrder', createOrders.handle);
-routes.get('/orders/getOrdersUser/:userId', getOrdersUser.handle);
-routes.get('/orders/getOrderItems/:orderId', getOrderItems.handle);
+routes.get('/stores/getAllStoresRegion', auth, getAllStoresRegion.handle);
+routes.post('/orders/createOrder', auth, createOrders.handle);
+routes.get('/orders/getOrdersUser/:userId', auth, getOrdersUser.handle);
+routes.get('/orders/getOrderItems/:orderId', auth, getOrderItems.handle);
 
 export { routes };

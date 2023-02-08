@@ -1,4 +1,18 @@
 import { prisma } from '../../../database/prisma';
+
+/**
+ * createOrdersModel
+ * 
+ * Parametros de entrada: user_id, store_id, order_items
+ * 
+ * Esta classe cria uma nova ordem com seus respectivos itens e marca os itens selecionados como reserved = true.
+ * Usa a biblioteca "prisma" para acesso ao banco de dados. 
+ * Recebe como parametros as informações definidas na interface "ICreateOrder" 
+ * Após criar a nova ordem com seus itens é retornado pela classe a order que foi gerada.
+ * 
+ * return result_order
+ * 
+ */
 interface ICreateOrder {
   user_id: string;
   store_id: string;
@@ -41,6 +55,7 @@ export class createOrdersModel {
 
     } 
     
+  // Retorna a Order criada
   return result_order; 
   }
 }

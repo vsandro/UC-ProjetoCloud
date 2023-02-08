@@ -1722,7 +1722,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:4300/orders/getOrderItems/62a007a0-349c-4cb5-8174-ff0bd8ec3eee",
+									"raw": "http://localhost:4300/orders/getOrderItems/df233c6c-070d-4e70-8d49-d318e4d513c4",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -1731,7 +1731,7 @@
 									"path": [
 										"orders",
 										"getOrderItems",
-										"62a007a0-349c-4cb5-8174-ff0bd8ec3eee"
+										"df233c6c-070d-4e70-8d49-d318e4d513c4"
 									]
 								}
 							},
@@ -1765,7 +1765,7 @@
 	"variable": [
 		{
 			"key": "TOKEN",
-			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNhbmRybyIsImlhdCI6MTY3NTc4MjE1NywiZXhwIjoxNjc1ODY4NTU3LCJzdWIiOiIzYmYxM2UzOC04M2Q3LTQwY2YtOWEzYy0zNjk4MDY4MGVlN2YifQ.gpMabgO9tWg24f9Y3qtYzx5jUs1tR5TjxRrG33GkZIw"
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNhbmRybyIsImlhdCI6MTY3NTg4NDIzNywiZXhwIjoxNjc1OTcwNjM3LCJzdWIiOiIzYmYxM2UzOC04M2Q3LTQwY2YtOWEzYy0zNjk4MDY4MGVlN2YifQ.kRr2m9wc2YEcWrWPEblKuWfFc1yIYzgiUKr4Wpfcsos"
 		}
 	]
 }

@@ -2,6 +2,7 @@ import jwt, { Secret, JwtPayload } from 'jsonwebtoken';
 import { Request, Response, NextFunction } from 'express';
 
 const SECRET = String(process.env.SECRET_KEY)
+
 export const SECRET_KEY: Secret = SECRET;
 export interface CustomRequest extends Request {
  token: string | JwtPayload;
@@ -20,7 +21,7 @@ export const auth = async (req: Request, res: Response, next: NextFunction) => {
 
     const POSTGRES_USER = String(process.env.POSTGRES_USER);
     const POSTGRES_PASSWORD = String(process.env.POSTGRES_PASSWORD);    
-    const POSTGRES_DB = String(process.env.POSTGRES_DB);
+    const POSTGRES_DB = "arquitetura_authentication";
     const DB_HOST = String(process.env.DB_HOST);
     const DB_PORT = Number(process.env.DB_PORT);
 
@@ -36,7 +37,8 @@ export const auth = async (req: Request, res: Response, next: NextFunction) => {
     client.connect();
 
     const IDUser = decoded.sub;
-    const ROTA = req.url
+    //const ROTA = req.url
+    const ROTA = "/" + req.path.substring(1, 7)
     const METODO = req.method  
 
     // console.log(IDUser)
@@ -49,9 +51,11 @@ export const auth = async (req: Request, res: Response, next: NextFunction) => {
     AND ${POSTGRES_DB}.permissions.operation_id = ${POSTGRES_DB}.operations."id"
     AND ${POSTGRES_DB}.users.id = '${IDUser}'
     AND ${POSTGRES_DB}.operations.route = '${ROTA}'
-    AND ${POSTGRES_DB}.operations.description LIKE '[authentication]%'
+    AND ${POSTGRES_DB}.operations.description LIKE '[choose donation]%'
     AND ${POSTGRES_DB}.operations.method = '${METODO}'`;
     
+    // console.log(query)
+
     client.query(query, (err:any, result:any) => {
         if (err) {
             console.error(err);

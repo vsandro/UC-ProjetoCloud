@@ -6,10 +6,12 @@
  * Esta classe cria um novo utilizador.
  * Usa a biblioteca "bcrypt" para criptografar a senha do utilizador
  * Usa a biblioteca "prisma" para acesso ao banco de dados. 
- * Recebe como parametros as informações definidas na interface "ICreateUser" com todos os campos necessários para criar um novo utilizador.
+ * Recebe como parametros as informações definidas na interface "ICreateUser" 
+ * com todos os campos necessários para criar um novo utilizador.
  * O método "execute" da classe verifica se o nome de usuário já existe no banco de dados. 
  * Se existir, ele lança um erro. 
- * Se não existir, ele criptografa a senha e cria um novo utilizador que é retornado pela classe
+ * Se não existir, ele criptografa a senha, cria um novo utilizador.
+ * Os dados do novo utilizador é retornado pela classe
  * 
  * return user
  * 

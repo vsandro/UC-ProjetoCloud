@@ -4,185 +4,29 @@
     "title": "Swagger - Choose Donation microservice documentation",
     "description": ""
   },
-  "tags": [       
-  ],
   "paths": {
     "/orders/": {
     },
     "/orders": {
       "get": {
-        "tags": [
-          "orders"
-        ],
-        "summary": "Returns all orderss",
-        "description": "",
-        "operationId": "getInventory",
+        "summary": "Returns all orders",
         "responses": {
           "200": {
-            "description": "successful operation"
-          }
-        }
-      }
-    },
-    "/orders/{orderId}": {
-      "/orders/": {
-        "post": {
-          "tags": [
-            "orders"
-          ],
-          "summary": "Create a new orders",
-          "description": "",
-          "operationId": "createEvent",
-          "requestBody": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Event"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Event"
-                }
-              },
-              "application/x-www-form-urlencoded": {
-                "schema": {
-                  "$ref": "#/components/schemas/Event"
-                }
-              }
-            }
-          },
-          "responses": {
-            "200": {
-              "description": "successful operation",
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "$ref": "#/components/schemas/Event"
-                  }
-                }
-              }
-            },
-            "405": {
-              "description": "Invalid input"
-            }
-          }
-        }
-      },
-      "/orders": {
-        "orders": {
-          "tags": [
-            "orders"
-          ],
-          "summary": "Returns all orderss",
-          "description": "",
-          "operationId": "getInventory",
-          "responses": {
-            "200": {
-              "description": "successful operation"
-            }
-          }
-        }
-      },  
-      "get": {
-        "tags": [
-          "orders"
-        ],
-        "summary": "Find items of order by ID",
-        "description": "",
-        "operationId": "getOrderItems",
-        "parameters": [
-          {
-            "name": "orderId",
-            "in": "path",
-            "description": "ID of order that needs to be fetched",
-            "required": true,
+            "description": "Returns all orders",
             "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Event"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Event"
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  }  
                 }
               }
             }
-          },
-          "400": {
-            "description": "Invalid ID supplied"
-          },
-          "404": {
-            "description": "orders not found"
           }
         }
       }
     }
-  },
-  "components": {
-    "schemas": {
-       "Event": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "example": "orders #1"
-          },
-          "active": {
-            "type": "boolean",
-            "example": true
-          }          
-        },
-        "xml": {
-          "name": "orders"
-        }
-      }
-    },
-    "requestBodies": {
-      "Event": {
-        "description": "orders",
-        "content": {
-          "application/json": {
-            "schema": {
-              "$ref": "#/components/schemas/Event"
-            }
-          },
-          "application/xml": {
-            "schema": {
-              "$ref": "#/components/schemas/Event"
-            }
-          }
-        }
-      },                  
-      "UserArray": {
-        "description": "List of user object",
-        "content": {
-          "application/json": {
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/components/schemas/User"
-              }
-            }
-          }
-        }
-      }
-    },
-    "securitySchemes": {
-      "api_key": {
-        "type": "http",
-        "scheme": "bearer",
-        "bearerFormat": "JWT"
-      }
-    }    
   }
 }
