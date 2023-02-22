@@ -1,0 +1,70 @@
+generator client {
+  provider      = "prisma-client-js"  
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Stores {
+  id   String @id @default(uuid())
+  name String
+  address String
+  latitude Int
+  longitude Int
+  id_city Int
+  active Boolean @default(true)
+
+  storeItems Store_items[]
+
+  @@map("stores")
+}
+
+model Items {
+  id  String @id @default(uuid())
+  description String
+  category_id String
+  active  Boolean
+  reserved  Boolean
+
+  storeItems Store_items[]
+  orderItems Order_items[]
+
+  @@map("items")
+}
+
+model Store_items {
+  id    String @id @default(uuid())
+  store_id String
+  item_id String  
+
+  store Stores @relation(fields: [store_id], references: [id])
+  item Items @relation(fields: [item_id], references: [id])
+
+  @@map("store_items")
+}
+
+model Orders {
+  id   String @id @default(uuid())
+  user_id String
+  store_id String
+  required_date  DateTime   @default(now())
+  status String
+  delivery_date  DateTime?
+
+  orderItems Order_items[]
+
+  @@map("orders")
+}
+
+model Order_items {
+  id    String @id @default(uuid())
+  order_id String
+  item_id String
+
+  order Orders @relation(fields: [order_id], references: [id])
+  item Items @relation(fields: [item_id], references: [id])
+
+  @@map("order_items")
+}

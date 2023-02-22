@@ -10,7 +10,7 @@
       "description": "Access to stores",
       "externalDocs": {
         "description": "",
-        "url": "localhost:5000"
+        "url": "localhost:4100"
       }
     },
     {
@@ -18,7 +18,7 @@
       "description": "Access to categories",
       "externalDocs": {
         "description": "",
-        "url": "localhost:5000"
+        "url": "localhost:4100"
       }
     },
     {
@@ -26,7 +26,7 @@
       "description": "Access to collectors",
       "externalDocs": {
         "description": "",
-        "url": "localhost:5000"
+        "url": "localhost:4100"
       }
     },
     {
@@ -34,7 +34,7 @@
       "description": "Access to events",
       "externalDocs": {
         "description": "",
-        "url": "localhost:5000"
+        "url": "localhost:4100"
       }
     }          
   ],

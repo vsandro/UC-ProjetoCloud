@@ -21,7 +21,7 @@ export class PGStoreDataSource implements StoreDataSource {
 
     async create(Store: StoreRequestModel) {  
         const ID = uuidv4()     
-        await this.db.query(`insert into ${DB_TABLE} (id, name, address, latitude, longitude) values ($1, $2, $3, $4, $5)`, [ID, Store.name, Store.address, Store.latitude, Store.longitude])
+        await this.db.query(`insert into ${DB_TABLE} (id, name, address, latitude, longitude, id_city) values ($1, $2, $3, $4, $5, $6)`, [ID, Store.name, Store.address, Store.latitude, Store.longitude, Store.id_city])
 
         const jsonSend = JSON.stringify({
                   id: ID,
@@ -29,8 +29,9 @@ export class PGStoreDataSource implements StoreDataSource {
                   address: Store.address,
                   latitude: Store.latitude,
                   longitude: Store.longitude,
-                  active: Store.active,
-                  type: "store created",
+                  active: true,
+                  id_city: Store.id_city,
+                  type: "store created",                  
         })
         producer(jsonSend)
     }
@@ -43,6 +44,7 @@ export class PGStoreDataSource implements StoreDataSource {
             address: item.address,
             latitude: item.latitude,
             longitude: item.longitude,
+            id_city: item.id_city,
             active: item.active,
         }));
         return result;
@@ -62,6 +64,7 @@ export class PGStoreDataSource implements StoreDataSource {
             address: item.address,
             latitude: item.latitude,
             longitude: item.longitude,
+            id_city: item.id_city,
             active: item.active,   
         }));
         return result[0];
@@ -74,12 +77,16 @@ export class PGStoreDataSource implements StoreDataSource {
             console.log("Not found");
             return false;
         }     
-        await this.db.query(`update ${DB_TABLE} set  name = $2, address = $3, latitude = $4, longitude = $5, active = $6 where id = $1`, [id, data.name, data.address, data.latitude, data.longitude, data.active])
+        await this.db.query(`update ${DB_TABLE} set  name = $2, address = $3, latitude = $4, longitude = $5, id_city = $6, active = $7 where id = $1`, [id, data.name, data.address, data.latitude, data.longitude, data.id_city, data.active])
 
         const jsonSend = JSON.stringify({
             id: id,
             name: data.name,
-            active: data.active,                
+            address: data.address,
+            latitude: data.latitude,
+            longitude: data.longitude,
+            id_city: data.id_city,
+            active: data.active,              
             type: "store updated",
         })
         producer(jsonSend)        

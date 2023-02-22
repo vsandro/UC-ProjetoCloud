@@ -80,6 +80,17 @@ services:
     networks:
       - app-net
 
+  choose_donation:
+    container_name: projetoCloud_choose_donation
+    build: choose_donation
+    ports:
+      - '4300:4300'
+    depends_on:
+      - rabbitmq
+      - elasticsearch           
+    networks:
+      - app-net
+
 networks:
   app-net:
     driver: bridge

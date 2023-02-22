@@ -1,0 +1,32 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Swagger - Choose Donation microservice documentation",
+    "description": ""
+  },
+  "paths": {
+    "/orders/": {
+    },
+    "/orders": {
+      "get": {
+        "summary": "Returns all orders",
+        "responses": {
+          "200": {
+            "description": "Returns all orders",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  }  
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -4,6 +4,7 @@ ENV SERVER_HABBIT="amqp://guest:guest@rabbitmq:5672"
 WORKDIR /usr/app
 
 COPY . .
+COPY ./docker/.env .
 
 RUN npm install
 

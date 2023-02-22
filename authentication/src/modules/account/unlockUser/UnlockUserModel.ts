@@ -1,10 +1,23 @@
 import { prisma } from '../../../database/prisma';
 import getClient from '../../../client/elasticsearch'
 
+/**
+ * UnlockUserModel
+ * 
+ * Parametros de entrada: username
+ * 
+ * Esta classe desbloqueia um utilizador.
+ * Usa a biblioteca "prisma" para acesso ao banco de dados. 
+ * Recebe como parametros as informações definidas na interface "IUnlockUser" 
+ * Verificar se o utilizador está bloqueado, informando se ele não estiver. 
+ * Se ele estiver bloqueado, faz o desbloqueo e adiciona um registo no Elasticsearch como log. 
+ * 
+ * return true
+ * 
+ */
 interface IUnlockUser {
   username: string;
 }
-
 export class UnlockUserModel {
   constructor(
    
@@ -46,6 +59,7 @@ export class UnlockUserModel {
     return true
   }
 
+  // Desbloqueia o utilizador no banco de dados
   async update({ username }: IUnlockUser) {
     const updateUser = await prisma.users.update({
       where: {

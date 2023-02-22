@@ -10,7 +10,7 @@
       "description": "Access to event records",
       "externalDocs": {
         "description": "",
-        "url": "ocalhost:5001"
+        "url": "localhost:4200"
       }
     },
     {
@@ -18,7 +18,7 @@
       "description": "Access to collectors",
       "externalDocs": {
         "description": "",
-        "url": "ocalhost:5001"
+        "url": "localhost:4200"
       }
     },
     {
@@ -26,7 +26,7 @@
       "description": "Access to events",
       "externalDocs": {
         "description": "",
-        "url": "ocalhost:5001"
+        "url": "localhost:4200"
       }
     }          
   ],
